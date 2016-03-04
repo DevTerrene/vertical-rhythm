@@ -1,41 +1,72 @@
-@import 'functions/calc-font-sizes',
-		'variables.scss',
-		'mixins/clearfix',
-		'mixins/grid',
-		'mixins/triangle',
-		'mixins/vertical-rhythm';
+@import 'mixins/vr/vr-main';
 
-//
-// Base
-//
+$grid-breakpoint-s: 30rem;
+$grid-breakpoint-m: 60rem;
+$grid-gutter: $distance-m;
 
-html {
-	box-sizing: border-box;
-	overflow-y: scroll;
-}
+$black: #222;
+$white: #fff;
+$yellow: #ffffc2;
 
-*,
-*:before,
-*:after {
-	box-sizing: inherit; // Credit: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+a {
+	color: $black;
 }
 
 body {
-	margin: 0;
-	padding: 0;
+	overflow-x: hidden;
 
-	color: $text-color;
-	font-size: $base-font-size;
-	font-family: $typeface-body;
-	line-height: $base-line-height;
-	text-rendering: optimizeLegibility;
+	padding: 0 $grid-gutter;
 
-	background: $bg-color;
+	color: $black;
+
+	background-color: $white;
 }
 
-//
-// Typography
-//
+blockquote {
+	display: inline-block;
+
+	margin: 0 0 $paragraph-trailer;
+	padding: ($distance-l + $distance-l) $paragraph-trailer 0;
+
+	background: $yellow;
+}
+
+code {
+	padding: $distance-m $distance-l;
+
+	background-color: $yellow;
+
+	& + p {
+		padding-top: $paragraph-trailer;
+	}
+}
+
+form {
+	label,
+	legend {
+		font-weight: bold;
+	}
+
+	fieldset,
+	input,
+	select,
+	textarea {
+		margin-bottom: $paragraph-trailer;
+	}
+
+	input {
+		&[type=radio],
+		&[type=checkbox] {
+			margin-bottom: 0;
+
+			+ label {
+				margin-right: $distance-m;
+
+				font-weight: normal;
+			}
+		}
+	}
+}
 
 h1, .h1,
 h2, .h2,
@@ -43,522 +74,86 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-	font-family: $typeface-display;
-	font-weight: $font-weight-bold;
+	font-weight: bold;
 }
 
-p + ul {
-	margin-top: -$paragraph-trailer * $rhythm;
-}
-
-a {
-	color: $anchor;
-	text-decoration: underline;
-}
-
-blockquote {
-	$quote-size: $size-m;
-
-	position: relative;
-
-	margin: 0 0 ($paragraph-trailer * $rhythm);
-	padding: $distance-xs $distance-xs $distance-xs ($quote-size / 2 + $distance-xs);
-
-	font-weight: $font-weight-bold;
-
-	background: $brand;
-	border-radius: $border-radius;
-
-	&:before,
-	&:after {
-		position: absolute;
-		top: 50%;
-		left: -$quote-size / 2;
-
-		width: $quote-size;
-		height: $quote-size;
-
-		transform: translateY(-50%);
-	}
-
-	&:before {
-		content: 'Q';
-		z-index: 1;
-
-		font-size: $font-size-l;
-		font-weight: $font-weight-normal;
-		line-height: $quote-size;
-		text-align: center;
-	}
-
-	&:after {
-		content: '';
-
-		background: $bg-color;
-		border-radius: 100%;
-	}
-}
-
-code {
-	display: inline-block;
-	width: 100%;
-
-	margin: 0 0 ($paragraph-trailer * $rhythm);
-	padding: $distance-xs;
-
-	color: $bg-color;
-
-	background: $text-color;
-	border-radius: $border-radius;
-}
-
-small {
-	padding-bottom: $distance-xs;
-}
-
-.custom-font-size {
-	@include vertical-rhythm(4rem);
-
-	display: flex;
+// OL is used to style the how-to steps
+ol {
 	flex-wrap: wrap;
+	display: flex;
 
-	&__glyph {
-		flex: 1 1 auto;
+	margin: 0 ($grid-gutter * -1);
+	padding: 0;
 
-		margin: $distance-xs 0;
-		padding: 0 $distance-xs;
+	list-style-type: none;
 
-		text-align: center;
+	li {
+		width: 100%;
 
-		background: $gray-light;
-		border-radius: $border-radius;
+		padding: 0 $grid-gutter;
+
+		@media (min-width: $grid-breakpoint-s) {
+			width: (100% / 2);
+		}
+
+		@media (min-width: $grid-breakpoint-m) {
+			width: (100% / 4);
+		}
 	}
 }
 
-//
-// Images
-//
-
-img {
+table {
 	width: 100%;
 
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
-}
+	text-align: left;
 
-//
-// Layout
-//
-
-// Toggle
-.toggle {
-	@include vertical-rhythm-background();
-
-	position: fixed;
-	top: $grid-gutter / 2;
-	left: 50%;
-	z-index: 10;
-
-	margin: (-$border-width) 0 0;
-	padding: $distance-xs;
-
-	width: $size-m;
-	height: $size-m;
-
-	font-weight: $font-weight-bold;
-	text-indent: -100%;
-
-	box-shadow: inset 0 4px 8px rgba($black, 0.5);
-	border: $border-width solid $text-color;
-	border-radius: 100%;
-
-	cursor: pointer;
-	transform: translateX(-50%);
-	overflow: hidden;
-
-	&__input {
-		display: none;
-
-		&:checked {
-			& + .container {
-				@include vertical-rhythm-background;
-			}
-		}
+	thead,
+	tfoot,
+	tbody {
+		vertical-align: top;
 	}
 }
-
-.container {
-	max-width: 80rem;
-
-	padding: $distance-s ($grid-gutter / 2) $distance-xs;
-
-	overflow: hidden;
-
-	@include respond-to(small) {
-		padding-right: $grid-gutter;
-		padding-left: $grid-gutter;
-	}
-}
-
-.header {
-	@include vertical-rhythm-background($gray-light);
-
-	margin: 0 0 $distance-s;
-	padding: $distance-l 0 0;
-
-	text-align: center;
-
-	&__title {
-		@include vertical-rhythm($font-size-xxl);
-	}
-}
-
-.main {
-	position: relative;
-	z-index: 1;
-
-	margin: (-$border-width) 0 0;
-	border-top: $border-width solid $text-color;
-
-	&__section {
-		margin: (-$border-width) 0 0;
-		padding: $distance-s 0 0;
-
-		border-top: $border-width solid $text-color;
-
-		&:last-of-type {
-			margin-bottom: 0;
-		}
-	}
-}
-
-.footer {
-	margin: (-$border-width) 0 0;
-	padding: $distance-s 0 0;
-
-	border-top: $border-width solid $text-color;
-}
-
-//
-// Buttons
-//
 
 .btn {
-	@include vertical-rhythm;
+	padding: $distance-m $distance-l;
 
-	margin-top: calc((#{$rhythm} * #{$paragraph-leader}) - #{$border-width});
-	margin-bottom: calc((#{$rhythm} * #{$paragraph-trailer}) - #{$border-width});
-	padding: $size-xs;
+	font-weight: bold;
 
-	color: $bg-color;
-	font-weight: $font-weight-bold;
-	text-align: center;
-
-	background: $text-color;
-	border: $border-width solid $text-color;
-	border-radius: $border-radius;
-	outline: none;
-
-	appearance: none;
-	cursor: pointer;
+	background-color: $white;
+	border-color: $black;
 
 	&:active,
 	&:focus,
 	&:hover {
-		color: $text-color;
+		color: $white;
 
-		background-color: $brand;
-		border-color: $brand;
-	}
-
-	&--primary {
-		color: $black;
-
-		background-color: $brand;
-		border-color: $brand;
-	}
-
-	&[disabled]{
-		color: $gray;
-
-		background-color: $gray-light;
-		border-color: $gray-light;
+		background-color: $black;
 	}
 }
 
-//
-// Forms
-//
-
-.form {
-	margin: 0 0 ($paragraph-trailer * $rhythm);
-	padding: $distance-xs $distance-s 0;
-
-	background: $gray-light;
-	border-radius: $border-radius;
-
-	ol {
-		margin: 0;
-		padding: 0;
-
-		list-style-type: none;
-	}
-
-	&__item {
-		display: block;
-
-		margin-top: $rhythm * $paragraph-leader;
-		margin-bottom: $rhythm * $paragraph-trailer;
-	}
-
-	&__label {
-		@include vertical-rhythm;
-
-		display: block;
-
-		padding: 0 0 $distance-xs;
-
-		font-weight: $font-weight-bold;
-
-		cursor: pointer;
-	}
-
-	&__field {
-		@include vertical-rhythm;
-
-		width: 100%;
-
-		margin-top: -$border-width;
-		margin-bottom: -$border-width;
-		padding: $distance-xs;
-
-		background: transparent;
-		border: $border-width solid $text-color;
-		border-radius: $border-radius;
-
-		&:focus {
-			color: $anchor;
-
-			background: $bg-color;
-			border: $border-width solid $anchor;
-			outline: none;
-		}
-	}
+.header {
+	text-align: center;
 }
 
-//
-// Step
-//
+// Sections are divided with a border
+.section {
+	$section-border-width: $border-width-m;
 
-.step {
-	@include clearfix;
+	position: relative; // For .section__title
 
-	margin-top: $distance-xs;
+	margin: ($section-border-width * -1) 0 0;
+	padding: ($rhythm * 2) 0 0;
 
-	&__number {
-		$arrow-border-radius: 25%;
-		$arrow-offset: 18%;
-
-		$number-color: $brand;
-		$number-size: $size-m;
-
-		float: left;
-		position: relative;
-		z-index: 1;
-
-		width: $number-size;
-		height: $number-size;
-
-		margin: (-$distance-xs) $distance-s $distance-s 0;
-
-		font-size: $font-size-m;
-		font-weight: $font-weight-bold;
-		line-height: $number-size;
-		text-align: center;
-
-		border-radius: $border-radius;
-
-		&:before,
-		&:after {
-			content: '';
-			position: absolute;
-
-			background: $number-color;
-			border-radius: $border-radius $arrow-border-radius $arrow-border-radius $border-radius;
-		}
-
-		&:before {
-			top: 0;
-			left: 0;
-			z-index: -1;
-
-			width: 100%;
-			height: 100%;
-		}
-
-		&:after {
-			content: '';
-			position: absolute;
-			top: $arrow-offset / 2;
-			left: 50% - ($arrow-border-radius / 2);
-			z-index: -2;
-
-			width: 100% - $arrow-offset;
-			height: 100% - $arrow-offset;
-
-			border-radius: $arrow-border-radius;
-
-			transform: rotate(45deg);
-		}
-	}
+	border-top: $section-border-width solid $black;
 }
 
-//
-// Demo
-//
+.table-wrapper {
+	overflow-x: auto;
+	overflow-y: hidden;
 
-.demo {
-	&__item {
-		margin: (-$border-width) 0 0;
-		padding: $distance-s 0 0;
+	margin: 0 0 $paragraph-trailer;
 
-		border-top: $border-width solid $gray;
-	}
-
-	&__title {
-		color: $gray;
-		font-weight: $font-weight-bold;
-	}
-}
-
-//
-// Article
-//
-
-.article {
-	margin: 0 0 $distance-s;
-
-	&__page {
-		position: relative;
-
-		padding: $distance-s $distance-s 0;
-
-		border: $distance-xs solid $gray-light;
-
-		&--one {
-			border-bottom: none;
-		}
-
-		&--two {
-			padding-top: 0;
-
-			border-top: none;
-		}
-
-		&__bookmark {
-			$bookmark-size: $size-m;
-
-			position: absolute;
-			top: 0;
-			right: $grid-gutter;
-
-			width: $bookmark-size;
-			height: $bookmark-size;
-
-			background: $brand;
-
-			&:before,
-			&:after {
-				content: '';
-				position: absolute;
-				top: 100%;
-			}
-
-			&:before {
-				@include triangle(($bookmark-size / 2), $brand, up-left);
-
-				left: 0;
-			}
-
-			&:after {
-				@include triangle(($bookmark-size / 2), $brand, up-right);
-
-				right: 0;
-			}
-		}
-	}
-
-	&__figure {
-		margin: 0 0 ($distance-s - $border-width);
-
-		border-bottom: $border-width solid $gray-light;
-
-		&__img {
-			height: $size-l;
-
-			overflow: hidden;
-		}
-
-		&__caption {
-			margin-top: $distance-xs;
-		}
-
-		&:last-of-type {
-			margin-bottom: $distance-xs;
-
-			border-bottom: none;
-		}
-	}
-
-	@include respond-to(small) {
-		display: flex;
-
-		&__page {
-			flex: 0 0 50%;
-
-			border: $distance-s solid $gray-light;
-
-			&--one {
-				border-right: $border-width solid $gray-light;
-			}
-
-			&--two {
-				padding-top: $distance-s;
-
-				border-left: $border-width solid $gray-light;
-			}
-		}
-
-		&__figure {
-			&__img {
-				height: $size-l * 2;
-			}
-		}
-	}
-
-	@include respond-to(medium) {
-		&__page {
-			&--one {
-				padding-right: $distance-l;
-			}
-		}
-
-		&__figure {
-			display: flex;
-
-			&__img {
-				flex: 0 0 (100% / 12 * 8);
-
-				height: $size-l * 3;
-
-				margin-bottom: $distance-s;
-			}
-
-			&__caption {
-				flex: 0 0 (100% / 12 * 4);
-
-				padding-left: $grid-gutter;
-			}
-		}
+	table {
+		margin-bottom: 0;
 	}
 }

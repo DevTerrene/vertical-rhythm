@@ -1,0 +1,67 @@
+$show-baseline:					true; // Toggles the baseline
+
+$font-display:					Arial, sans-serif;
+$font-body:						Georgia, serif;
+$font-mono:						'Courier New', monospace;
+
+$cap-font-display:				0.02825;
+$cap-font-body:					0.02825;
+$cap-font-mono:					0.1;
+
+$base-font-size:				1rem;
+$base-line-height:				1.5;
+
+$rhythm:						($base-font-size * $base-line-height);
+
+// Modular scale - see <functions/calc-font-sizes> for all preset scales
+// $type-scale:					'minor-second';
+// $type-scale:					'major-second';
+// $type-scale:					'minor-third';
+// $type-scale:					'major-third';
+// $type-scale:					'perfect-fourth';
+// $type-scale:					'augmented-fourth';
+// $type-scale:					'perfect-fifth';
+// $type-scale:					'minor-sixth';
+$type-scale:					'golden-section';
+// $type-scale:					'major-sixth';
+// $type-scale:					'minor-seventh';
+// $type-scale:					'major-seventh';
+// $type-scale:					'octave';
+// $type-scale:					'major-tenth';
+// $type-scale:					'major-eleventh';
+// $type-scale:					'major-twelfth';
+// $type-scale:					'double-octave';
+
+$font-sizes:					('xs', 's', 'm', 'l', 'xl', 'xxl');
+$font-size-default:				's';
+
+// Font sizes
+$font-sizes:					calc-font-sizes($type-scale, $font-sizes, $font-size-default);
+
+$font-size-xs:					map-get($font-sizes, xs);
+$font-size-s:					map-get($font-sizes, s);
+$font-size-m:					map-get($font-sizes, m);
+$font-size-l:					map-get($font-sizes, l);
+$font-size-xl:					map-get($font-sizes, xl);
+$font-size-xxl:					map-get($font-sizes, xxl);
+
+// Alignment
+$header-trailer:				$rhythm * 0;
+$paragraph-trailer:				$rhythm * 1;
+
+$distance-s:					$rhythm * 0.25;
+$distance-m:					$rhythm * 0.5;
+$distance-l:					$rhythm * 1;
+
+$size-s:						$rhythm * 0.25;
+$size-m:						$rhythm * 0.5;
+$size-l:						$rhythm * 1;
+
+// Borders
+$border-width-s:				0.0625rem;
+$border-width-m:				0.125rem;
+$border-width-l:				0.25rem;
+
+// Colors
+$vr-color-base:					#ff6347;
+$vr-color:						rgba($vr-color-base, 0.5);

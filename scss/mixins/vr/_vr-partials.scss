@@ -1,0 +1,313 @@
+// Base
+html {
+	box-sizing: border-box;
+}
+
+* {
+	&,
+	&:before,
+	&:after {
+		box-sizing: inherit;
+	}
+}
+
+body {
+	margin: 0;
+	padding: 0;
+
+	font-family: $font-body;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+
+	> h1,
+	> .h1,
+	> h2,
+	> .h2,
+	> h3,
+	> .h3,
+	> h4,
+	> .h4,
+	> h5,
+	> .h5,
+	> h6,
+	> .h6, {
+		&:first-child {
+			display: inline-block;
+
+			width: 100%;
+		}
+	}
+
+	&:before {
+		position: fixed;
+		right: $distance-m;
+		bottom: $distance-m;
+		z-index: 9999;
+
+		margin: 0;
+		padding: $distance-s;
+
+		font-family: $font-display;
+		font-size: $base-font-size;
+		font-weight: normal;
+		line-height: 1;
+
+		background: $vr-color-base;
+		content: 'Font size: #{$base-font-size} / Line height: #{$base-line-height} / Rhythm: #{$rhythm}';
+	}
+
+	@if ($show-baseline == true) {
+		position: relative;
+
+		&:after {
+			@include vr-baseline;
+
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 1000;
+
+			content: '';
+			pointer-events: none;
+		}
+	}
+}
+
+// Typography
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	padding-top: 0;
+	padding-bottom: $header-trailer;
+}
+
+h1, .h1 {
+	@include vr($font-display, $font-size-xxl);
+}
+
+h2, .h2 {
+	@include vr($font-display, $font-size-xl);
+}
+
+h3, .h3 {
+	@include vr($font-display, $font-size-l);
+}
+
+h4, .h4 {
+	@include vr($font-display, $font-size-m);
+}
+
+h5, .h5 {
+	@include vr($font-display, $font-size-s);
+}
+
+h6, .h6 {
+	@include vr($font-display, $font-size-xs);
+}
+
+p {
+	@include vr;
+
+	padding-top: 0;
+	padding-bottom: $paragraph-trailer;
+}
+
+blockquote {
+	margin: 0;
+	padding: 0;
+
+	p {
+		@include vr($font-body, $font-size-m);
+
+		padding: 0; // Reset header and trailer paddings
+	}
+}
+
+cite {
+	@include vr($font-display, $font-size-s);
+
+	display: block;
+
+	padding: 0 0 $paragraph-trailer;
+}
+
+code {
+	@include vr($font-mono);
+
+	display: inline-block;
+
+	width: 100%;
+}
+
+ol,
+ul {
+	li {
+		padding: 0 0 $paragraph-trailer;
+	}
+}
+
+small {
+	font-size: $font-size-xs;
+	line-height: 1;
+}
+
+// Buttons
+$btn-border-width: $border-width-m;
+
+.btn {
+	@include vr($font-display, $font-size-s);
+
+	display: inline-block; // For when used on anchors
+
+	margin: ($btn-border-width * -1) 0 ($paragraph-trailer - $btn-border-width);
+	padding: 0;
+
+	text-decoration: none;
+
+	border: $btn-border-width solid;
+
+	cursor: pointer;
+
+	// FF button height fix: https://davidwalsh.name/firefox-buttons
+	&::-moz-focus-inner {
+		margin-top: 0;
+		margin-bottom: 0;
+
+		padding: 0;
+
+		border: none;
+	}
+}
+
+// Forms
+$form-border-width: $border-width-s;
+$form-field-height: $rhythm * 2;
+$form-textarea-height: $rhythm * 10;
+
+form {
+	font-family: $font-display;
+}
+
+fieldset {
+	margin: ($form-border-width * -1) 0 0;
+	padding: $distance-m $distance-m ($distance-m - $form-border-width);
+
+	border: solid $form-border-width;
+}
+
+legend {
+	@include vr($font-display, $font-size-s);
+
+	margin: 0;
+	padding: 0 $distance-m $form-border-width;
+}
+
+label {
+	@include vr($font-display, $font-size-s);
+
+	display: block;
+
+	padding: 0 0 $distance-m;
+
+	cursor: pointer;
+}
+
+input,
+select,
+textarea {
+	@include vr($font-display, $font-size-s);
+
+	display: block;
+
+	width: 100%;
+	// height: $form-field-height;
+
+	margin: 0;
+	padding: $distance-m;
+
+	line-height: $base-line-height;
+
+	border: solid $form-border-width;
+}
+
+textarea {
+	height: $form-textarea-height;
+
+	padding-top: $distance-m - 0.0625rem;
+}
+
+input {
+	&[type=search],
+	&[type=number] {
+		box-sizing: border-box;
+
+		appearance: textfield;
+	}
+
+	&[type=radio],
+	&[type=checkbox] {
+		display: inline-block;
+
+		width: auto;
+		// height: auto;
+
+		+ label {
+			display: inline-block;
+
+			margin: 0;
+			padding: 0; // Reset leaders and trailers
+		}
+	}
+}
+
+// Tables
+$table-border-width: $border-width-s;
+$table-padding: $distance-m;
+
+table {
+	margin: 0 0 $paragraph-trailer;
+
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+tr {
+	td,
+	th {
+		@include vr($font-display, $font-size-s);
+
+		padding: $table-padding $table-padding ($table-padding - $table-border-width);
+
+		border-bottom: $table-border-width solid;
+		border-left: $table-border-width solid;
+
+		&:last-of-type {
+			border-right: $table-border-width solid;
+		}
+	}
+}
+
+thead {
+	border-top: $table-border-width solid;
+	border-bottom: $table-border-width solid;
+
+	th,
+	td {
+		padding-top: $table-padding - $table-border-width;
+		padding-bottom: $table-padding - $table-border-width;
+	}
+}
+
+tfoot {
+	border-bottom: $table-border-width solid;
+
+	th,
+	td {
+		padding-bottom: $table-padding - $table-border-width;
+	}
+}

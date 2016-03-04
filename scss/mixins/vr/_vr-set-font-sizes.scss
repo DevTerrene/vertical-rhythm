@@ -1,0 +1,66 @@
+@mixin vr($font-family: $font-body, $font-size: $base-font-size) {
+	$offset-font-display: $cap-font-display * 1em;
+	$offset-font-body: $cap-font-body * 1em;
+	$offset-font-mono: $cap-font-mono * 1em;
+
+	// What height does this text have?
+	$text-height: $font-size * $base-line-height;
+
+	// How many rhythms fit inside that height?
+	$rhythm-count: $text-height / $rhythm;
+
+	// How much offset does the text have compared to the rhythm?
+	$rhythm-offset: ($text-height * 0.25);
+	// $rhythm-offset - ($type-scale - $base-font-size)
+
+	// How would that convert to a line height?
+	$line-height: ($rhythm-count - ($rhythm-count - floor($rhythm-count))) * $rhythm;
+
+	position: relative;
+
+	margin-top: $rhythm-offset * -1;
+	margin-bottom: $rhythm-offset;
+
+	font-size: $font-size;
+
+	@if $line-height == 0rem {
+		line-height: $base-line-height * 1rem;
+	} @else {
+		line-height: $line-height;
+	}
+
+	// Set font offsets and families
+	@if $font-family == $font-display {
+		top: $offset-font-display;
+
+		font-family: $font-display;
+	} @else if $font-family == $font-mono {
+		top: $offset-font-mono;
+
+		font-family: $font-mono;
+	} @else {
+		top: $offset-font-body;
+
+		font-family: $font-body;
+	}
+
+	&.stats {
+		&:hover {
+			&:before {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				z-index: 9999;
+
+				padding: $distance-s;
+
+				font-size: $base-font-size;
+				font-weight: normal;
+				line-height: 1;
+
+				background: $vr-color-base;
+				content: attr(identifier) ': Font size: #{$font-size} / Line height: #{$line-height} / Font height: #{$text-height} / Rhythm count: #{$rhythm-count} / Rhythm offset: #{$rhythm-offset}';
+			}
+		}
+	}
+}

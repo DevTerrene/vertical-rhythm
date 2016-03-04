@@ -2,226 +2,219 @@
 
 <html>
 	<head>
-        <meta charset="utf-8" />
+		<meta charset="utf-8" />
 
-		<title>Vertical rhythm</title>
+		<title>Vertical Rhythm 2.0</title>
 
 		<meta name="author" content="Olaf Muller" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
 
-        <link rel="stylesheet" href="dist/vertical-rhythm.css" />
-        <link rel="stylesheet" href="dist/demo.css" />
+		<link rel="stylesheet" href="dist/demo.css" />
 	</head>
 
 	<body>
-		<label for="toggle" class="toggle">Toggle baseline</label>
-		<input type="checkbox" id="toggle" class="toggle__input">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati totam laudantium ad facilis natus sum at nesciunt, enim veniam qui illum, mollitia non voluptatem? Placeat maiores neque natus culpa molestias.</p>
+		<p class="h1 stats" identifier="Header 1">Lorem ipsum dolor sit amet.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati totam laudantium ad facilis natus sum at nesciunt, enim veniam qui illum, mollitia non voluptatem? Placeat maiores neque natus culpa molestias.</p>
+		<p class="h2 stats" identifier="Header 2">Lorem ipsum dolor sit amet.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati totam laudantium ad facilis natus sum at nesciunt, enim veniam qui illum, mollitia non voluptatem? Placeat maiores neque natus culpa molestias.</p>
+		<p class="h3 stats" identifier="Header 3">Lorem ipsum dolor sit amet.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati totam laudantium ad facilis natus sum at nesciunt, enim veniam qui illum, mollitia non voluptatem? Placeat maiores neque natus culpa molestias.</p>
+		<p class="h4 stats" identifier="Header 4">Lorem ipsum dolor sit amet.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati totam laudantium ad facilis natus sum at nesciunt, enim veniam qui illum, mollitia non voluptatem? Placeat maiores neque natus culpa molestias.</p>
+		<p class="h5 stats" identifier="Header 5">Lorem ipsum dolor sit amet.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati totam laudantium ad facilis natus sum at nesciunt, enim veniam qui illum, mollitia non voluptatem? Placeat maiores neque natus culpa molestias.</p>
+		<p class="h6 stats" identifier="Header 6">Lorem ipsum dolor sit amet.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati totam laudantium ad facilis natus sum at nesciunt, enim veniam qui illum, mollitia non voluptatem? Placeat maiores neque natus culpa molestias.</p>
 
-		<div class="container">
-			<header class="header">
-				<h1 class="header__title">Vertical rhythm</h1>
+		<header class="header">
+			<h1>Vertical Rhythm 2.0</h1>
+			<p class="h3">For the creative developer</p>
+			<a class="btn" href="https://github.com/vicompany/vertical-rhythm">Github</a>
+		</header>
 
-				<p class="h2">For the creative developer</p>
-				<p><a href="https://github.com/vicompany/vertical-rhythm">Github</a></p>
-			</header>
+		<main>
+			<section class="section">
+				<h2 class="section__title">How it works</h2>
+				<ol>
+					<li>
+						<p class="h5">Base typograhy</p>
+						<code>
+							$px-font-size: 16;<br />
+							$px-line-height: 24;<br />
+						</code>
+						<p>Converted to REM&rsquo;s automatically.</p>
+					</li>
 
-			<main class="main">
-				<div class="main__section">
-					<div class="row">
-						<div class="col col-medium-3">
-							<h2 class="h6">How it works</h2>
+					<li>
+						<p class="h5">Modular scale</p>
+						<code>
+							$modular-scale: &lsquo;golden section&rsquo;;
+						</code>
+						<p>Diminished fifth, perfect fifth, minor sixth, golden section, major sixth, minor seventh&hellip;</p>
+					</li>
+
+					<li>
+						<p class="h5">Vertical Rhythm</p>
+						<code>
+							h1 { @include vr($font-size-xl); }
+						</code>
+						<p>Standard range from extra small to extra large.</p>
+					</li>
+
+					<li>
+						<p class="h5">Alignment</p>
+						<code>
+							div { margin: $distance-s; }<br />
+							img { height: $size-m; }
+						</code>
+						<p>Distances and sizes are based on the vertical Rhythm.</p>
+					</li>
+				</ol>
+			</section>
+
+			<section class="section">
+				<h2 class="section__title">Typography</h2>
+				<h3 class="h5">Header 1</h3>
+				<p class="h1">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
+				<h3 class="h5">Header 2</h3>
+				<p class="h2">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
+				<h3 class="h5">Header 3</h3>
+				<p class="h3">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
+				<h3 class="h5">Header 4</h3>
+				<p class="h4">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
+				<h3 class="h5">Header 5</h3>
+				<p class="h5">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
+				<h3 class="h5">Header 6</h3>
+				<p class="h6">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
+				<h3 class="h5">Paragraphs</h3>
+				<p>Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed.</p>
+				<p>Although typically applied to printed, published, broadcast, and reproduced materials in contemporary times, all words, letters, symbols, and numbers written alongside the earliest naturalistic drawings by humans may be called typography.</p>
+				<h3 class="h5">Small text</h3>
+				<p><small>Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed.</small></p>
+				<p><small>Although typically applied to printed, published, broadcast, and reproduced materials in contemporary times, all words, letters, symbols, and numbers written alongside the earliest naturalistic drawings by humans may be called typography.</small></p>
+				<h3 class="h5">Blockquote</h3>
+				<blockquote>
+					<p>&ldquo;Vertical Rhythm is the holy grail of front-end development.&rdquo;</p>
+					<cite>&mdash; <a href="http://olafmuller.nl">Olaf Muller</a></cite>
+				</blockquote>
+			</section>
+
+			<section class="section">
+				<h2 class="section__title">Buttons</h2>
+				<button class="btn">Button</button>
+			</section>
+
+			<!-- <section class="section">
+				<h2 class="section__title">Form elements</h2>
+				<form class="form">
+					<div class="form__split">
+						<div>
+							<label for="text">Label text</label>
+							<input type="text" id="text" name="text" placeholder="Placeholder text" />
+						</div>
+						<div>
+							<label for="number">Label number</label>
+							<input type="number" id="number" name="number" placeholder="42" />
+						</div>
+						<div>
+							<label for="email">Label e-mail</label>
+							<input type="email" id="email" name="number" placeholder="name@domain.com" />
+						</div>
+						<div>
+							<label for="textarea">Label textarea</label>
+							<textarea id="textarea" name="textarea"></textarea>
 						</div>
 					</div>
 
-					<div class="row">
-						<div class="col col-small-6 col-medium-3">
-							<div class="step">
-								<p class="step__number">1</p>
-								<h3 class="h6">Base typograhy</h3>
-								<code>
-									$px-font-size: 16;<br />
-									$px-line-height: 24;<br />
-								</code>
-								<p>Converted to REM&rsquo;s automatically.</p>
-							</div>
-						</div>
-
-						<div class="col col-small-6 col-medium-3">
-							<div class="step">
-								<p class="step__number">2</p>
-								<h3 class="h6">Modular scale</h3>
-								<code>
-									$modular-scale: &ldquo;golden section&rdquo;;
-								</code>
-								<p>Diminished fifth, perfect fifth, minor sixth, golden section, major sixth, minor seventh&hellip;</p>
-							</div>
-						</div>
-
-						<div class="col col-small-6 col-medium-3">
-							<div class="step">
-								<p class="step__number">3</p>
-								<h3 class="h6">Vertical rhythm</h3>
-								<code>
-									h1 { @include vertical-rhythm($font-size-xl); }
-								</code>
-								<p>Standard range from extra small to extra large.</p>
-							</div>
-						</div>
-
-						<div class="col col-small-6 col-medium-3">
-							<div class="step">
-								<p class="step__number">4</p>
-								<h3 class="h6">Alignment</h3>
-								<code>
-									div { margin: $distance-s; }<br />
-									img { height: $size-m; }
-								</code>
-								<p>Distances and sizes are based on the vertical rhythm.</p>
-							</div>
+					<div class="form__split">
+						<fieldset>
+							<legend>Select</legend>
+							<input type="checkbox" name="checkbox" value="1" id="checkbox-1" />
+							<label for="checkbox-1">Option 1</label>
+							<input type="checkbox" name="checkbox" value="2" id="checkbox-2" />
+							<label for="checkbox-2">Option 2</label>
+							<input type="checkbox" name="checkbox" value="3" id="checkbox-3" />
+							<label for="checkbox-3">Option 3</label>
+						</fieldset>
+						<fieldset>
+							<legend>Choose</legend>
+							<input type="radio" name="radio" value="1" id="radio-1" />
+							<label for="radio-1">Option 1</label>
+							<input type="radio" name="radio" value="2" id="radio-2" />
+							<label for="radio-2">Option 2</label>
+							<input type="radio" name="radio" value="3" id="radio-3" />
+							<label for="radio-3">Option 3</label>
+						</fieldset>
+						<div>
+							<label for="select">Select</label>
+							<select id="select">
+								<option value="value-1">Option 1</option>
+								<option value="value-2">Option 2</option>
+								<option value="value-3">Option 3</option>
+								<option value="value-4">Option 4</option>
+								<option value="value-5">Option 5</option>
+								<option value="value-6">Option 6</option>
+								<option value="value-7">Option 7</option>
+							</select>
 						</div>
 					</div>
+				</form>
+			</section>
+
+			<section class="section">
+				<h2 class="section__title">Tables</h2>
+				<div class="table-wrapper">
+					<table>
+						<thead>
+							<tr>
+								<th>Funds</th>
+								<th>Value</th>
+								<th>Amount</th>
+								<th>Performance</th>
+							</tr>
+						</thead>
+						<tfoot>
+							<tr>
+								<td>Totals</td>
+								<td nowrap>&euro; 40.000</td>
+								<td>75</td>
+								<td nowrap>+ 12,00%</td>
+							</tr>
+						</tfoot>
+						<tbody>
+							<tr>
+								<td>Alpha</td>
+								<td nowrap>&euro; 10.000</td>
+								<td>25</td>
+								<td nowrap>+ 3,00%</td>
+							</tr>
+							<tr>
+								<td>Beta</td>
+								<td nowrap>&euro; 10.000</td>
+								<td>25</td>
+								<td nowrap>+ 3,00%</td>
+							</tr>
+							<tr>
+								<td>Gamma</td>
+								<td nowrap>&euro; 10.000</td>
+								<td>25</td>
+								<td nowrap>+ 3,00%</td>
+							</tr>
+							<tr>
+								<td>Delta</td>
+								<td nowrap>&euro; 10.000</td>
+								<td>25</td>
+								<td nowrap>+ 3,00%</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
+			</section> -->
+		</main>
 
-				<div class="main__section">
-					<h2 class="h6">Demo</h2>
-
-					<div class="row">
-						<div class="col col-small-6 col-medium-5">
-							<div class="demo__item">
-								<small class="demo__title">Header 1</small>
-								<p class="h1">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
-							</div>
-
-							<div class="demo__item">
-								<small class="demo__title">Header 2</small>
-								<p class="h2">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
-							</div>
-
-							<div class="demo__item">
-								<small class="demo__title">Header 3</small>
-								<p class="h3">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
-							</div>
-						</div>
-
-						<div class="col col-small-6 col-medium-offset-1">
-							<div class="demo__item">
-								<small class="demo__title">Blockquote</small>
-								<blockquote>
-									Vertical rhythm is the holy grail of front-end development.
-								</blockquote>
-							</div>
-						</div>
-
-						<div class="col col-small-6 col-medium-3 col-medium-offset-1">
-							<div class="demo__item">
-								<small class="demo__title">Paragraphs</small>
-								<p>Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed.</p>
-								<p>Although typically applied to printed, published, broadcast, and reproduced materials in contemporary times, all words, letters, symbols, and numbers written alongside the earliest naturalistic drawings by humans may be called typography.</p>
-							</div>
-						</div>
-
-						<div class="col col-small-6 col-small-offset-6 col-medium-2 col-medium-offset-1">
-							<div class="demo__item">
-								<small class="demo__title">Small texts</small>
-								<small>Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed.</small>
-								<small>Although typically applied to printed, published, broadcast, and reproduced materials in contemporary times, all words, letters, symbols, and numbers written alongside the earliest naturalistic drawings by humans may be called typography.</small>
-							</div>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col col-small-6 col-medium-2">
-							<div class="demo__item">
-								<small class="demo__title">Buttons</small>
-								<button class="btn">Button</button><br />
-								<button class="btn btn--primary">Button primary</button><br />
-								<button class="btn" disabled>Button disabled</button>
-							</div>
-						</div>
-
-						<div class="col col-small-6 col-medium-5 col-medium-offset-1">
-							<div class="demo__item">
-								<small class="demo__title">Form elements</small>
-								<form class="form">
-									<p class="h3">Newsletter</p>
-									<ol>
-										<li class="form__item">
-											<label for="form-1" class="form__label">To whom it may concern:</label>
-											<input type="email" id="form-1" class="form__field" placeholder="Email address">
-										</li>
-
-										<li class="form__item form__item--btn">
-											<button class="btn">Subscribe</button>
-										</li>
-									</ol>
-								</form>
-							</div>
-						</div>
-
-						<div class="col col-medium-3 col-medium-offset-1">
-							<div class="demo__item">
-								<small class="demo__title">Custom font size</small>
-								<div class="custom-font-size">
-									<span class="custom-font-size__glyph">B</span>
-									<span class="custom-font-size__glyph">a</span>
-									<span class="custom-font-size__glyph">n</span>
-									<span class="custom-font-size__glyph">a</span>
-									<span class="custom-font-size__glyph">n</span>
-									<span class="custom-font-size__glyph">a</span>
-								</div>
-							</div>
-						</div>
-
-						<div class="col">
-							<div class="demo__item">
-								<small class="demo__title">Article</small>
-
-								<div class="article">
-									<div class="article__page article__page--one">
-										<div class="article__page__bookmark"></div>
-										<h1><a href="https://en.wikipedia.org/wiki/Typography">Ty&shy;po&shy;gra&shy;phy</a></h1>
-										<small>From Wikipedia, the free encyclopedia</small>
-										<p>Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed.</p>
-
-										<h2>History</h2>
-										<p>Although typically applied to printed, published, broadcast, and reproduced materials in contemporary times, all words, letters, symbols, and numbers written alongside the earliest naturalistic drawings by humans may be called typography.</p>
-
-										<h3>Evolution</h3>
-										<p>The design of typefaces has developed alongside the development of typesetting systems. Although typography has evolved significantly from its origins, it is a largely conservative art that tends to cleave closely to tradition.</p>
-										<p>This is because legibility is paramount, and so the typefaces that are the most readable usually are retained.</p>
-									</div>
-
-									<div class="article__page article__page--two">
-										<div class="article__figure">
-											<div class="article__figure__img">
-												<img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Pressing-16th_century.jpg" alt="Pressing 16th century">
-											</div>
-
-											<div class="article__figure__caption">
-												<small>A sixteenth century workshop in Germany showing a printing press and many of the activities involved in the process of printing.</small>
-											</div>
-										</div>
-
-										<div class="article__figure">
-											<div class="article__figure__img">
-												<img src="https://upload.wikimedia.org/wikipedia/en/c/ce/EncycBrit1913.png" alt="Encyclopædia Britannica 1913">
-											</div>
-
-											<div class="article__figure__caption">
-												<small>A display advertisement for the Encyclopædia Britannica from a 1913 issue of National Geographic magazine.</small>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</main>
-
-			<footer class="footer">
-				<p><b>Vertical Rhythm</b> for the creative developer. <a href="https://github.com/vicompany/vertical-rhythm">Github</a></p>
-			</footer>
-		</div>
+		<footer>
+			<p><b>Vertical Rhythm 2.0</b> for the creative developer. <a href="https://github.com/vicompany/vertical-rhythm">Github</a></p>
+		</footer>
 	</body>
 </html>
