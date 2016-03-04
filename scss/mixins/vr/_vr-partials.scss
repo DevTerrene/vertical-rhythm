@@ -186,7 +186,7 @@ $btn-border-width: $border-width-m;
 
 // Forms
 $form-border-width: $border-width-s;
-$form-field-height: $rhythm * 2;
+$form-field-height: $rhythm * 1.5;
 $form-textarea-height: $rhythm * 10;
 
 form {
@@ -194,8 +194,8 @@ form {
 }
 
 fieldset {
-	margin: ($form-border-width * -1) 0 0;
-	padding: $distance-m $distance-m ($distance-m - $form-border-width);
+	margin: 0;
+	padding: $distance-s $distance-m ($distance-s - $form-border-width);
 
 	border: solid $form-border-width;
 }
@@ -204,7 +204,7 @@ legend {
 	@include vr($font-display, $font-size-s);
 
 	margin: 0;
-	padding: 0 $distance-m $form-border-width;
+	padding: 0 $distance-m;
 }
 
 label {
@@ -225,10 +225,10 @@ textarea {
 	display: block;
 
 	width: 100%;
-	// height: $form-field-height;
+	height: $form-field-height;
 
 	margin: 0;
-	padding: $distance-m;
+	padding: 0 $distance-m;
 
 	line-height: $base-line-height;
 
@@ -238,7 +238,7 @@ textarea {
 textarea {
 	height: $form-textarea-height;
 
-	padding-top: $distance-m - 0.0625rem;
+	padding-top: $rhythm * 0.1875;
 }
 
 input {
@@ -254,7 +254,7 @@ input {
 		display: inline-block;
 
 		width: auto;
-		// height: auto;
+		height: auto;
 
 		+ label {
 			display: inline-block;
@@ -267,7 +267,7 @@ input {
 
 // Tables
 $table-border-width: $border-width-s;
-$table-padding: $distance-m;
+$table-padding: $distance-s;
 
 table {
 	margin: 0 0 $paragraph-trailer;
@@ -281,7 +281,7 @@ tr {
 	th {
 		@include vr($font-display, $font-size-s);
 
-		padding: $table-padding $table-padding ($table-padding - $table-border-width);
+		padding: $table-padding $distance-m ($table-padding - $table-border-width);
 
 		border-bottom: $table-border-width solid;
 		border-left: $table-border-width solid;

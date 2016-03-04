@@ -63,10 +63,10 @@ h6, .h6 {
 
 h1, .h1 {
   position: relative;
-  margin-top: -2.5700722762rem;
-  margin-bottom: 2.5700722762rem;
-  font-size: 6.8535260698rem;
-  line-height: 9rem;
+  margin-top: -1.8984375rem;
+  margin-bottom: 1.8984375rem;
+  font-size: 5.0625rem;
+  line-height: 7.5rem;
   top: 0.02825em;
   font-family: Arial, sans-serif; }
   h1.stats:hover:before, .h1.stats:hover:before {
@@ -79,14 +79,14 @@ h1, .h1 {
     font-weight: normal;
     line-height: 1;
     background: #ff6347;
-    content: attr(identifier) ": Font size: 6.8535260698rem / Line height: 9rem / Font height: 10.2802891047rem / Rhythm count: 6.8535260698 / Rhythm offset: 2.5700722762rem"; }
+    content: attr(identifier) ": Font size: 5.0625rem / Line height: 7.5rem / Font height: 7.59375rem / Rhythm count: 5.0625 / Rhythm offset: 1.8984375rem"; }
 
 h2, .h2 {
   position: relative;
-  margin-top: -1.588425387rem;
-  margin-bottom: 1.588425387rem;
-  font-size: 4.235801032rem;
-  line-height: 6rem;
+  margin-top: -1.265625rem;
+  margin-bottom: 1.265625rem;
+  font-size: 3.375rem;
+  line-height: 4.5rem;
   top: 0.02825em;
   font-family: Arial, sans-serif; }
   h2.stats:hover:before, .h2.stats:hover:before {
@@ -99,13 +99,13 @@ h2, .h2 {
     font-weight: normal;
     line-height: 1;
     background: #ff6347;
-    content: attr(identifier) ": Font size: 4.235801032rem / Line height: 6rem / Font height: 6.353701548rem / Rhythm count: 4.235801032 / Rhythm offset: 1.588425387rem"; }
+    content: attr(identifier) ": Font size: 3.375rem / Line height: 4.5rem / Font height: 5.0625rem / Rhythm count: 3.375 / Rhythm offset: 1.265625rem"; }
 
 h3, .h3 {
   position: relative;
-  margin-top: -0.9817215rem;
-  margin-bottom: 0.9817215rem;
-  font-size: 2.617924rem;
+  margin-top: -0.84375rem;
+  margin-bottom: 0.84375rem;
+  font-size: 2.25rem;
   line-height: 3rem;
   top: 0.02825em;
   font-family: Arial, sans-serif; }
@@ -119,13 +119,13 @@ h3, .h3 {
     font-weight: normal;
     line-height: 1;
     background: #ff6347;
-    content: attr(identifier) ": Font size: 2.617924rem / Line height: 3rem / Font height: 3.926886rem / Rhythm count: 2.617924 / Rhythm offset: 0.9817215rem"; }
+    content: attr(identifier) ": Font size: 2.25rem / Line height: 3rem / Font height: 3.375rem / Rhythm count: 2.25 / Rhythm offset: 0.84375rem"; }
 
 h4, .h4 {
   position: relative;
-  margin-top: -0.60675rem;
-  margin-bottom: 0.60675rem;
-  font-size: 1.618rem;
+  margin-top: -0.5625rem;
+  margin-bottom: 0.5625rem;
+  font-size: 1.5rem;
   line-height: 1.5rem;
   top: 0.02825em;
   font-family: Arial, sans-serif; }
@@ -139,7 +139,7 @@ h4, .h4 {
     font-weight: normal;
     line-height: 1;
     background: #ff6347;
-    content: attr(identifier) ": Font size: 1.618rem / Line height: 1.5rem / Font height: 2.427rem / Rhythm count: 1.618 / Rhythm offset: 0.60675rem"; }
+    content: attr(identifier) ": Font size: 1.5rem / Line height: 1.5rem / Font height: 2.25rem / Rhythm count: 1.5 / Rhythm offset: 0.5625rem"; }
 
 h5, .h5 {
   position: relative;
@@ -163,9 +163,9 @@ h5, .h5 {
 
 h6, .h6 {
   position: relative;
-  margin-top: -0.2317676143rem;
-  margin-bottom: 0.2317676143rem;
-  font-size: 0.6180469716rem;
+  margin-top: -0.25rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.6666666667rem;
   line-height: 1.5rem;
   top: 0.02825em;
   font-family: Arial, sans-serif; }
@@ -179,7 +179,7 @@ h6, .h6 {
     font-weight: normal;
     line-height: 1;
     background: #ff6347;
-    content: attr(identifier) ": Font size: 0.6180469716rem / Line height: 0rem / Font height: 0.9270704574rem / Rhythm count: 0.6180469716 / Rhythm offset: 0.2317676143rem"; }
+    content: attr(identifier) ": Font size: 0.6666666667rem / Line height: 0rem / Font height: 1rem / Rhythm count: 0.6666666667 / Rhythm offset: 0.25rem"; }
 
 p {
   position: relative;
@@ -208,9 +208,9 @@ blockquote {
   padding: 0; }
   blockquote p {
     position: relative;
-    margin-top: -0.60675rem;
-    margin-bottom: 0.60675rem;
-    font-size: 1.618rem;
+    margin-top: -0.5625rem;
+    margin-bottom: 0.5625rem;
+    font-size: 1.5rem;
     line-height: 1.5rem;
     top: 0.02825em;
     font-family: Georgia, serif;
@@ -225,7 +225,7 @@ blockquote {
       font-weight: normal;
       line-height: 1;
       background: #ff6347;
-      content: attr(identifier) ": Font size: 1.618rem / Line height: 1.5rem / Font height: 2.427rem / Rhythm count: 1.618 / Rhythm offset: 0.60675rem"; }
+      content: attr(identifier) ": Font size: 1.5rem / Line height: 1.5rem / Font height: 2.25rem / Rhythm count: 1.5 / Rhythm offset: 0.5625rem"; }
 
 cite {
   position: relative;
@@ -276,7 +276,7 @@ ul li {
   padding: 0 0 1.5rem; }
 
 small {
-  font-size: 0.6180469716rem;
+  font-size: 0.6666666667rem;
   line-height: 1; }
 
 .btn {
@@ -314,8 +314,8 @@ form {
   font-family: Arial, sans-serif; }
 
 fieldset {
-  margin: -0.0625rem 0 0;
-  padding: 0.75rem 0.75rem 0.6875rem;
+  margin: 0;
+  padding: 0.375rem 0.75rem 0.3125rem;
   border: solid 0.0625rem; }
 
 legend {
@@ -327,7 +327,7 @@ legend {
   top: 0.02825em;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0 0.75rem 0.0625rem; }
+  padding: 0 0.75rem; }
   legend.stats:hover:before {
     position: absolute;
     top: 100%;
@@ -375,8 +375,9 @@ textarea {
   font-family: Arial, sans-serif;
   display: block;
   width: 100%;
+  height: 2.25rem;
   margin: 0;
-  padding: 0.75rem;
+  padding: 0 0.75rem;
   line-height: 1.5;
   border: solid 0.0625rem; }
   input.stats:hover:before,
@@ -395,7 +396,7 @@ textarea {
 
 textarea {
   height: 15rem;
-  padding-top: 0.6875rem; }
+  padding-top: 0.28125rem; }
 
 input[type=search], input[type=number] {
   box-sizing: border-box;
@@ -403,7 +404,8 @@ input[type=search], input[type=number] {
 
 input[type=radio], input[type=checkbox] {
   display: inline-block;
-  width: auto; }
+  width: auto;
+  height: auto; }
   input[type=radio] + label, input[type=checkbox] + label {
     display: inline-block;
     margin: 0;
@@ -423,7 +425,7 @@ tr th {
   line-height: 1.5rem;
   top: 0.02825em;
   font-family: Arial, sans-serif;
-  padding: 0.75rem 0.75rem 0.6875rem;
+  padding: 0.375rem 0.75rem 0.3125rem;
   border-bottom: 0.0625rem solid;
   border-left: 0.0625rem solid; }
   tr td.stats:hover:before,
@@ -447,14 +449,14 @@ thead {
   border-bottom: 0.0625rem solid; }
   thead th,
   thead td {
-    padding-top: 0.6875rem;
-    padding-bottom: 0.6875rem; }
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem; }
 
 tfoot {
   border-bottom: 0.0625rem solid; }
   tfoot th,
   tfoot td {
-    padding-bottom: 0.6875rem; }
+    padding-bottom: 0.3125rem; }
 
 a {
   color: #222; }
