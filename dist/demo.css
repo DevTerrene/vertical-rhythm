@@ -2,9 +2,9 @@ html {
   position: relative;
   box-sizing: border-box; }
   html:after {
-    background-image: linear-gradient(to bottom, transparent 0, transparent 0.6875rem, rgba(255, 25, 25, 0.5) 0.6875rem, rgba(255, 25, 25, 0.5) 0.75rem);
-    background-position: 0 0.75rem;
-    background-size: 100% 0.75rem;
+    background-image: linear-gradient(to bottom, transparent 0, transparent 0.75rem, rgba(255, 25, 25, 0.25) 0.75rem, rgba(255, 25, 25, 0.25) 0.8125rem);
+    background-position: 0 0.8125rem;
+    background-size: 100% 0.8125rem;
     background-repeat: repeat;
     position: absolute;
     top: 0;
@@ -22,8 +22,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: Georgia, serif;
-  font-size: 1rem;
-  line-height: 1.5; }
+  font-size: 1.125rem;
+  line-height: 1.4444444444; }
 
 h1, .h1,
 h2, .h2,
@@ -36,311 +36,349 @@ h6, .h6 {
 
 h1, .h1 {
   position: relative;
-  margin-top: -1.8984375rem;
-  margin-bottom: 1.8984375rem;
-  font-size: 5.0625rem;
-  line-height: 7.5rem;
-  top: 0.02825em;
+  margin-top: -2.056640625rem;
+  margin-bottom: 2.056640625rem;
+  font-size: 5.6953125rem;
+  line-height: 8.125rem;
+  top: 0.0143611111em;
   font-family: Arial, sans-serif; }
-  h1:hover:after, .h1:hover:after {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 0.375rem 0.75rem;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5;
-    background-color: #ff1919;
-    content: "Font size: 5.0625rem / Line height: 7.5rem"; }
+  h1:hover, .h1:hover {
+    color: #000;
+    background-color: rgba(255, 25, 25, 0.25); }
+    h1:hover:after, .h1:hover:after {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      padding: 0.40625rem 0.8125rem;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.4444444444;
+      background-color: #ff1919;
+      content: "Font size: 5.6953125rem / Line height: 8.125rem"; }
 
 h2, .h2 {
   position: relative;
-  margin-top: -1.265625rem;
-  margin-bottom: 1.265625rem;
-  font-size: 3.375rem;
-  line-height: 4.5rem;
-  top: 0.02825em;
+  margin-top: -1.37109375rem;
+  margin-bottom: 1.37109375rem;
+  font-size: 3.796875rem;
+  line-height: 4.875rem;
+  top: 0.0143611111em;
   font-family: Arial, sans-serif; }
-  h2:hover:after, .h2:hover:after {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 0.375rem 0.75rem;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5;
-    background-color: #ff1919;
-    content: "Font size: 3.375rem / Line height: 4.5rem"; }
+  h2:hover, .h2:hover {
+    color: #000;
+    background-color: rgba(255, 25, 25, 0.25); }
+    h2:hover:after, .h2:hover:after {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      padding: 0.40625rem 0.8125rem;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.4444444444;
+      background-color: #ff1919;
+      content: "Font size: 3.796875rem / Line height: 4.875rem"; }
 
 h3, .h3 {
   position: relative;
-  margin-top: -0.84375rem;
-  margin-bottom: 0.84375rem;
-  font-size: 2.25rem;
-  line-height: 3rem;
-  top: 0.02825em;
+  margin-top: -0.9140625rem;
+  margin-bottom: 0.9140625rem;
+  font-size: 2.53125rem;
+  line-height: 3.25rem;
+  top: 0.0143611111em;
   font-family: Arial, sans-serif; }
-  h3:hover:after, .h3:hover:after {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 0.375rem 0.75rem;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5;
-    background-color: #ff1919;
-    content: "Font size: 2.25rem / Line height: 3rem"; }
+  h3:hover, .h3:hover {
+    color: #000;
+    background-color: rgba(255, 25, 25, 0.25); }
+    h3:hover:after, .h3:hover:after {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      padding: 0.40625rem 0.8125rem;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.4444444444;
+      background-color: #ff1919;
+      content: "Font size: 2.53125rem / Line height: 3.25rem"; }
 
 h4, .h4 {
   position: relative;
-  margin-top: -0.5625rem;
-  margin-bottom: 0.5625rem;
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  top: 0.02825em;
+  margin-top: -0.609375rem;
+  margin-bottom: 0.609375rem;
+  font-size: 1.6875rem;
+  line-height: 1.625rem;
+  top: 0.0143611111em;
   font-family: Arial, sans-serif; }
-  h4:hover:after, .h4:hover:after {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 0.375rem 0.75rem;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5;
-    background-color: #ff1919;
-    content: "Font size: 1.5rem / Line height: 1.5rem"; }
+  h4:hover, .h4:hover {
+    color: #000;
+    background-color: rgba(255, 25, 25, 0.25); }
+    h4:hover:after, .h4:hover:after {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      padding: 0.40625rem 0.8125rem;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.4444444444;
+      background-color: #ff1919;
+      content: "Font size: 1.6875rem / Line height: 1.625rem"; }
 
 h5, .h5 {
   position: relative;
-  margin-top: -0.375rem;
-  margin-bottom: 0.375rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  top: 0.02825em;
+  margin-top: -0.40625rem;
+  margin-bottom: 0.40625rem;
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  top: 0.0143611111em;
   font-family: Arial, sans-serif; }
-  h5:hover:after, .h5:hover:after {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 0.375rem 0.75rem;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5;
-    background-color: #ff1919;
-    content: "Font size: 1rem / Line height: 1.5rem"; }
+  h5:hover, .h5:hover {
+    color: #000;
+    background-color: rgba(255, 25, 25, 0.25); }
+    h5:hover:after, .h5:hover:after {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      padding: 0.40625rem 0.8125rem;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.4444444444;
+      background-color: #ff1919;
+      content: "Font size: 1.125rem / Line height: 1.625rem"; }
 
 h6, .h6 {
   position: relative;
-  margin-top: -0.25rem;
-  margin-bottom: 0.25rem;
-  font-size: 0.6666666667rem;
-  line-height: 1.5rem;
-  top: 0.02825em;
+  margin-top: -0.2708333333rem;
+  margin-bottom: 0.2708333333rem;
+  font-size: 0.75rem;
+  line-height: 1.625rem;
+  top: 0.0143611111em;
   font-family: Arial, sans-serif; }
-  h6:hover:after, .h6:hover:after {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 0.375rem 0.75rem;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5;
-    background-color: #ff1919;
-    content: "Font size: 0.6666666667rem / Line height: 0rem"; }
+  h6:hover, .h6:hover {
+    color: #000;
+    background-color: rgba(255, 25, 25, 0.25); }
+    h6:hover:after, .h6:hover:after {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      padding: 0.40625rem 0.8125rem;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.4444444444;
+      background-color: #ff1919;
+      content: "Font size: 0.75rem / Line height: 0rem"; }
 
 p {
   position: relative;
-  margin-top: -0.375rem;
-  margin-bottom: 0.375rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  top: 0.02825em;
+  margin-top: -0.40625rem;
+  margin-bottom: 0.40625rem;
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  top: 0.0143611111em;
   font-family: Georgia, serif;
   padding-top: 0;
-  padding-bottom: 1.5rem; }
-  p:hover:after {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 0.375rem 0.75rem;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5;
-    background-color: #ff1919;
-    content: "Font size: 1rem / Line height: 1.5rem"; }
+  padding-bottom: 1.625rem; }
+  p:hover {
+    color: #000;
+    background-color: rgba(255, 25, 25, 0.25); }
+    p:hover:after {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      padding: 0.40625rem 0.8125rem;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.4444444444;
+      background-color: #ff1919;
+      content: "Font size: 1.125rem / Line height: 1.625rem"; }
 
 blockquote {
   margin: 0;
   padding: 0; }
   blockquote p {
     position: relative;
-    margin-top: -0.5625rem;
-    margin-bottom: 0.5625rem;
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-    top: 0.02825em;
+    margin-top: -0.609375rem;
+    margin-bottom: 0.609375rem;
+    font-size: 1.6875rem;
+    line-height: 1.625rem;
+    top: 0.0143611111em;
     font-family: Georgia, serif; }
-    blockquote p:hover:after {
+    blockquote p:hover {
+      color: #000;
+      background-color: rgba(255, 25, 25, 0.25); }
+      blockquote p:hover:after {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        padding: 0.40625rem 0.8125rem;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1.4444444444;
+        background-color: #ff1919;
+        content: "Font size: 1.6875rem / Line height: 1.625rem"; }
+
+cite {
+  position: relative;
+  margin-top: -0.40625rem;
+  margin-bottom: 0.40625rem;
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  top: 0.0143611111em;
+  font-family: Arial, sans-serif;
+  display: block;
+  padding: 0 0 1.625rem; }
+  cite:hover {
+    color: #000;
+    background-color: rgba(255, 25, 25, 0.25); }
+    cite:hover:after {
       position: fixed;
       right: 0;
       bottom: 0;
       z-index: 1000;
-      padding: 0.375rem 0.75rem;
+      padding: 0.40625rem 0.8125rem;
       color: #fff;
       font-family: Arial, sans-serif;
-      font-size: 1rem;
+      font-size: 1.125rem;
       font-style: normal;
       font-weight: normal;
-      line-height: 1.5;
+      line-height: 1.4444444444;
       background-color: #ff1919;
-      content: "Font size: 1.5rem / Line height: 1.5rem"; }
-
-cite {
-  position: relative;
-  margin-top: -0.375rem;
-  margin-bottom: 0.375rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  top: 0.02825em;
-  font-family: Arial, sans-serif;
-  display: block;
-  padding: 0 0 1.5rem; }
-  cite:hover:after {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 0.375rem 0.75rem;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5;
-    background-color: #ff1919;
-    content: "Font size: 1rem / Line height: 1.5rem"; }
+      content: "Font size: 1.125rem / Line height: 1.625rem"; }
 
 code {
   position: relative;
-  margin-top: -0.375rem;
-  margin-bottom: 0.375rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  top: 0.10625em;
+  margin-top: -0.40625rem;
+  margin-bottom: 0.40625rem;
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  top: 0.0923611111em;
   font-family: "Courier New", monospace;
   display: block;
-  padding: 0 0 1.5rem; }
-  code:hover:after {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 0.375rem 0.75rem;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5;
-    background-color: #ff1919;
-    content: "Font size: 1rem / Line height: 1.5rem"; }
+  padding: 0 0 1.625rem; }
+  code:hover {
+    color: #000;
+    background-color: rgba(255, 25, 25, 0.25); }
+    code:hover:after {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      padding: 0.40625rem 0.8125rem;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.4444444444;
+      background-color: #ff1919;
+      content: "Font size: 1.125rem / Line height: 1.625rem"; }
 
 ol,
 ul {
   position: relative;
-  margin-top: -0.375rem;
-  margin-bottom: 0.375rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  top: 0.02825em;
+  margin-top: -0.40625rem;
+  margin-bottom: 0.40625rem;
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  top: 0.0143611111em;
   font-family: Georgia, serif;
-  padding-bottom: 1.5rem; }
-  ol:hover:after,
-  ul:hover:after {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 0.375rem 0.75rem;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5;
-    background-color: #ff1919;
-    content: "Font size: 1rem / Line height: 1.5rem"; }
+  padding-bottom: 1.625rem; }
+  ol:hover,
+  ul:hover {
+    color: #000;
+    background-color: rgba(255, 25, 25, 0.25); }
+    ol:hover:after,
+    ul:hover:after {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      padding: 0.40625rem 0.8125rem;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.4444444444;
+      background-color: #ff1919;
+      content: "Font size: 1.125rem / Line height: 1.625rem"; }
   ol ol,
   ol ul,
   ul ol,
   ul ul {
-    top: 0;
+    position: static;
+    top: auto;
     margin-top: 0;
     margin-bottom: 0;
     padding-top: 0;
     padding-bottom: 0; }
 
 small {
-  font-size: 0.6666666667rem;
+  font-size: 0.75rem;
   line-height: 1; }
 
-.btn, input[type=submit] {
+.btn {
   position: relative;
-  margin-top: -0.375rem;
-  margin-bottom: 0.375rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  top: 0.02825em;
+  margin-top: -0.40625rem;
+  margin-bottom: 0.40625rem;
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  top: 0.0143611111em;
   font-family: Arial, sans-serif;
   display: inline-block;
-  margin: -0.125rem 0 1.375rem;
-  padding: 0.375rem 0.75rem;
+  margin: -0.125rem 0 1.5rem;
+  padding: 0.40625rem 1.625rem;
   text-decoration: none;
   border: 0.125rem solid;
   cursor: pointer; }
-  .btn:hover:after, input[type=submit]:hover:after {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 0.375rem 0.75rem;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5;
-    background-color: #ff1919;
-    content: "Font size: 1rem / Line height: 1.5rem"; }
-  .btn::-moz-focus-inner, input[type=submit]::-moz-focus-inner {
+  .btn:hover {
+    color: #000;
+    background-color: rgba(255, 25, 25, 0.25); }
+    .btn:hover:after {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      padding: 0.40625rem 0.8125rem;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.4444444444;
+      background-color: #ff1919;
+      content: "Font size: 1.125rem / Line height: 1.625rem"; }
+  .btn::-moz-focus-inner {
     margin-top: 0;
     margin-bottom: 0;
     padding: 0;
@@ -350,99 +388,110 @@ form {
   font-family: Arial, sans-serif; }
 
 fieldset {
-  margin: 0 0 1.5rem;
-  padding: 0.25rem 0.75rem;
-  border: solid 0.125rem; }
+  margin: 0 0 1.625rem;
+  padding: 0.34375rem 0.8125rem;
+  border: solid 0.0625rem; }
 
 legend {
   position: relative;
-  margin-top: -0.375rem;
-  margin-bottom: 0.375rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  top: 0.02825em;
+  margin-top: -0.40625rem;
+  margin-bottom: 0.40625rem;
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  top: 0.0143611111em;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0 0.75rem 0.125rem; }
-  legend:hover:after {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 0.375rem 0.75rem;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5;
-    background-color: #ff1919;
-    content: "Font size: 1rem / Line height: 1.5rem"; }
+  padding: 0 0.8125rem 0.0625rem; }
+  legend:hover {
+    color: #000;
+    background-color: rgba(255, 25, 25, 0.25); }
+    legend:hover:after {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      padding: 0.40625rem 0.8125rem;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.4444444444;
+      background-color: #ff1919;
+      content: "Font size: 1.125rem / Line height: 1.625rem"; }
 
 label {
   position: relative;
-  margin-top: -0.375rem;
-  margin-bottom: 0.375rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  top: 0.02825em;
+  margin-top: -0.40625rem;
+  margin-bottom: 0.40625rem;
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  top: 0.0143611111em;
   font-family: Arial, sans-serif;
   display: block;
   width: 100%;
   padding: 0;
   cursor: pointer; }
-  label:hover:after {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 0.375rem 0.75rem;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5;
-    background-color: #ff1919;
-    content: "Font size: 1rem / Line height: 1.5rem"; }
+  label:hover {
+    color: #000;
+    background-color: rgba(255, 25, 25, 0.25); }
+    label:hover:after {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      padding: 0.40625rem 0.8125rem;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.4444444444;
+      background-color: #ff1919;
+      content: "Font size: 1.125rem / Line height: 1.625rem"; }
 
 input,
 select,
 textarea {
   position: relative;
-  margin-top: -0.375rem;
-  margin-bottom: 0.375rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  top: 0.02825em;
+  margin-top: -0.40625rem;
+  margin-bottom: 0.40625rem;
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  top: 0.0143611111em;
   font-family: Arial, sans-serif;
   display: block;
   width: 100%;
-  margin: 0 0 1.5rem;
-  padding: 0.25rem 0.375rem;
-  border: solid 0.125rem; }
-  input:hover:after,
-  select:hover:after,
-  textarea:hover:after {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 0.375rem 0.75rem;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5;
-    background-color: #ff1919;
-    content: "Font size: 1rem / Line height: 1.5rem"; }
+  margin: 0 0 1.625rem;
+  padding: 0.34375rem 0.40625rem;
+  border: solid 0.0625rem; }
+  input:hover,
+  select:hover,
+  textarea:hover {
+    color: #000;
+    background-color: rgba(255, 25, 25, 0.25); }
+    input:hover:after,
+    select:hover:after,
+    textarea:hover:after {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      padding: 0.40625rem 0.8125rem;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.4444444444;
+      background-color: #ff1919;
+      content: "Font size: 1.125rem / Line height: 1.625rem"; }
 
 select {
-  height: 2.25rem; }
+  height: 2.4375rem; }
 
 textarea {
-  height: 10.5rem; }
+  height: 9.75rem; }
 
 input[type=search], input[type=number] {
   box-sizing: border-box;
@@ -456,69 +505,8 @@ input[type=radio], input[type=checkbox] {
   input[type=radio] + label, input[type=checkbox] + label {
     display: inline-block;
     width: auto;
-    margin: 0 0.75rem 0 0;
+    margin: 0 0.8125rem 0 0;
     padding: 0; }
-
-input[type=submit] {
-  width: auto; }
-
-.table-wrapper {
-  overflow-x: auto;
-  overflow-y: hidden;
-  margin: -0.0625rem 0 1.5rem;
-  border: 0.0625rem solid; }
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-tfoot tr:last-child th,
-tfoot tr:last-child td,
-tbody tr:last-child th,
-tbody tr:last-child td {
-  border-bottom: none; }
-
-tfoot tr:first-child th,
-tfoot tr:first-child td {
-  border-top: 0.0625rem solid; }
-
-tr {
-  vertical-align: top; }
-
-th,
-td {
-  position: relative;
-  margin-top: -0.375rem;
-  margin-bottom: 0.375rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  top: 0.02825em;
-  font-family: Arial, sans-serif;
-  padding: 1.125rem 0.75rem 1.0625rem;
-  text-align: left;
-  border-right: 0.0625rem solid;
-  border-bottom: 0.0625rem solid;
-  cursor: default;
-  vertical-align: top; }
-  th:hover:after,
-  td:hover:after {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 0.375rem 0.75rem;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5;
-    background-color: #ff1919;
-    content: "Font size: 1rem / Line height: 1.5rem"; }
-  th:last-child,
-  td:last-child {
-    border-right: none; }
 
 ::selection {
   color: #fff;
@@ -534,161 +522,163 @@ td {
 
 body {
   overflow-x: hidden;
-  padding: 1.5rem 0 0;
+  padding: 0;
   color: #000;
   background-color: #fff; }
   @media (min-width: 60rem) {
     body {
-      padding-top: 4.5rem; } }
+      padding-top: 4.875rem; } }
 
 header,
 main,
 footer {
-  padding: 0 0.75rem; }
+  padding: 0 0.8125rem; }
 
-@media (min-width: 60rem) {
-  header {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: calc((100% / 3) - 0.75rem);
-    padding-top: 3rem; } }
+header {
+  text-align: center; }
+  @media (min-width: 60rem) {
+    header {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 33.3333333333%; } }
 
 @media (min-width: 60rem) {
   main,
   footer {
     margin-left: 33.3333333333%; } }
 
+footer {
+  padding-bottom: 4.875rem; }
+
 .section {
-  margin: 0 0 2.875rem;
-  padding: 0 0 1.5rem;
+  margin: 0 0 3.125rem;
+  padding: 0 0 1.625rem;
   border-bottom: 0.125rem solid #000; }
   .section__title {
     position: relative;
-    margin-top: -0.84375rem;
-    margin-bottom: 0.84375rem;
-    font-size: 2.25rem;
-    line-height: 3rem;
-    top: 0.02825em;
+    margin-top: -0.9140625rem;
+    margin-bottom: 0.9140625rem;
+    font-size: 2.53125rem;
+    line-height: 3.25rem;
+    top: 0.0143611111em;
     font-family: Arial, sans-serif; }
-    .section__title:hover:after {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      z-index: 1000;
-      padding: 0.375rem 0.75rem;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      font-size: 1rem;
-      font-style: normal;
-      font-weight: normal;
-      line-height: 1.5;
-      background-color: #ff1919;
-      content: "Font size: 2.25rem / Line height: 3rem"; }
+    .section__title:hover {
+      color: #000;
+      background-color: rgba(255, 25, 25, 0.25); }
+      .section__title:hover:after {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        padding: 0.40625rem 0.8125rem;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1.4444444444;
+        background-color: #ff1919;
+        content: "Font size: 2.53125rem / Line height: 3.25rem"; }
     .section__title:before {
       color: #ff1919;
       content: '# '; }
   .section__subtitle {
     position: relative;
-    margin-top: -0.375rem;
-    margin-bottom: 0.375rem;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    top: 0.02825em;
+    margin-top: -0.40625rem;
+    margin-bottom: 0.40625rem;
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    top: 0.0143611111em;
     font-family: Arial, sans-serif;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 1.625rem;
+    padding-bottom: 1.625rem;
     color: #ff1919; }
-    .section__subtitle:hover:after {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      z-index: 1000;
-      padding: 0.375rem 0.75rem;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      font-size: 1rem;
-      font-style: normal;
-      font-weight: normal;
-      line-height: 1.5;
-      background-color: #ff1919;
-      content: "Font size: 1rem / Line height: 1.5rem"; }
+    .section__subtitle:hover {
+      color: #000;
+      background-color: rgba(255, 25, 25, 0.25); }
+      .section__subtitle:hover:after {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        padding: 0.40625rem 0.8125rem;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1.4444444444;
+        background-color: #ff1919;
+        content: "Font size: 1.125rem / Line height: 1.625rem"; }
 
 a {
-  position: relative;
-  color: #000;
+  color: #ff1919;
   text-decoration: none;
-  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
-  background-image: linear-gradient(to top, transparent, transparent 2px, #000 2px, #000 3px, transparent 3px); }
-  a:hover {
-    color: #ff1919;
-    background-image: linear-gradient(to top, transparent, transparent 2px, #ff1919 2px, #ff1919 3px, transparent 3px); }
-
-.article__row {
-  margin: 0 -0.75rem; }
-  .article__row:after {
-    clear: both;
-    display: table;
-    content: ''; }
-
-.article__col {
-  float: left;
-  width: 100%;
-  padding: 0 0.75rem; }
-  @media (min-width: 60rem) {
-    .article__col {
-      width: 50%; } }
-
-.article__dropcap {
-  position: relative;
-  margin-top: -1.265625rem;
-  margin-bottom: 1.265625rem;
-  font-size: 3.375rem;
-  line-height: 4.5rem;
-  top: 0.02825em;
-  font-family: Arial, sans-serif;
-  float: left;
-  width: 5.25rem;
-  margin-right: 0.75rem;
-  color: #fff;
-  font-weight: bold;
-  line-height: 5.25rem;
-  text-align: center;
-  background-color: #ff1919;
-  transform: translate(0, 1.5rem); }
-  .article__dropcap:hover:after {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 0.375rem 0.75rem;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5;
-    background-color: #ff1919;
-    content: "Font size: 3.375rem / Line height: 4.5rem"; }
-
-.article__streamer {
-  letter-spacing: 0.0625em;
-  text-transform: uppercase; }
-
-.article h1, .article .h1,
-.article h2, .article .h2,
-.article h3, .article .h3,
-.article h4, .article .h4,
-.article h5, .article .h5,
-.article h6, .article .h6 {
-  padding-top: 1.5rem; }
+  outline: none; }
+  a:focus, a:hover {
+    color: #000; }
 
 blockquote {
   display: inline-block;
-  margin: -0.125rem 0 1.375rem;
-  padding: 3rem 1.5rem 0;
-  border: 0.125rem solid #000; }
+  margin: -0.0625rem 0 1.5625rem;
+  padding: 2.4375rem 1.625rem 0;
+  border: 0.0625rem solid #ff1919; }
+  blockquote p {
+    position: relative;
+    margin-top: -0.9140625rem;
+    margin-bottom: 0.9140625rem;
+    font-size: 2.53125rem;
+    line-height: 3.25rem;
+    top: 0.0143611111em;
+    font-family: Georgia, serif;
+    padding-bottom: 0;
+    text-indent: -0.4125em; }
+    blockquote p:hover {
+      color: #000;
+      background-color: rgba(255, 25, 25, 0.25); }
+      blockquote p:hover:after {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        padding: 0.40625rem 0.8125rem;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1.4444444444;
+        background-color: #ff1919;
+        content: "Font size: 2.53125rem / Line height: 3.25rem"; }
+
+cite {
+  font-style: normal; }
+
+code {
+  display: block;
+  padding: 0.8125rem;
+  color: #fff;
+  background-color: #000;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1875) 0, rgba(255, 255, 255, 0.1875) 1.5625rem, transparent 1.5625rem, transparent 1.625rem);
+  background-position: 0 0.8125rem;
+  background-size: 100% 3.25rem;
+  background-repeat: repeat;
+  border-radius: 0.125rem; }
+  code + p {
+    padding-top: 1.625rem; }
+
+pre {
+  margin: 0; }
+
+p code {
+  position: static;
+  display: inline;
+  margin: 0;
+  padding: 0 0.40625rem;
+  line-height: 0;
+  background: #000; }
 
 form label {
   font-weight: bold; }
@@ -721,41 +711,73 @@ h5, .h5,
 h6, .h6 {
   font-weight: bold; }
 
-.btn, input[type=submit] {
-  padding: 1.125rem 1.875rem;
+.article {
+  padding-top: 1.625rem; }
+  .article__row {
+    margin: 0 -0.8125rem; }
+    .article__row:after {
+      clear: both;
+      display: table;
+      content: ''; }
+  .article__col {
+    float: left;
+    width: 100%;
+    padding: 0 0.8125rem; }
+    @media (min-width: 60rem) {
+      .article__col {
+        width: 50%; } }
+  .article__dropcap {
+    position: relative;
+    margin-top: -1.37109375rem;
+    margin-bottom: 1.37109375rem;
+    font-size: 3.796875rem;
+    line-height: 4.875rem;
+    top: 0.0143611111em;
+    font-family: Arial, sans-serif;
+    float: left;
+    width: 5.6875rem;
+    margin-right: 0.8125rem;
+    color: #fff;
+    font-weight: bold;
+    line-height: 5.6875rem;
+    text-align: center;
+    background-color: #ff1919;
+    transform: translate(0, 1.625rem); }
+    .article__dropcap:hover {
+      color: #000;
+      background-color: rgba(255, 25, 25, 0.25); }
+      .article__dropcap:hover:after {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        padding: 0.40625rem 0.8125rem;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1.4444444444;
+        background-color: #ff1919;
+        content: "Font size: 3.796875rem / Line height: 4.875rem"; }
+    .article__dropcap:after {
+      display: none; }
+  .article__streamer {
+    margin-right: 0.40625rem;
+    font-variant: small-caps;
+    letter-spacing: 0.0625em;
+    text-transform: lowercase; }
+
+.btn {
   color: #000;
   font-weight: bold;
   background-color: transparent;
-  border-color: #000; }
-  .btn:active, input[type=submit]:active, .btn:focus, input[type=submit]:focus, .btn:hover, input[type=submit]:hover {
+  border-color: #000;
+  outline: none; }
+  .btn:active, .btn:focus, .btn:hover {
     color: #fff;
     background-color: #ff1919;
     border-color: #ff1919; }
-
-.logo {
-  position: relative;
-  margin-top: -1.265625rem;
-  margin-bottom: 1.265625rem;
-  font-size: 3.375rem;
-  line-height: 4.5rem;
-  top: 0.02825em;
-  font-family: Georgia, serif;
-  color: #ff1919;
-  font-weight: bold; }
-  .logo:hover:after {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 0.375rem 0.75rem;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5;
-    background-color: #ff1919;
-    content: "Font size: 3.375rem / Line height: 4.5rem"; }
 
 .grid {
   position: fixed;
@@ -768,7 +790,40 @@ h6, .h6 {
   pointer-events: none; }
   .grid__item {
     width: 33.3333333333%;
-    margin: -0.0625rem 0.6875rem;
-    border: 0.0625rem solid rgba(255, 25, 25, 0.5); }
+    margin: -0.0625rem 0.75rem;
+    border: 0.0625rem solid rgba(255, 25, 25, 0.25); }
+
+.logo {
+  position: relative;
+  margin-top: -1.37109375rem;
+  margin-bottom: 1.37109375rem;
+  font-size: 3.796875rem;
+  line-height: 4.875rem;
+  top: 0.0143611111em;
+  font-family: Georgia, serif;
+  color: #ff1919; }
+  .logo:hover {
+    color: #000;
+    background-color: rgba(255, 25, 25, 0.25); }
+    .logo:hover:after {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      padding: 0.40625rem 0.8125rem;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.4444444444;
+      background-color: #ff1919;
+      content: "Font size: 3.796875rem / Line height: 4.875rem"; }
+  .logo:before {
+    display: block;
+    height: 3.25rem;
+    margin: 0 0 0.8125rem;
+    background: #ff1919;
+    content: ''; }
 
 /*# sourceMappingURL=demo.css.map */

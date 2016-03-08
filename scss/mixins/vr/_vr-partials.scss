@@ -123,192 +123,112 @@ small {
 	line-height: 1;
 }
 
-// Buttons
-$btn-border-width: $border-width-m;
+@if $include-vr-buttons == true {
+	.btn {
+		@include vr($font-display, $base-font-size);
 
-.btn {
-	@extend %btn;
-}
+		display: inline-block; // For when used on anchors
 
-%btn {
-	@include vr($font-display, $base-font-size);
+		margin: ($vr-btn-border-width * -1) 0 ($paragraph-trailer - $vr-btn-border-width);
+		padding: $distance-s $distance-l;
 
-	display: inline-block; // For when used on anchors
+		text-decoration: none;
 
-	margin: ($btn-border-width * -1) 0 ($paragraph-trailer - $btn-border-width);
-	padding: $distance-s $distance-m;
+		border: $vr-btn-border-width solid;
 
-	text-decoration: none;
+		cursor: pointer;
 
-	border: $btn-border-width solid;
+		// FF button height fix: https://davidwalsh.name/firefox-buttons
+		&::-moz-focus-inner {
+			margin-top: 0;
+			margin-bottom: 0;
 
-	cursor: pointer;
+			padding: 0;
 
-	// FF button height fix: https://davidwalsh.name/firefox-buttons
-	&::-moz-focus-inner {
-		margin-top: 0;
-		margin-bottom: 0;
-
-		padding: 0;
-
-		border: none;
+			border: none;
+		}
 	}
 }
 
-// Forms
-$form-border-width: $border-width-m;
-$form-textarea-height: $rhythm * 7;
-$form-item-spacing: $distance-l;
-
-form {
-	font-family: $font-display;
-}
-
-fieldset {
-	margin: 0 0 $form-item-spacing;
-	padding: ($distance-s - $form-border-width) $distance-m;
-
-	border: solid $form-border-width;
-}
-
-legend {
-	@include vr($font-display, $base-font-size);
-
-	margin: 0;
-	padding: 0 $distance-m $form-border-width;
-}
-
-label {
-	@include vr($font-display, $base-font-size);
-
-	display: block;
-
-	width: 100%;
-
-	padding: 0;
-
-	cursor: pointer;
-}
-
-input,
-select,
-textarea {
-	@include vr($font-display, $base-font-size);
-
-	display: block;
-
-	width: 100%;
-
-	margin: 0 0 $form-item-spacing;
-	padding: ($distance-s - $form-border-width) $distance-s;
-
-	border: solid $form-border-width;
-}
-
-select {
-	height: $rhythm * 1.5;
-}
-
-textarea {
-	height: $form-textarea-height;
-}
-
-input {
-	&[type=search],
-	&[type=number] {
-		box-sizing: border-box;
-
-		appearance: textfield;
+@if $include-vr-forms == true {
+	form {
+		font-family: $font-display;
 	}
 
-	&[type=radio],
-	&[type=checkbox] {
-		display: inline-block;
+	fieldset {
+		margin: 0 0 $vr-form-item-spacing;
+		padding: ($distance-s - $vr-form-border-width) $distance-m;
 
-		width: auto;
+		border: solid $vr-form-border-width;
+	}
+
+	legend {
+		@include vr($font-display, $base-font-size);
 
 		margin: 0;
+		padding: 0 $distance-m $vr-form-border-width;
+	}
+
+	label {
+		@include vr($font-display, $base-font-size);
+
+		display: block;
+
+		width: 100%;
+
 		padding: 0;
 
-		+ label {
+		cursor: pointer;
+	}
+
+	input,
+	select,
+	textarea {
+		@include vr($font-display, $base-font-size);
+
+		display: block;
+
+		width: 100%;
+
+		margin: 0 0 $vr-form-item-spacing;
+		padding: ($distance-s - $vr-form-border-width) $distance-s;
+
+		border: solid $vr-form-border-width;
+	}
+
+	select {
+		height: $rhythm * 1.5;
+	}
+
+	textarea {
+		height: $vr-form-textarea-height;
+	}
+
+	input {
+		&[type=search],
+		&[type=number] {
+			box-sizing: border-box;
+
+			appearance: textfield;
+		}
+
+		&[type=radio],
+		&[type=checkbox] {
 			display: inline-block;
 
 			width: auto;
 
-			margin: 0 $distance-m 0 0;
+			margin: 0;
 			padding: 0;
-		}
-	}
 
-	&[type=submit] {
-		@extend %btn;
+			+ label {
+				display: inline-block;
 
-		width: auto;
-	}
-}
+				width: auto;
 
-// Tables
-$table-border-width: $border-width-s;
-$table-padding: $distance-s;
-
-.table-wrapper {
-	overflow-x: auto;
-	overflow-y: hidden;
-
-	margin: ($table-border-width * -1) 0 $paragraph-trailer;
-
-	border: $table-border-width solid;
-}
-
-table {
-	width: 100%;
-
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-tfoot,
-tbody {
-	tr {
-		&:last-child {
-			th,
-			td {
-				border-bottom: none;
+				margin: 0 $distance-m 0 0;
+				padding: 0;
 			}
 		}
-	}
-}
-
-tfoot {
-	tr {
-		&:first-child {
-			th,
-			td {
-				border-top: $table-border-width solid;
-			}
-		}
-	}
-}
-
-tr {
-	vertical-align: top;
-}
-
-th,
-td {
-	@include vr($font-display);
-
-	padding: ($rhythm * 0.75) $distance-m ($rhythm * 0.75 - $table-border-width);
-
-	text-align: left;
-
-	border-right: $table-border-width solid;
-	border-bottom: $table-border-width solid;
-
-	cursor: default;
-	vertical-align: top;
-
-	&:last-child {
-		border-right: none;
 	}
 }

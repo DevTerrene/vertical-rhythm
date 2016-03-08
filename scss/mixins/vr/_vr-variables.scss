@@ -1,6 +1,8 @@
+// Helpers
 $show-baseline:					true;
 $show-stats:					true;
 
+// Typography
 $font-display:					Arial, sans-serif;
 $font-body:						Georgia, serif;
 $font-mono:						'Courier New', monospace;
@@ -9,8 +11,8 @@ $cap-font-display:				0.02825;
 $cap-font-body:					0.02825;
 $cap-font-mono:					0.10625;
 
-$px-font-size:					16;
-$px-line-height:				24; // Even numbers work best
+$px-font-size:					18;
+$px-line-height:				26; // Only even numbers are supported
 
 $base-font-size:				($px-font-size / 16) * 1rem;
 $base-line-height:				($px-line-height / $px-font-size);
@@ -18,23 +20,7 @@ $base-line-height:				($px-line-height / $px-font-size);
 $rhythm:						($base-font-size * $base-line-height);
 
 // Modular scale - see <functions/calc-font-sizes> for all preset scales
-// $modular-scale:					'minor-second';
-// $modular-scale:					'major-second';
-// $modular-scale:					'minor-third';
-// $modular-scale:					'major-third';
-// $modular-scale:					'perfect-fourth';
-// $modular-scale:					'augmented-fourth';
 $modular-scale:					'perfect-fifth';
-// $modular-scale:					'minor-sixth';
-// $modular-scale:					'golden-section';
-// $modular-scale:					'major-sixth';
-// $modular-scale:					'minor-seventh';
-// $modular-scale:					'major-seventh';
-// $modular-scale:					'octave';
-// $modular-scale:					'major-tenth';
-// $modular-scale:					'major-eleventh';
-// $modular-scale:					'major-twelfth';
-// $modular-scale:					'double-octave';
 
 $font-sizes:					('xs', 's', 'm', 'l', 'xl', 'xxl');
 $font-size-default:				's';
@@ -75,4 +61,16 @@ $vr-black:						#000;
 $vr-white:						#fff;
 
 $vr-color-base:					#ff1919;
-$vr-color:						rgba($vr-color-base, 0.5);
+$vr-color:						rgba($vr-color-base, 0.25);
+
+// VR buttons
+$include-vr-buttons:			true;
+
+$vr-btn-border-width:			$border-width-m;
+
+// VR forms
+$include-vr-forms:				true;
+
+$vr-form-border-width:			$border-width-s;
+$vr-form-textarea-height:		$rhythm * 6;
+$vr-form-item-spacing:			$distance-l;

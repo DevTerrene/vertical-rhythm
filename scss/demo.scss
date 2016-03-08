@@ -1,22 +1,16 @@
 @import 'mixins/vr/vr-main';
 
-$grid-break-s: 30rem;
-$grid-break-m: 60rem;
-$grid-break-l: 60rem;
-
+$grid-break: 60rem;
 $grid-gutter: $distance-m;
 
 $black: #000;
 $gray: lighten($black, 75%);
-$white: #fff;
-
-$yellow: #fff6cc;
 $red: #ff1919;
+$white: #fff;
 
 $bg-color: $white;
 $text-color: $black;
 
-// Layout
 ::selection {
 	color: $white;
 	text-shadow: none;
@@ -34,13 +28,13 @@ $text-color: $black;
 body {
 	overflow-x: hidden;
 
-	padding: $paragraph-trailer 0 0;
+	padding: 0;
 
 	color: $text-color;
 
 	background-color: $bg-color;
 
-	@media (min-width: $grid-break-m) {
+	@media (min-width: $grid-break) {
 		padding-top: $rhythm * 3;
 	}
 }
@@ -52,23 +46,27 @@ footer {
 }
 
 header {
-	@media (min-width: $grid-break-m) {
+	text-align: center;
+
+	@media (min-width: $grid-break) {
 		position: fixed;
 		top: 0;
 		bottom: 0;
 		left: 0;
 
-		width: calc((100% / 3) - #{$grid-gutter});
-
-		padding-top: $rhythm * 2;
+		width: (100% / 3);
 	}
 }
 
 main,
 footer {
-	@media (min-width: $grid-break-m) {
+	@media (min-width: $grid-break) {
 		margin-left: (100% / 3 * 1);
 	}
+}
+
+footer {
+	padding-bottom: $rhythm * 3;
 }
 
 .section {
@@ -100,98 +98,86 @@ footer {
 	}
 }
 
-// Typography
 a {
-	position: relative;
-
-	color: $text-color;
+	color: $red;
 	text-decoration: none;
-	text-shadow: -1px -1px 0 $white,
-				 1px -1px 0 $white,
-				 -1px 1px 0 $white,
-				 1px 1px 0 $white;
 
-	background-image: linear-gradient(to top, transparent,
-											  transparent 2px, $black 2px, $black 3px,
-											  transparent 3px);
+	outline: none;
 
+	&:focus,
 	&:hover {
-		color: $red;
-
-		background-image: linear-gradient(to top, transparent,
-												  transparent 2px, $red 2px, $red 3px,
-												  transparent 3px);
-	}
-}
-
-.article {
-	&__row {
-		margin: 0 ($grid-gutter * -1);
-
-		// Clearfix
-		&:after {
-			clear: both;
-			display: table;
-			content: '';
-		}
-	}
-
-	&__col {
-		float: left;
-
-		width: 100%;
-
-		padding: 0 $grid-gutter;
-
-		@media (min-width: $grid-break-m) {
-			width: 50%;
-		}
-	}
-
-	&__dropcap {
-		$dropcap-size: $rhythm * 3.5;
-
-		@include vr($font-display, $font-size-xl);
-
-		float: left;
-
-		width: $dropcap-size;
-
-		margin-right: $distance-m;
-
-		color: $white;
-		font-weight: bold;
-		line-height: $dropcap-size;
-		text-align: center;
-
-		background-color: $red;
-		transform: translate(0, ($rhythm));
-	}
-
-	&__streamer {
-		letter-spacing: 0.0625em;
-		text-transform: uppercase;
-	}
-
-	h1, .h1,
-	h2, .h2,
-	h3, .h3,
-	h4, .h4,
-	h5, .h5,
-	h6, .h6 {
-		padding-top: $distance-l;
+		color: $text-color;
 	}
 }
 
 blockquote {
-	$blockquote-border-width: $border-width-m;
+	$blockquote-border-width: $border-width-s;
 
 	display: inline-block;
 
 	margin: ($blockquote-border-width * -1) 0 ($paragraph-trailer - $blockquote-border-width);
-	padding: ($distance-l + $distance-l) $paragraph-trailer 0;
+	padding: ($distance-m + $distance-l) $distance-l 0;
 
-	border: $blockquote-border-width solid $text-color;
+	border: $blockquote-border-width solid $red;
+
+	p {
+		@include vr($font-body, $font-size-l);
+
+		padding-bottom: 0; // Reset paragraph trailer
+
+		text-indent: 0.4125em * -1;
+	}
+}
+
+cite {
+	font-style: normal;
+}
+
+code {
+	$code-padding: $grid-gutter;
+	$code-stripe: rgba($white, 0.1875);
+
+	display: block;
+
+	padding: $code-padding;
+
+	color: $white;
+
+	background-color: $black;
+
+	background-image: linear-gradient(to bottom,
+		$code-stripe 0,
+		$code-stripe ($rhythm - 0.0625rem),
+		transparent ($rhythm - 0.0625rem),
+		transparent $rhythm
+	);
+
+	background-position: 0 $code-padding;
+	background-size: 100% ($rhythm * 2);
+	background-repeat: repeat;
+	border-radius: $border-radius-s;
+
+	& + p {
+		padding-top: $paragraph-trailer;
+	}
+}
+
+pre {
+	margin: 0;
+}
+
+p {
+	code {
+		position: static;
+		display: inline;
+
+		margin: 0;
+		padding: 0 $distance-s;
+
+		line-height: 0;
+
+		background: $black;
+	}
 }
 
 form {
@@ -237,15 +223,73 @@ h6, .h6 {
 	font-weight: bold;
 }
 
-// Elements
-%btn {
-	padding: ($distance-m + $distance-s) ($distance-l + $distance-s);
+.article {
+	padding-top: $distance-l;
 
+	&__row {
+		margin: 0 ($grid-gutter * -1);
+
+		// Clearfix
+		&:after {
+			clear: both;
+			display: table;
+			content: '';
+		}
+	}
+
+	&__col {
+		float: left;
+
+		width: 100%;
+
+		padding: 0 $grid-gutter;
+
+		@media (min-width: $grid-break) {
+			width: 50%;
+		}
+	}
+
+	&__dropcap {
+		$dropcap-size: $rhythm * 3.5;
+
+		@include vr($font-display, $font-size-xl);
+
+		float: left;
+
+		width: $dropcap-size;
+
+		margin-right: $distance-m;
+
+		color: $white;
+		font-weight: bold;
+		line-height: $dropcap-size;
+		text-align: center;
+
+		background-color: $red;
+		transform: translate(0, ($rhythm));
+
+		// Hide the stat tooltip for this one
+		&:after {
+			display: none;
+		}
+	}
+
+	&__streamer {
+		margin-right: $distance-s;
+
+		font-variant: small-caps;
+		letter-spacing: 0.0625em;
+		text-transform: lowercase;
+	}
+}
+
+.btn {
 	color: $text-color;
 	font-weight: bold;
 
 	background-color: transparent;
 	border-color: $text-color;
+	outline: none;
 
 	&:active,
 	&:focus,
@@ -255,15 +299,6 @@ h6, .h6 {
 		background-color: $red;
 		border-color: $red;
 	}
-}
-
-// Styling
-.logo {
-	@include vr($font-body, $font-size-xl);
-
-	color: $red;
-
-	font-weight: bold;
 }
 
 .grid {
@@ -283,5 +318,24 @@ h6, .h6 {
 		margin: ($border-width-s * -1) ($grid-gutter - $border-width-s);
 
 		border: $border-width-s solid $vr-color;
+	}
+}
+
+
+.logo {
+	@include vr($font-body, $font-size-xl);
+
+	color: $red;
+
+	&:before {
+		display: block;
+
+		height: $rhythm * 2;
+
+		margin: 0 0 ($rhythm * 0.5);
+
+		background: $red;
+
+		content: '';
 	}
 }

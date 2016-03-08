@@ -39,20 +39,33 @@
 
 				<h3 class="section__subtitle">Set base typograhy</h3>
 				<code>
+					$show-baseline: true;<br />
+					$show-stats: true;<br /><br />
 					$font-display: Arial, sans-serif;<br />
-					$cap-font-display: 0.02825;<br />
+					$cap-font-display: 0.02825;<br /><br />
 					$px-font-size: 16;<br />
-					$px-line-height: 24;<br />
-					$modular-scale: &lsquo;golden section&rsquo;;
+					$px-line-height: 24;<br /><br />
+					$modular-scale: 'golden section';
 				</code>
+				<p>VR takes into account the cap height of different typefaces. This is the only number that needs some fine-tuning to get everything just right.</p>
 
 				<h3 class="section__subtitle">Personal styling</h3>
 				<code>
 					div { margin-bottom: $distance-s; }<br />
-					h1 { @include vr($font-size-m); }<br />
-					code { padding-bottom: $paragraph-trailer; }<br />
-					img { height: $size-m; }
+					h1 { @include vr($font-display, $font-size-m); }<br />
+					code { padding: $paragraph-trailer; }<br />
+					img { max-height: $size-m; }
 				</code>
+				<p>All alignment classes are based on the <code>$rhythm</code>. The <code>$rhythm</code> is calculated by multiplying the <code>$base-font-size</code> with the <code>$base-line-height</code>.</p>
+
+				<h3 class="section__subtitle">Borders</h3>
+				<code>
+					.section {<br />
+					<pre>	margin-top: $border-width-m * -1;</pre>
+					<pre>	border-top: $border-width-m solid $black;</pre>
+					}
+				</code>
+				<p>Aligning borders might be a bit tricky at first, but eventually it becomes second nature.</p>
 			</section>
 
 			<section class="section">
@@ -84,7 +97,7 @@
 				<h3 class="section__subtitle">Blockquote</h3>
 				<blockquote>
 					<p>&ldquo;Vertical Rhythm is the holy grail of front-end development.&rdquo;</p>
-					<cite>&mdash; <a href="http://olafmuller.nl">Olaf Muller</a></cite>
+					<cite><a href="http://olafmuller.nl">&mdash; Olaf Muller</a></cite>
 				</blockquote>
 			</section>
 
@@ -152,10 +165,12 @@
 
 					<div class="article__row">
 						<div class="article__col">
-							<p><span class="article__dropcap">T</span>ypography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed. The arrangement of type involves selecting typefaces, point size, line length, line-spacing (leading), letter-spacing (tracking), and adjusting the space within letters pairs (kerning). The term typography is also applied to the style, arrangement, and appearance of the letters, numbers, and symbols created by the process. Type design is a closely related craft, sometimes considered part of typography; most typographers do not design typefaces, and some type designers do not consider themselves typographers. Typography also may be used as a decorative device, unrelated to communication of information.</p>
+							<p><span class="article__dropcap">T</span>ypography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed. The arrangement of type involves selecting typefaces, point size, line length, line-spacing (leading), letter-spacing (tracking), and adjusting the space within letters pairs (kerning).
+							<p>The term typography is also applied to the style, arrangement, and appearance of the letters, numbers, and symbols created by the process. Type design is a closely related craft, sometimes considered part of typography; most typographers do not design typefaces, and some type designers do not consider themselves typographers. Typography also may be used as a decorative device, unrelated to communication of information.</p>
 						</div>
 
 						<div class="article__col">
+							<h2 class="h3">Table of contents</h2>
 							<ul>
 								<li>History
 									<ul>
@@ -188,23 +203,27 @@
 						</div>
 					</div>
 
-					<h2>History</h2>
 					<div class="article__row">
 						<div class="article__col">
-							<p>The essential criterion of type identity was met by medieval print artifacts such as the Latin Pruefening Abbey inscription of 1119 that was created by the same technique as the Phaistos disc. The silver altarpiece of patriarch Pellegrinus II (1195−1204) in the cathedral of Cividale was printed with individual letter punches. Apparently, the same printing technique may be found in tenth to twelfth century Byzantine reliquaries. Other early examples include individual letter tiles where the words are formed by assembling single letter tiles in the desired order, which were reasonably widespread in medieval Northern Europe.</p>
+							<h2>History</h2>
+							<p><span class="article__streamer">The essential criterion</span> of type identity was met by medieval print artifacts such as the Latin Pruefening Abbey inscription of 1119 that was created by the same technique as the Phaistos disc. The silver altarpiece of patriarch Pellegrinus II (1195−1204) in the cathedral of Cividale was printed with individual letter punches.</p>
+							<p>Apparently, the same printing technique may be found in tenth to twelfth century Byzantine reliquaries. Other early examples include individual letter tiles where the words are formed by assembling single letter tiles in the desired order, which were reasonably widespread in medieval Northern Europe.</p>
 						</div>
 						<div class="article__col">
 							<p>Typography with movable type was invented during the eleventh-century Song dynasty in China by Bi Sheng (990–1051). His movable type system was manufactured from ceramic materials, and clay type printing continued to be practiced in China until the Qing Dynasty.</p>
+							<p>Wang Zhen was one of the pioneers of wooden movable type. Although the wooden type was more durable under the mechanical rigors of handling, repeated printing wore the character faces down and the types could be replaced only by carving new pieces.</p>
 						</div>
 					</div>
 
-					<h3>Evolution</h3>
 					<div class="article__row">
 						<div class="article__col">
-							<p><span class="article__streamer">The design of typefaces</span> has developed alongside the development of typesetting systems. Although typography has evolved significantly from its origins, it is a largely conservative art that tends to cleave closely to tradition. This is because legibility is paramount, and so the typefaces that are the most readable usually are retained. In addition, the evolution of typography is inextricably intertwined with lettering by hand and related art forms, especially formal styles, which thrived for centuries preceding typography, and so the evolution of typography must be discussed with reference to this relationship.</p>
+							<h3>Evolution</h3>
+							<p><span class="article__streamer">The design of typefaces</span> has developed alongside the development of typesetting systems. Although typography has evolved significantly from its origins, it is a largely conservative art that tends to cleave closely to tradition. This is because legibility is paramount, and so the typefaces that are the most readable usually are retained.</p>
+							<p>In addition, the evolution of typography is inextricably intertwined with lettering by hand and related art forms, especially formal styles, which thrived for centuries preceding typography, and so the evolution of typography must be discussed with reference to this relationship.</p>
 						</div>
 						<div class="article__col">
-							<p>The development of Roman typeface can be traced back to Greek lapidary letters. Greek lapidary letters were carved into stone and &ldquo;one of the first formal uses of Western letterforms&rdquo;; after that, Roman lapidary letterforms evolved into the monumental capitals, which laid the foundation for Western typographical design, especially serif typefaces. There are two styles of Roman typefaces: the old style, and the modern. The former is characterized by its similarly-weighted lines, while the latter is distinguished by its contrast of light and heavy lines. Often, these styles are combined.</p>
+							<p>The development of Roman typeface can be traced back to Greek lapidary letters. Greek lapidary letters were carved into stone and &ldquo;one of the first formal uses of Western letterforms&rdquo;; after that, Roman lapidary letterforms evolved into the monumental capitals, which laid the foundation for Western typographical design, especially serif typefaces.</p>
+							<p>There are two styles of Roman typefaces: the old style, and the modern. The former is characterized by its similarly-weighted lines, while the latter is distinguished by its contrast of light and heavy lines. Often, these styles are combined.</p>
 						</div>
 					</div>
 				</article>

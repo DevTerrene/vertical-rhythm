@@ -1,65 +1,80 @@
 # Vertical Rhythm
 
 ## Description
-A SASS-based tool that let's any designer create a vertical rhythm while designing in the browser.
+A SASS-based tool that let’s any designer create a vertical rhythm.
 
-## [DEMO](http://vicompany.github.io/vertical-rhythm/)
+## New in V2.0
+* All files can now be imported as a mixin.
+* Standard 6 font sizes (xs - xxl).
+* New calculations for typeface specific cap heights.
+* Baseline can now be toggled via a variable instead of a checkbox.
+* Fixed some bugs in the calculations.
+
+## [Demo](http://vicompany.github.io/vertical-rhythm/)
 A collection of examples that displays the effects of a proper vertical rhythm.
 
 ## How it works
 ### Base typography
-The goal of typography is to create balanced, readable and legible text. Good typography depends on many factors, luckily there are [calculators](http://www.pearsonified.com/typography/) that give a good indication of what combinations work best. Because we know designers are going to use the code, we wanted to start things of easy by letting them define the base font size and line height in pixels. These values are automatically converted to rems.
+The goal of typography is to create balanced, readable and legible text. Good typography depends on many factors.
+
+VR takes into account the cap height of different typefaces. This is the only number that needs some fine-tuning to get everything just right.
+
 ```
-$px-font-size:   16;
-$px-line-height: 24;
+$show-baseline: true;
+$show-stats: true;
+
+$font-display: Arial, sans-serif;
+$cap-font-display: 0.02825;
+
+$px-font-size: 16;
+$px-line-height: 24; // Only even numbers are supported
+
+$modular-scale: 'golden section';
 ```
 
 ### Modular scales
-The next step is selecting a modular scale. A modular scale is nothing more than a list of values that share the same relationship. For example: if we apply the golden section (1,618) to a base font size of 16px, the outcome would be:
-*	Font size xs: 16 * 1,618<sup>-1</sup> = 9,89px
-*	Font size s (starting point): 16px
-*	Font size m: 16 * 1.618 = 25,89px
-*	Font size l: 16 * 1,618<sup>2</sup> = 41,89px
-*	Font size xl: 16 * 1,618<sup>3</sup> = 67,77px
+The next step is selecing one of the 17 predefined modular scales.
 
-There are 17 predefined modular scales:
 ```
 $modular-scales: (
-  "minor second": 1.067,
-  "major second": 1.125,
-  "minor third":  1.2,
-  "major third": 1.25,
-  "perfect fourth": 1.333,
-  "augmented fourth": 1.414,
-  "perfect fifth": 1.5,
-  "minor sixth": 1.6,
-  "golden section": 1.618,
-  "major sixth": 1.667,
-  "minor seventh": 1.778,
-  "major seventh": 1.875,
-  "octave": 2,
-  "major tenth": 2.5,
-  "major eleventh": 2.667,
-  "major twelfth": 3,
-  "double octave": 4
+  'minor-second': 1.067,
+  'major-second': 1.125,
+  'minor-third': 1.2,
+  'major-third': 1.25,
+  'perfect-fourth': 1.333,
+  'augmented-fourth': 1.414,
+  'perfect-fifth': 1.5,
+  'minor-sixth': 1.6,
+  'golden-section': 1.618,
+  'major-sixth': 1.667,
+  'minor-seventh': 1.778,
+  'major-seventh': 1.875,
+  'octave': 2,
+  'major-tenth': 2.5,
+  'major-eleventh': 2.667,
+  'major-twelfth': 3,
+  'double-octave': 4
 );
 ```
 
-### Applying the Vertical Rhythm
-Applying the vertical rhythm should be as easy as possible. For this, we've predefined 5 font sizes. To apply one of the font sizes to an element, you'll only need the following code (the mixin does the calculations):
+### Alignment
+All alignment classes are based on the $rhythm. The $rhythm is calculated by multiplying the $base-font-size with the $base-line-height.
+
 ```
-small { @include vertical-rhythm($font-size-xs); }
-p     { @include vertical-rhythm($font-size-s); }
-h3    { @include vertical-rhythm($font-size-m); }
-h2    { @include vertical-rhythm($font-size-l); }
-h1    { @include vertical-rhythm($font-size-xl); }
+div  { margin-bottom: $distance-s; }
+h1   { @include vr($font-display, $font-size-m); }
+code { padding: $paragraph-trailer; }
+img  { max-height: $size-m; }
 ```
 
-### Alignment
-To round it all up, aligning other elements can be done using predefined distance and size variables that are based on the vertical rhythm itself:
+### Borders
+Aligning borders might be a bit tricky at first, but eventually it becomes second nature.
+
 ```
-div { margin: $distance-s; }
-img { height: $size-m; }
+.section {
+  margin-top: $border-width-m * -1;
+  border-top: $border-width-m solid $black;
+}
 ```
 
 ## License

@@ -52,6 +52,10 @@
 
 	@if $show-stats == true {
 		&:hover {
+			color: $vr-black;
+
+			background-color: $vr-color;
+
 			&:after {
 				position: fixed;
 				right: 0;
@@ -77,7 +81,8 @@
 }
 
 @mixin vr-reset {
-	top: 0;
+	position: static;
+	top: auto;
 
 	margin-top: 0;
 	margin-bottom: 0;
