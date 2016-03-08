@@ -1,0 +1,76 @@
+// Helpers
+$show-baseline:					true;
+$show-stats:					true;
+
+// Typography
+$font-display:					Arial, sans-serif;
+$font-body:						Georgia, serif;
+$font-mono:						'Courier New', monospace;
+
+$cap-font-display:				0.02825;
+$cap-font-body:					0.02825;
+$cap-font-mono:					0.10625;
+
+$px-font-size:					18;
+$px-line-height:				26; // Only even numbers are supported
+
+$base-font-size:				($px-font-size / 16) * 1rem;
+$base-line-height:				($px-line-height / $px-font-size);
+
+$rhythm:						($base-font-size * $base-line-height);
+
+// Modular scale - see <functions/calc-font-sizes> for all preset scales
+$modular-scale:					'perfect-fifth';
+
+$font-sizes:					('xs', 's', 'm', 'l', 'xl', 'xxl');
+$font-size-default:				's';
+
+// Font sizes
+$font-sizes:					calc-font-sizes($modular-scale, $font-sizes, $font-size-default);
+
+$font-size-xs:					map-get($font-sizes, xs);
+$font-size-s:					map-get($font-sizes, s);
+$font-size-m:					map-get($font-sizes, m);
+$font-size-l:					map-get($font-sizes, l);
+$font-size-xl:					map-get($font-sizes, xl);
+$font-size-xxl:					map-get($font-sizes, xxl);
+
+// Alignment
+$header-trailer:				$rhythm * 0;
+$paragraph-trailer:				$rhythm * 1;
+
+$distance-s:					$rhythm * 0.25;
+$distance-m:					$rhythm * 0.5;
+$distance-l:					$rhythm * 1;
+
+$size-s:						$rhythm * 0.25;
+$size-m:						$rhythm * 0.5;
+$size-l:						$rhythm * 1;
+
+// Borders
+$border-width-s:				0.0625rem;
+$border-width-m:				0.125rem;
+$border-width-l:				0.25rem;
+
+$border-radius-s:				0.125rem;
+$border-radius-m:				0.25rem;
+$border-radius-l:				0.5rem;
+
+// Colors
+$vr-black:						#000;
+$vr-white:						#fff;
+
+$vr-color-base:					#ff1919;
+$vr-color:						rgba($vr-color-base, 0.25);
+
+// VR buttons
+$include-vr-buttons:			true;
+
+$vr-btn-border-width:			$border-width-m;
+
+// VR forms
+$include-vr-forms:				true;
+
+$vr-form-border-width:			$border-width-s;
+$vr-form-textarea-height:		$rhythm * 6;
+$vr-form-item-spacing:			$distance-l;

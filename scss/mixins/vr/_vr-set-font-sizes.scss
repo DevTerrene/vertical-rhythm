@@ -1,0 +1,91 @@
+@mixin vr($font-family: $font-body, $font-size: $base-font-size) {
+	// Calculate offset between line height and base line height (1.5)
+	$offset-line-height: ((((16 - $px-font-size) / 16) / 2) - ((1.5 - $base-line-height) / 4));
+
+	// Calculate offset between font size and base font size (16px)
+	$offset-font-size: (($px-font-size - 16) / 16 / 2);
+
+	// Combine cap height and other offsets so we can shift text accordingly
+	$offset-font-display: ($cap-font-display + $offset-line-height + $offset-font-size) * 1em;
+	$offset-font-body: ($cap-font-body + $offset-line-height + $offset-font-size) * 1em;
+	$offset-font-mono: ($cap-font-mono + $offset-line-height + $offset-font-size) * 1em;
+
+	// Calculate the height of the text
+	$text-height: $font-size * $base-line-height;
+
+	// Calculate how much rhythm the text height has
+	$rhythm-count: $text-height / $rhythm;
+
+	// Calculate the offset of the text height compared to the rhythm
+	$rhythm-offset: ($text-height * 0.25);
+
+	// Combine text height and offset to form the adjusted line height
+	$line-height: ($rhythm-count - ($rhythm-count - floor($rhythm-count))) * $rhythm;
+
+	position: relative;
+
+	margin-top: $rhythm-offset * -1;
+	margin-bottom: $rhythm-offset;
+
+	font-size: $font-size;
+
+	@if $line-height == 0rem {
+		line-height: $rhythm; // TODO: fractional line height
+	} @else {
+		line-height: $line-height;
+	}
+
+	// Set font offsets and families
+	@if $font-family == $font-display {
+		top: $offset-font-display;
+
+		font-family: $font-display;
+	} @else if $font-family == $font-mono {
+		top: $offset-font-mono;
+
+		font-family: $font-mono;
+	} @else {
+		top: $offset-font-body;
+
+		font-family: $font-body;
+	}
+
+	@if $show-stats == true {
+		&:hover {
+			color: $vr-black;
+
+			background-color: $vr-color;
+
+			&:after {
+				position: fixed;
+				right: 0;
+				bottom: 0;
+				z-index: 1000;
+
+				padding: $distance-s $distance-m;
+
+				color: $vr-white;
+
+				font-family: $font-display;
+				font-size: $base-font-size;
+				font-style: normal;
+				font-weight: normal;
+				line-height: $base-line-height;
+
+				background-color: $vr-color-base;
+
+				content: 'Font size: #{$font-size} / Line height: #{$line-height}';
+			}
+		}
+	}
+}
+
+@mixin vr-reset {
+	position: static;
+	top: auto;
+
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}

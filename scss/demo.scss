@@ -1,41 +1,218 @@
-@import 'functions/calc-font-sizes',
-		'variables.scss',
-		'mixins/clearfix',
-		'mixins/grid',
-		'mixins/triangle',
-		'mixins/vertical-rhythm';
+@import 'mixins/vr/vr-main';
 
-//
-// Base
-//
+$grid-break: 60rem;
+$grid-gutter: $distance-m;
 
-html {
-	box-sizing: border-box;
-	overflow-y: scroll;
+$black: #000;
+$gray: lighten($black, 75%);
+$red: #ff1919;
+$white: #fff;
+
+$bg-color: $white;
+$text-color: $black;
+
+::selection {
+	color: $white;
+	text-shadow: none;
+
+	background-color: $red; /* WebKit/Blink Browsers */
 }
 
-*,
-*:before,
-*:after {
-	box-sizing: inherit; // Credit: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+::-moz-selection {
+	color: $white;
+	text-shadow: none;
+
+	background-color: $red; /* Gecko Browsers */
 }
 
 body {
-	margin: 0;
+	overflow-x: hidden;
+
 	padding: 0;
 
 	color: $text-color;
-	font-size: $base-font-size;
-	font-family: $typeface-body;
-	line-height: $base-line-height;
-	text-rendering: optimizeLegibility;
 
-	background: $bg-color;
+	background-color: $bg-color;
+
+	@media (min-width: $grid-break) {
+		padding-top: $rhythm * 3;
+	}
 }
 
-//
-// Typography
-//
+header,
+main,
+footer {
+	padding: 0 $grid-gutter;
+}
+
+header {
+	text-align: center;
+
+	@media (min-width: $grid-break) {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+
+		width: (100% / 3);
+	}
+}
+
+main,
+footer {
+	@media (min-width: $grid-break) {
+		margin-left: (100% / 3 * 1);
+	}
+}
+
+footer {
+	padding-bottom: $rhythm * 3;
+}
+
+.section {
+	$section-border-width: $border-width-m;
+	$section-spacing: $distance-l * 2;
+
+	margin: 0 0 ($section-spacing - $section-border-width);
+	padding: 0 0 ($section-spacing - $paragraph-trailer);
+
+	border-bottom: $section-border-width solid $text-color;
+
+	&__title {
+		@include vr($font-display, $font-size-l);
+
+		&:before {
+			color: $red;
+
+			content: '# ';
+		}
+	}
+
+	&__subtitle {
+		@include vr($font-display, $base-font-size);
+
+		padding-top: $paragraph-trailer;
+		padding-bottom: $paragraph-trailer;
+
+		color: $red;
+	}
+}
+
+a {
+	color: $red;
+	text-decoration: none;
+
+	outline: none;
+
+	&:focus,
+	&:hover {
+		color: $text-color;
+	}
+}
+
+blockquote {
+	$blockquote-border-width: $border-width-s;
+
+	display: inline-block;
+
+	margin: ($blockquote-border-width * -1) 0 ($paragraph-trailer - $blockquote-border-width);
+	padding: ($distance-m + $distance-l) $distance-l 0;
+
+	border: $blockquote-border-width solid $red;
+
+	p {
+		@include vr($font-body, $font-size-l);
+
+		padding-bottom: 0; // Reset paragraph trailer
+
+		text-indent: 0.4125em * -1;
+	}
+}
+
+cite {
+	font-style: normal;
+}
+
+code {
+	$code-padding: $grid-gutter;
+	$code-stripe: rgba($white, 0.1875);
+
+	display: block;
+
+	padding: $code-padding;
+
+	color: $white;
+
+	background-color: $black;
+
+	background-image: linear-gradient(to bottom,
+		$code-stripe 0,
+		$code-stripe ($rhythm - 0.0625rem),
+		transparent ($rhythm - 0.0625rem),
+		transparent $rhythm
+	);
+
+	background-position: 0 $code-padding;
+	background-size: 100% ($rhythm * 2);
+	background-repeat: repeat;
+	border-radius: $border-radius-s;
+
+	& + p {
+		padding-top: $paragraph-trailer;
+	}
+}
+
+pre {
+	margin: 0;
+}
+
+p {
+	code {
+		position: static;
+		display: inline;
+
+		margin: 0;
+		padding: 0 $distance-s;
+
+		line-height: 0;
+
+		background: $black;
+	}
+}
+
+form {
+	label {
+		font-weight: bold;
+	}
+
+	legend {
+		display: none;
+	}
+
+	input,
+	select,
+	textarea {
+		color: $text-color;
+
+		background-color: transparent;
+		border-color: $text-color;
+		outline: none;
+
+		&:active,
+		&:focus {
+			border-color: $red;
+		}
+	}
+
+	input {
+		&[type=radio],
+		&[type=checkbox] {
+			+ label {
+				font-weight: normal;
+			}
+		}
+	}
+}
 
 h1, .h1,
 h2, .h2,
@@ -43,522 +220,122 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-	font-family: $typeface-display;
-	font-weight: $font-weight-bold;
+	font-weight: bold;
 }
 
-p + ul {
-	margin-top: -$paragraph-trailer * $rhythm;
-}
+.article {
+	padding-top: $distance-l;
 
-a {
-	color: $anchor;
-	text-decoration: underline;
-}
+	&__row {
+		margin: 0 ($grid-gutter * -1);
 
-blockquote {
-	$quote-size: $size-m;
-
-	position: relative;
-
-	margin: 0 0 ($paragraph-trailer * $rhythm);
-	padding: $distance-xs $distance-xs $distance-xs ($quote-size / 2 + $distance-xs);
-
-	font-weight: $font-weight-bold;
-
-	background: $brand;
-	border-radius: $border-radius;
-
-	&:before,
-	&:after {
-		position: absolute;
-		top: 50%;
-		left: -$quote-size / 2;
-
-		width: $quote-size;
-		height: $quote-size;
-
-		transform: translateY(-50%);
-	}
-
-	&:before {
-		content: 'Q';
-		z-index: 1;
-
-		font-size: $font-size-l;
-		font-weight: $font-weight-normal;
-		line-height: $quote-size;
-		text-align: center;
-	}
-
-	&:after {
-		content: '';
-
-		background: $bg-color;
-		border-radius: 100%;
-	}
-}
-
-code {
-	display: inline-block;
-	width: 100%;
-
-	margin: 0 0 ($paragraph-trailer * $rhythm);
-	padding: $distance-xs;
-
-	color: $bg-color;
-
-	background: $text-color;
-	border-radius: $border-radius;
-}
-
-small {
-	padding-bottom: $distance-xs;
-}
-
-.custom-font-size {
-	@include vertical-rhythm(4rem);
-
-	display: flex;
-	flex-wrap: wrap;
-
-	&__glyph {
-		flex: 1 1 auto;
-
-		margin: $distance-xs 0;
-		padding: 0 $distance-xs;
-
-		text-align: center;
-
-		background: $gray-light;
-		border-radius: $border-radius;
-	}
-}
-
-//
-// Images
-//
-
-img {
-	width: 100%;
-
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
-}
-
-//
-// Layout
-//
-
-// Toggle
-.toggle {
-	@include vertical-rhythm-background();
-
-	position: fixed;
-	top: $grid-gutter / 2;
-	left: 50%;
-	z-index: 10;
-
-	margin: (-$border-width) 0 0;
-	padding: $distance-xs;
-
-	width: $size-m;
-	height: $size-m;
-
-	font-weight: $font-weight-bold;
-	text-indent: -100%;
-
-	box-shadow: inset 0 4px 8px rgba($black, 0.5);
-	border: $border-width solid $text-color;
-	border-radius: 100%;
-
-	cursor: pointer;
-	transform: translateX(-50%);
-	overflow: hidden;
-
-	&__input {
-		display: none;
-
-		&:checked {
-			& + .container {
-				@include vertical-rhythm-background;
-			}
+		// Clearfix
+		&:after {
+			clear: both;
+			display: table;
+			content: '';
 		}
 	}
-}
 
-.container {
-	max-width: 80rem;
+	&__col {
+		float: left;
 
-	padding: $distance-s ($grid-gutter / 2) $distance-xs;
+		width: 100%;
 
-	overflow: hidden;
+		padding: 0 $grid-gutter;
 
-	@include respond-to(small) {
-		padding-right: $grid-gutter;
-		padding-left: $grid-gutter;
-	}
-}
-
-.header {
-	@include vertical-rhythm-background($gray-light);
-
-	margin: 0 0 $distance-s;
-	padding: $distance-l 0 0;
-
-	text-align: center;
-
-	&__title {
-		@include vertical-rhythm($font-size-xxl);
-	}
-}
-
-.main {
-	position: relative;
-	z-index: 1;
-
-	margin: (-$border-width) 0 0;
-	border-top: $border-width solid $text-color;
-
-	&__section {
-		margin: (-$border-width) 0 0;
-		padding: $distance-s 0 0;
-
-		border-top: $border-width solid $text-color;
-
-		&:last-of-type {
-			margin-bottom: 0;
+		@media (min-width: $grid-break) {
+			width: 50%;
 		}
 	}
+
+	&__dropcap {
+		$dropcap-size: $rhythm * 3.5;
+
+		@include vr($font-display, $font-size-xl);
+
+		float: left;
+
+		width: $dropcap-size;
+
+		margin-right: $distance-m;
+
+		color: $white;
+		font-weight: bold;
+		line-height: $dropcap-size;
+		text-align: center;
+
+		background-color: $red;
+		transform: translate(0, ($rhythm));
+
+		// Hide the stat tooltip for this one
+		&:after {
+			display: none;
+		}
+	}
+
+	&__streamer {
+		margin-right: $distance-s;
+
+		font-variant: small-caps;
+		letter-spacing: 0.0625em;
+		text-transform: lowercase;
+	}
 }
-
-.footer {
-	margin: (-$border-width) 0 0;
-	padding: $distance-s 0 0;
-
-	border-top: $border-width solid $text-color;
-}
-
-//
-// Buttons
-//
 
 .btn {
-	@include vertical-rhythm;
+	color: $text-color;
+	font-weight: bold;
 
-	margin-top: calc((#{$rhythm} * #{$paragraph-leader}) - #{$border-width});
-	margin-bottom: calc((#{$rhythm} * #{$paragraph-trailer}) - #{$border-width});
-	padding: $size-xs;
-
-	color: $bg-color;
-	font-weight: $font-weight-bold;
-	text-align: center;
-
-	background: $text-color;
-	border: $border-width solid $text-color;
-	border-radius: $border-radius;
+	background-color: transparent;
+	border-color: $text-color;
 	outline: none;
-
-	appearance: none;
-	cursor: pointer;
 
 	&:active,
 	&:focus,
 	&:hover {
-		color: $text-color;
+		color: $white;
 
-		background-color: $brand;
-		border-color: $brand;
-	}
-
-	&--primary {
-		color: $black;
-
-		background-color: $brand;
-		border-color: $brand;
-	}
-
-	&[disabled]{
-		color: $gray;
-
-		background-color: $gray-light;
-		border-color: $gray-light;
+		background-color: $red;
+		border-color: $red;
 	}
 }
 
-//
-// Forms
-//
+.grid {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9999;
+	display: flex;
 
-.form {
-	margin: 0 0 ($paragraph-trailer * $rhythm);
-	padding: $distance-xs $distance-s 0;
-
-	background: $gray-light;
-	border-radius: $border-radius;
-
-	ol {
-		margin: 0;
-		padding: 0;
-
-		list-style-type: none;
-	}
+	pointer-events: none;
 
 	&__item {
+		width: (100% / 3);
+
+		margin: ($border-width-s * -1) ($grid-gutter - $border-width-s);
+
+		border: $border-width-s solid $vr-color;
+	}
+}
+
+
+.logo {
+	@include vr($font-body, $font-size-xl);
+
+	color: $red;
+
+	&:before {
 		display: block;
 
-		margin-top: $rhythm * $paragraph-leader;
-		margin-bottom: $rhythm * $paragraph-trailer;
-	}
+		height: $rhythm * 2;
 
-	&__label {
-		@include vertical-rhythm;
+		margin: 0 0 ($rhythm * 0.5);
 
-		display: block;
+		background: $red;
 
-		padding: 0 0 $distance-xs;
-
-		font-weight: $font-weight-bold;
-
-		cursor: pointer;
-	}
-
-	&__field {
-		@include vertical-rhythm;
-
-		width: 100%;
-
-		margin-top: -$border-width;
-		margin-bottom: -$border-width;
-		padding: $distance-xs;
-
-		background: transparent;
-		border: $border-width solid $text-color;
-		border-radius: $border-radius;
-
-		&:focus {
-			color: $anchor;
-
-			background: $bg-color;
-			border: $border-width solid $anchor;
-			outline: none;
-		}
-	}
-}
-
-//
-// Step
-//
-
-.step {
-	@include clearfix;
-
-	margin-top: $distance-xs;
-
-	&__number {
-		$arrow-border-radius: 25%;
-		$arrow-offset: 18%;
-
-		$number-color: $brand;
-		$number-size: $size-m;
-
-		float: left;
-		position: relative;
-		z-index: 1;
-
-		width: $number-size;
-		height: $number-size;
-
-		margin: (-$distance-xs) $distance-s $distance-s 0;
-
-		font-size: $font-size-m;
-		font-weight: $font-weight-bold;
-		line-height: $number-size;
-		text-align: center;
-
-		border-radius: $border-radius;
-
-		&:before,
-		&:after {
-			content: '';
-			position: absolute;
-
-			background: $number-color;
-			border-radius: $border-radius $arrow-border-radius $arrow-border-radius $border-radius;
-		}
-
-		&:before {
-			top: 0;
-			left: 0;
-			z-index: -1;
-
-			width: 100%;
-			height: 100%;
-		}
-
-		&:after {
-			content: '';
-			position: absolute;
-			top: $arrow-offset / 2;
-			left: 50% - ($arrow-border-radius / 2);
-			z-index: -2;
-
-			width: 100% - $arrow-offset;
-			height: 100% - $arrow-offset;
-
-			border-radius: $arrow-border-radius;
-
-			transform: rotate(45deg);
-		}
-	}
-}
-
-//
-// Demo
-//
-
-.demo {
-	&__item {
-		margin: (-$border-width) 0 0;
-		padding: $distance-s 0 0;
-
-		border-top: $border-width solid $gray;
-	}
-
-	&__title {
-		color: $gray;
-		font-weight: $font-weight-bold;
-	}
-}
-
-//
-// Article
-//
-
-.article {
-	margin: 0 0 $distance-s;
-
-	&__page {
-		position: relative;
-
-		padding: $distance-s $distance-s 0;
-
-		border: $distance-xs solid $gray-light;
-
-		&--one {
-			border-bottom: none;
-		}
-
-		&--two {
-			padding-top: 0;
-
-			border-top: none;
-		}
-
-		&__bookmark {
-			$bookmark-size: $size-m;
-
-			position: absolute;
-			top: 0;
-			right: $grid-gutter;
-
-			width: $bookmark-size;
-			height: $bookmark-size;
-
-			background: $brand;
-
-			&:before,
-			&:after {
-				content: '';
-				position: absolute;
-				top: 100%;
-			}
-
-			&:before {
-				@include triangle(($bookmark-size / 2), $brand, up-left);
-
-				left: 0;
-			}
-
-			&:after {
-				@include triangle(($bookmark-size / 2), $brand, up-right);
-
-				right: 0;
-			}
-		}
-	}
-
-	&__figure {
-		margin: 0 0 ($distance-s - $border-width);
-
-		border-bottom: $border-width solid $gray-light;
-
-		&__img {
-			height: $size-l;
-
-			overflow: hidden;
-		}
-
-		&__caption {
-			margin-top: $distance-xs;
-		}
-
-		&:last-of-type {
-			margin-bottom: $distance-xs;
-
-			border-bottom: none;
-		}
-	}
-
-	@include respond-to(small) {
-		display: flex;
-
-		&__page {
-			flex: 0 0 50%;
-
-			border: $distance-s solid $gray-light;
-
-			&--one {
-				border-right: $border-width solid $gray-light;
-			}
-
-			&--two {
-				padding-top: $distance-s;
-
-				border-left: $border-width solid $gray-light;
-			}
-		}
-
-		&__figure {
-			&__img {
-				height: $size-l * 2;
-			}
-		}
-	}
-
-	@include respond-to(medium) {
-		&__page {
-			&--one {
-				padding-right: $distance-l;
-			}
-		}
-
-		&__figure {
-			display: flex;
-
-			&__img {
-				flex: 0 0 (100% / 12 * 8);
-
-				height: $size-l * 3;
-
-				margin-bottom: $distance-s;
-			}
-
-			&__caption {
-				flex: 0 0 (100% / 12 * 4);
-
-				padding-left: $grid-gutter;
-			}
-		}
+		content: '';
 	}
 }
