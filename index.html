@@ -13,86 +13,99 @@
 	</head>
 
 	<body>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati totam laudantium ad facilis natus sum at nesciunt, enim veniam qui illum, mollitia non voluptatem? Placeat maiores neque natus culpa molestias.</p>
-		<p class="h1 stats" identifier="Header 1">Lorem ipsum dolor sit amet.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati totam laudantium ad facilis natus sum at nesciunt, enim veniam qui illum, mollitia non voluptatem? Placeat maiores neque natus culpa molestias.</p>
-		<p class="h2 stats" identifier="Header 2">Lorem ipsum dolor sit amet.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati totam laudantium ad facilis natus sum at nesciunt, enim veniam qui illum, mollitia non voluptatem? Placeat maiores neque natus culpa molestias.</p>
-		<p class="h3 stats" identifier="Header 3">Lorem ipsum dolor sit amet.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati totam laudantium ad facilis natus sum at nesciunt, enim veniam qui illum, mollitia non voluptatem? Placeat maiores neque natus culpa molestias.</p>
-		<p class="h4 stats" identifier="Header 4">Lorem ipsum dolor sit amet.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati totam laudantium ad facilis natus sum at nesciunt, enim veniam qui illum, mollitia non voluptatem? Placeat maiores neque natus culpa molestias.</p>
-		<p class="h5 stats" identifier="Header 5">Lorem ipsum dolor sit amet.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati totam laudantium ad facilis natus sum at nesciunt, enim veniam qui illum, mollitia non voluptatem? Placeat maiores neque natus culpa molestias.</p>
-		<p class="h6 stats" identifier="Header 6">Lorem ipsum dolor sit amet.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati totam laudantium ad facilis natus sum at nesciunt, enim veniam qui illum, mollitia non voluptatem? Placeat maiores neque natus culpa molestias.</p>
+		<div class="grid">
+			<div class="grid__item"></div>
+			<div class="grid__item"></div>
+			<div class="grid__item"></div>
+		</div>
 
-		<header class="header">
-			<h1>Vertical Rhythm 2.0</h1>
-			<p class="h3">For the creative developer</p>
+		<header>
+			<div class="logo">
+				<span class="logo__letter">
+					<span class="logo__item">V</span>
+					<span class="logo__item">V</span>
+					<span class="logo__item">V</span>
+					<span class="logo__item">V</span>
+				</span>
+				<span class="logo__letter">
+					<span class="logo__item">R</span>
+					<span class="logo__item">R</span>
+					<span class="logo__item">R</span>
+					<span class="logo__item">R</span>
+				</span>
+				<span class="logo__letter">
+					<span class="logo__item logo__item--half">2</span>
+					<span class="logo__item logo__item--half">2</span>
+					<span class="logo__item logo__item--half">2</span>
+					<span class="logo__item logo__item--half">2</span>
+				</span>
+			</div>
+
+			<h1 class="h3">Vertical rhythm</h1>
+			<p class="h5">for the creative developer</p>
 			<a class="btn" href="https://github.com/vicompany/vertical-rhythm">Github</a>
 		</header>
 
 		<main>
-			<section class="section">
-				<h2 class="section__title">How it works</h2>
+			<section>
+				<h2>How it works</h2>
+
 				<ol>
 					<li>
-						<p class="h5">Base typograhy</p>
+						<h5>Import VR Mixin</h5>
 						<code>
+							@import 'mixins/vr/vr-main';
+						</code>
+					</li>
+					<li>
+						<h5>Set base typograhy</h5>
+						<code>
+							$font-display: Arial, sans-serif;<br />
+							$cap-font-display: 0.02825;<br />
 							$px-font-size: 16;<br />
 							$px-line-height: 24;<br />
-						</code>
-						<p>Converted to REM&rsquo;s automatically.</p>
-					</li>
-
-					<li>
-						<p class="h5">Modular scale</p>
-						<code>
 							$modular-scale: &lsquo;golden section&rsquo;;
 						</code>
-						<p>Diminished fifth, perfect fifth, minor sixth, golden section, major sixth, minor seventh&hellip;</p>
 					</li>
 
 					<li>
-						<p class="h5">Vertical Rhythm</p>
+						<h5>Personal styling</h5>
 						<code>
-							h1 { @include vr($font-size-xl); }
-						</code>
-						<p>Standard range from extra small to extra large.</p>
-					</li>
-
-					<li>
-						<p class="h5">Alignment</p>
-						<code>
-							div { margin: $distance-s; }<br />
+							div { margin-bottom: $distance-s; }<br />
+							h1 { @include vr($font-size-m); }<br />
+							code { padding-bottom: $paragraph-trailer; }<br />
 							img { height: $size-m; }
 						</code>
-						<p>Distances and sizes are based on the vertical Rhythm.</p>
 					</li>
 				</ol>
 			</section>
 
-			<section class="section">
-				<h2 class="section__title">Typography</h2>
+			<section>
+				<h2>Typography</h2>
 				<h3 class="h5">Header 1</h3>
 				<p class="h1">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
+
 				<h3 class="h5">Header 2</h3>
 				<p class="h2">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
+
 				<h3 class="h5">Header 3</h3>
 				<p class="h3">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
+
 				<h3 class="h5">Header 4</h3>
 				<p class="h4">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
+
 				<h3 class="h5">Header 5</h3>
 				<p class="h5">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
+
 				<h3 class="h5">Header 6</h3>
 				<p class="h6">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
+
 				<h3 class="h5">Paragraphs</h3>
 				<p>Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed.</p>
-				<p>Although typically applied to printed, published, broadcast, and reproduced materials in contemporary times, all words, letters, symbols, and numbers written alongside the earliest naturalistic drawings by humans may be called typography.</p>
+
 				<h3 class="h5">Small text</h3>
 				<p><small>Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed.</small></p>
-				<p><small>Although typically applied to printed, published, broadcast, and reproduced materials in contemporary times, all words, letters, symbols, and numbers written alongside the earliest naturalistic drawings by humans may be called typography.</small></p>
+
 				<h3 class="h5">Blockquote</h3>
 				<blockquote>
 					<p>&ldquo;Vertical Rhythm is the holy grail of front-end development.&rdquo;</p>
@@ -100,121 +113,64 @@
 				</blockquote>
 			</section>
 
-			<section class="section">
-				<h2 class="section__title">Buttons</h2>
+			<section>
+				<h2>Buttons</h2>
+
 				<button class="btn">Button</button>
 			</section>
 
-			<section class="section">
-				<h2 class="section__title">Form elements</h2>
+			<section>
+				<h2>Form elements</h2>
+
 				<form class="form">
-					<div class="form__split">
-						<div>
-							<label for="text">Label text</label>
-							<input type="text" id="text" name="text" placeholder="Placeholder text" />
-						</div>
-						<div>
-							<label for="number">Label number</label>
-							<input type="number" id="number" name="number" placeholder="42" />
-						</div>
-						<div>
-							<label for="email">Label e-mail</label>
-							<input type="email" id="email" name="number" placeholder="name@domain.com" />
-						</div>
-						<div>
-							<label for="textarea">Label textarea</label>
-							<textarea id="textarea" name="textarea" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est doloremque nihil eaque accusamus rem magnam explicabo dolore provident fugit non mollitia, consequuntur voluptatem enim quas porro ipsam nesciunt nisi quidem."></textarea>
-						</div>
-					</div>
+					<label for="text">Label text</label>
+					<input type="text" id="text" name="text" placeholder="Placeholder text" />
 
-					<div class="form__split">
-						<fieldset>
-							<legend>Select</legend>
-							<input type="checkbox" name="checkbox" value="1" id="checkbox-1" />
-							<label for="checkbox-1">Option 1</label>
-							<input type="checkbox" name="checkbox" value="2" id="checkbox-2" />
-							<label for="checkbox-2">Option 2</label>
-							<input type="checkbox" name="checkbox" value="3" id="checkbox-3" />
-							<label for="checkbox-3">Option 3</label>
-						</fieldset>
-						<fieldset>
-							<legend>Choose</legend>
-							<input type="radio" name="radio" value="1" id="radio-1" />
-							<label for="radio-1">Option 1</label>
-							<input type="radio" name="radio" value="2" id="radio-2" />
-							<label for="radio-2">Option 2</label>
-							<input type="radio" name="radio" value="3" id="radio-3" />
-							<label for="radio-3">Option 3</label>
-						</fieldset>
-						<div>
-							<label for="select">Select</label>
-							<select id="select">
-								<option value="value-1">Option 1</option>
-								<option value="value-2">Option 2</option>
-								<option value="value-3">Option 3</option>
-								<option value="value-4">Option 4</option>
-								<option value="value-5">Option 5</option>
-								<option value="value-6">Option 6</option>
-								<option value="value-7">Option 7</option>
-							</select>
-						</div>
-					</div>
+					<label for="number">Label number</label>
+					<input type="number" id="number" name="number" placeholder="42" />
+
+					<label for="email">Label e-mail</label>
+					<input type="email" id="email" name="number" placeholder="name@domain.com" />
+
+					<label for="textarea">Label textarea</label>
+					<textarea id="textarea" name="textarea" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est doloremque nihil eaque accusamus rem magnam explicabo dolore provident fugit non mollitia, consequuntur voluptatem enim quas porro ipsam nesciunt nisi quidem."></textarea>
+
+					<fieldset>
+						<legend>Select</legend>
+						<input type="checkbox" name="checkbox" value="1" id="checkbox-1" />
+						<label for="checkbox-1">Option 1</label>
+						<input type="checkbox" name="checkbox" value="2" id="checkbox-2" />
+						<label for="checkbox-2">Option 2</label>
+						<input type="checkbox" name="checkbox" value="3" id="checkbox-3" />
+						<label for="checkbox-3">Option 3</label>
+					</fieldset>
+
+					<fieldset>
+						<legend>Choose</legend>
+						<input type="radio" name="radio" value="1" id="radio-1" />
+						<label for="radio-1">Option 1</label>
+						<input type="radio" name="radio" value="2" id="radio-2" />
+						<label for="radio-2">Option 2</label>
+						<input type="radio" name="radio" value="3" id="radio-3" />
+						<label for="radio-3">Option 3</label>
+					</fieldset>
+
+					<label for="select">Select</label>
+					<select id="select">
+						<option value="value-1">Option 1</option>
+						<option value="value-2">Option 2</option>
+						<option value="value-3">Option 3</option>
+						<option value="value-4">Option 4</option>
+						<option value="value-5">Option 5</option>
+						<option value="value-6">Option 6</option>
+						<option value="value-7">Option 7</option>
+					</select>
 				</form>
-			</section>
-
-			<section class="section">
-				<h2 class="section__title">Tables</h2>
-				<div class="table-wrapper">
-					<table>
-						<thead>
-							<tr>
-								<th>Funds</th>
-								<th>Value</th>
-								<th>Amount</th>
-								<th>Performance</th>
-							</tr>
-						</thead>
-						<tfoot>
-							<tr>
-								<td>Totals</td>
-								<td nowrap>&euro; 40.000</td>
-								<td>75</td>
-								<td nowrap>+ 12,00%</td>
-							</tr>
-						</tfoot>
-						<tbody>
-							<tr>
-								<td>Alpha</td>
-								<td nowrap>&euro; 10.000</td>
-								<td>25</td>
-								<td nowrap>+ 3,00%</td>
-							</tr>
-							<tr>
-								<td>Beta</td>
-								<td nowrap>&euro; 10.000</td>
-								<td>25</td>
-								<td nowrap>+ 3,00%</td>
-							</tr>
-							<tr>
-								<td>Gamma</td>
-								<td nowrap>&euro; 10.000</td>
-								<td>25</td>
-								<td nowrap>+ 3,00%</td>
-							</tr>
-							<tr>
-								<td>Delta</td>
-								<td nowrap>&euro; 10.000</td>
-								<td>25</td>
-								<td nowrap>+ 3,00%</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
 			</section>
 		</main>
 
 		<footer>
-			<p><b>Vertical Rhythm 2.0</b> for the creative developer. <a href="https://github.com/vicompany/vertical-rhythm">Github</a></p>
+			<p class="h5">Vertical Rhythm 2.0 for the creative developer. <a href="https://github.com/vicompany/vertical-rhythm">Github</a></p>
 		</footer>
 	</body>
 </html>

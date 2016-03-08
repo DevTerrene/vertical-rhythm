@@ -1,6 +1,25 @@
 // Base
 html {
+	position: relative;
+
 	box-sizing: border-box;
+
+	@if ($show-baseline == true) {
+		&:after {
+			@include vr-baseline;
+
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			z-index: 999;
+
+			height: 100%;
+
+			content: '';
+			pointer-events: none;
+		}
+	}
 }
 
 * {
@@ -18,61 +37,6 @@ body {
 	font-family: $font-body;
 	font-size: $base-font-size;
 	line-height: $base-line-height;
-
-	> h1,
-	> .h1,
-	> h2,
-	> .h2,
-	> h3,
-	> .h3,
-	> h4,
-	> .h4,
-	> h5,
-	> .h5,
-	> h6,
-	> .h6, {
-		&:first-child {
-			display: inline-block;
-
-			width: 100%;
-		}
-	}
-
-	&:before {
-		position: fixed;
-		right: $distance-m;
-		bottom: $distance-m;
-		z-index: 9999;
-
-		margin: 0;
-		padding: $distance-s;
-
-		font-family: $font-display;
-		font-size: $base-font-size;
-		font-weight: normal;
-		line-height: 1;
-
-		background: $vr-color-base;
-		content: 'Font size: #{$base-font-size} / Line height: #{$base-line-height} / Rhythm: #{$rhythm}';
-	}
-
-	@if ($show-baseline == true) {
-		position: relative;
-
-		&:after {
-			@include vr-baseline;
-
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			z-index: 1000;
-
-			content: '';
-			pointer-events: none;
-		}
-	}
 }
 
 // Typography
@@ -129,7 +93,7 @@ blockquote {
 }
 
 cite {
-	@include vr($font-display, $font-size-s);
+	@include vr($font-display, $base-font-size);
 
 	display: block;
 
@@ -139,16 +103,15 @@ cite {
 code {
 	@include vr($font-mono);
 
-	display: inline-block;
-
-	width: 100%;
+	display: block;
 }
 
 ol,
 ul {
-	li {
-		padding: 0 0 $paragraph-trailer;
-	}
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
 }
 
 small {
@@ -157,15 +120,19 @@ small {
 }
 
 // Buttons
-$btn-border-width: $border-width-m;
+$btn-border-width: $border-width-s;
 
 .btn {
-	@include vr($font-display, $font-size-s);
+	@extend %btn;
+}
+
+%btn {
+	@include vr($font-display, $base-font-size);
 
 	display: inline-block; // For when used on anchors
 
 	margin: ($btn-border-width * -1) 0 ($paragraph-trailer - $btn-border-width);
-	padding: 0;
+	padding: $distance-s $distance-m;
 
 	text-decoration: none;
 
@@ -186,33 +153,35 @@ $btn-border-width: $border-width-m;
 
 // Forms
 $form-border-width: $border-width-s;
-$form-field-height: $rhythm * 1.5;
-$form-textarea-height: $rhythm * 10;
+$form-textarea-height: $rhythm * 7;
+$form-item-spacing: $distance-l;
 
 form {
 	font-family: $font-display;
 }
 
 fieldset {
-	margin: 0;
-	padding: $distance-s $distance-m ($distance-s - $form-border-width);
+	margin: 0 0 $form-item-spacing;
+	padding: ($distance-s - $form-border-width) $distance-m;
 
 	border: solid $form-border-width;
 }
 
 legend {
-	@include vr($font-display, $font-size-s);
+	@include vr($font-display, $base-font-size);
 
 	margin: 0;
-	padding: 0 $distance-m;
+	padding: 0 $distance-m $form-border-width;
 }
 
 label {
-	@include vr($font-display, $font-size-s);
+	@include vr($font-display, $base-font-size);
 
 	display: block;
 
-	padding: 0 0 $distance-m;
+	width: 100%;
+
+	padding: 0;
 
 	cursor: pointer;
 }
@@ -220,25 +189,24 @@ label {
 input,
 select,
 textarea {
-	@include vr($font-display, $font-size-s);
+	@include vr($font-display, $base-font-size);
 
 	display: block;
 
 	width: 100%;
-	height: $form-field-height;
 
-	margin: 0;
-	padding: 0 $distance-m;
-
-	line-height: $base-line-height;
+	margin: 0 0 $form-item-spacing;
+	padding: ($distance-s - $form-border-width) $distance-s;
 
 	border: solid $form-border-width;
 }
 
+select {
+	height: $rhythm * 1.5;
+}
+
 textarea {
 	height: $form-textarea-height;
-
-	padding-top: $rhythm * 0.1875;
 }
 
 input {
@@ -254,14 +222,24 @@ input {
 		display: inline-block;
 
 		width: auto;
-		height: auto;
+
+		margin: 0;
+		padding: 0;
 
 		+ label {
 			display: inline-block;
 
-			margin: 0;
-			padding: 0; // Reset leaders and trailers
+			width: auto;
+
+			margin: 0 $distance-m 0 0;
+			padding: 0;
 		}
+	}
+
+	&[type=submit] {
+		@extend %btn;
+
+		width: auto;
 	}
 }
 
@@ -269,45 +247,64 @@ input {
 $table-border-width: $border-width-s;
 $table-padding: $distance-s;
 
+.table-wrapper {
+	overflow-x: auto;
+	overflow-y: hidden;
+
+	margin: ($table-border-width * -1) 0 $paragraph-trailer;
+
+	border: $table-border-width solid;
+}
+
 table {
-	margin: 0 0 $paragraph-trailer;
+	width: 100%;
 
 	border-collapse: collapse;
 	border-spacing: 0;
 }
 
-tr {
-	td,
-	th {
-		@include vr($font-display, $font-size-s);
-
-		padding: $table-padding $distance-m ($table-padding - $table-border-width);
-
-		border-bottom: $table-border-width solid;
-		border-left: $table-border-width solid;
-
-		&:last-of-type {
-			border-right: $table-border-width solid;
+tfoot,
+tbody {
+	tr {
+		&:last-child {
+			th,
+			td {
+				border-bottom: none;
+			}
 		}
 	}
 }
 
-thead {
-	border-top: $table-border-width solid;
-	border-bottom: $table-border-width solid;
-
-	th,
-	td {
-		padding-top: $table-padding - $table-border-width;
-		padding-bottom: $table-padding - $table-border-width;
+tfoot {
+	tr {
+		&:first-child {
+			th,
+			td {
+				border-top: $table-border-width solid;
+			}
+		}
 	}
 }
 
-tfoot {
+tr {
+	vertical-align: top;
+}
+
+th,
+td {
+	@include vr($font-display);
+
+	padding: ($rhythm * 0.75) $distance-m ($rhythm * 0.75 - $table-border-width);
+
+	text-align: left;
+
+	border-right: $table-border-width solid;
 	border-bottom: $table-border-width solid;
 
-	th,
-	td {
-		padding-bottom: $table-padding - $table-border-width;
+	cursor: default;
+	vertical-align: top;
+
+	&:last-child {
+		border-right: none;
 	}
 }

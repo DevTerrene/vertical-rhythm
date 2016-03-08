@@ -1,25 +1,83 @@
 @import 'mixins/vr/vr-main';
 
-$grid-breakpoint-s: 30rem;
-$grid-breakpoint-m: 60rem;
+$grid-break-s: 30rem;
+$grid-break-m: 60rem;
+$grid-break-l: 60rem;
+
 $grid-gutter: $distance-m;
 
-$black: #222;
+$black: #1f2128;
+$gray: lighten($black, 7.5%);
 $white: #fff;
-$yellow: #ffffc2;
+$yellow: #fff6cc;
+$red: #f12b24;
+$brown: #bc9f75;
 
-a {
-	color: $black;
+// Layout
+body {
+	padding: $paragraph-trailer 0 0;
+
+	color: $white;
+
+	background-color: $black;
 }
 
-body {
-	overflow-x: hidden;
-
+header,
+main,
+footer {
 	padding: 0 $grid-gutter;
+}
 
-	color: $black;
+header {
+	@media (min-width: $grid-break-m) {
+		position: fixed;
+		top: $rhythm * 1.5;
+		left: 0;
 
-	background-color: $white;
+		width: (100% / 3);
+
+		text-align: center;
+
+		&:after {
+			position: absolute;
+			top: 100%;
+			left: 50%;
+
+			width: $border-width-m;
+			height: 1000%;
+
+			margin: $distance-m 0 0;
+
+			background: $white;
+
+			content: '';
+		}
+	}
+}
+
+main,
+footer {
+	@media (min-width: $grid-break-m) {
+		margin-left: (100% / 3 * 1);
+	}
+}
+
+section {
+	$section-border-width: $border-width-m;
+	$section-spacing: $distance-l * 2;
+
+	overflow: hidden;
+
+	margin: 0 0 ($section-spacing - $section-border-width);
+	padding: 0 0 ($section-spacing - $paragraph-trailer);
+
+	border-bottom: $section-border-width solid $white;
+}
+
+
+// Typography
+a {
+	color: $white;
 }
 
 blockquote {
@@ -28,40 +86,39 @@ blockquote {
 	margin: 0 0 $paragraph-trailer;
 	padding: ($distance-l + $distance-l) $paragraph-trailer 0;
 
-	background: $yellow;
+	background-color: $gray;
 }
 
 code {
 	padding: $distance-m $distance-l;
 
-	background-color: $yellow;
-
-	& + p {
-		padding-top: $paragraph-trailer;
-	}
+	background-color: $gray;
+	border-radius: $border-radius-s;
 }
 
 form {
-	label,
-	legend {
+	label {
 		font-weight: bold;
+	}
+
+	legend {
+		display: none;
 	}
 
 	fieldset,
 	input,
 	select,
 	textarea {
-		margin-bottom: $paragraph-trailer;
+		color: $white;
+
+		background-color: $gray;
+		border-color: $gray;
 	}
 
 	input {
 		&[type=radio],
 		&[type=checkbox] {
-			margin-bottom: 0;
-
 			+ label {
-				margin-right: $distance-m;
-
 				font-weight: normal;
 			}
 		}
@@ -77,83 +134,136 @@ h6, .h6 {
 	font-weight: bold;
 }
 
-// OL is used to style the how-to steps
-ol {
-	flex-wrap: wrap;
-	display: flex;
+h5, .h5,
+h6, .h6 {
+	padding-bottom: $paragraph-trailer;
+}
 
-	margin: 0 ($grid-gutter * -1);
+// <ol> is used to style the 'How it works' steps
+ol {
+	$counter-size: $rhythm * 1;
+
+	margin: 0;
 	padding: 0;
 
 	list-style-type: none;
 
+	counter-reset: how-to;
+
 	li {
-		width: 100%;
+		@include vr-reset; // Because we use <h5> and <code> inside <li>
 
-		padding: 0 $grid-gutter;
+		position: relative; // For custom numbering
 
-		@media (min-width: $grid-breakpoint-s) {
-			width: (100% / 2);
+		padding: 0 0 ($paragraph-trailer + $distance-m) ($counter-size + $grid-gutter);
+
+		// Custom numbering
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			width: $counter-size;
+
+			margin: (($distance-s + $border-width-m) * -1) 0 0;
+			padding: $distance-s 0 0;
+
+			color: $white;
+			font-family: $font-display;
+			font-weight: bold;
+			text-align: center;
+
+			border-top: $border-width-m solid $white;
+
+			content: counter(how-to);
+			counter-increment: how-to;
 		}
 
-		@media (min-width: $grid-breakpoint-m) {
-			width: (100% / 4);
+		h5 {
+			padding: 0; // Reset trailer
 		}
 	}
 }
 
 table {
-	width: 100%;
+	border-color: $gray;
 
-	text-align: left;
-
-	thead,
-	tfoot,
-	tbody {
-		vertical-align: top;
+	* {
+		border-color: $gray;
 	}
-}
 
-.btn {
-	padding: $distance-m $distance-l;
-
-	font-weight: bold;
-
-	background-color: $white;
-	border-color: $black;
-
-	&:active,
-	&:focus,
-	&:hover {
-		color: $white;
-
-		background-color: $black;
+	tr {
+		&:hover {
+			background-color: $gray;
+		}
 	}
-}
-
-.header {
-	text-align: center;
-}
-
-// Sections are divided with a border
-.section {
-	$section-border-width: $border-width-m;
-
-	position: relative; // For .section__title
-
-	margin: ($section-border-width * -1) 0 0;
-	padding: ($rhythm * 2) 0 0;
-
-	border-top: $section-border-width solid $black;
 }
 
 .table-wrapper {
-	overflow-x: auto;
-	overflow-y: hidden;
+	border-color: $gray;
+}
 
-	margin: 0 0 $paragraph-trailer;
+// Elements
+%btn {
+	padding: ($distance-m + $distance-s) ($distance-l + $distance-s);
 
-	table {
-		margin-bottom: 0;
+	color: $black;
+	font-weight: bold;
+
+	background-color: $white;
+	border-color: transparent;
+}
+
+// Styling
+.logo {
+	$logo-item-size: 100% / 3;
+	$logo-line-height: $rhythm * 3;
+
+	@include vr($font-display, $font-size-xl);
+
+	padding-bottom: $paragraph-trailer;
+
+	font-weight: bold;
+	line-height: $logo-line-height;
+
+	// Clearfix
+	&:after {
+		clear: both;
+		display: table;
+		content: '';
+	}
+
+	&__letter {
+		float: left;
+
+		width: $logo-item-size;
+
+		padding: 0 $grid-gutter;
+	}
+
+	&__item {
+		float: left;
+
+		width: 50%;
+	}
+}
+
+.grid {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	display: flex;
+
+	pointer-events: none;
+
+	&__item {
+		width: (100% / 3);
+
+		margin: ($border-width-s * -1) ($grid-gutter - $border-width-s);
+
+		border: $border-width-s solid $vr-color;
 	}
 }

@@ -1,5 +1,19 @@
 html {
+  position: relative;
   box-sizing: border-box; }
+  html:after {
+    background-image: linear-gradient(to bottom, transparent 0, transparent 0.6875rem, rgba(255, 99, 71, 0.5) 0.6875rem, rgba(255, 99, 71, 0.5) 0.75rem);
+    background-position: 0 0.75rem;
+    background-size: 100% 0.75rem;
+    background-repeat: repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    height: 100%;
+    content: '';
+    pointer-events: none; }
 
 *, *:before, *:after {
   box-sizing: inherit; }
@@ -9,48 +23,7 @@ body {
   padding: 0;
   font-family: Georgia, serif;
   font-size: 1rem;
-  line-height: 1.5;
-  position: relative; }
-  body > h1:first-child,
-  body > .h1:first-child,
-  body > h2:first-child,
-  body > .h2:first-child,
-  body > h3:first-child,
-  body > .h3:first-child,
-  body > h4:first-child,
-  body > .h4:first-child,
-  body > h5:first-child,
-  body > .h5:first-child,
-  body > h6:first-child,
-  body > .h6:first-child {
-    display: inline-block;
-    width: 100%; }
-  body:before {
-    position: fixed;
-    right: 0.75rem;
-    bottom: 0.75rem;
-    z-index: 9999;
-    margin: 0;
-    padding: 0.375rem;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1;
-    background: #ff6347;
-    content: "Font size: 1rem / Line height: 1.5 / Rhythm: 1.5rem"; }
-  body:after {
-    background-image: linear-gradient(to bottom, transparent 0, transparent 0.6875rem, rgba(255, 99, 71, 0.5) 0.6875rem, rgba(255, 99, 71, 0.5) 0.75rem);
-    background-position: 0 0.375rem;
-    background-size: 100% 0.75rem;
-    background-repeat: repeat;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    content: '';
-    pointer-events: none; }
+  line-height: 1.5; }
 
 h1, .h1,
 h2, .h2,
@@ -63,83 +36,39 @@ h6, .h6 {
 
 h1, .h1 {
   position: relative;
-  margin-top: -1.8984375rem;
-  margin-bottom: 1.8984375rem;
-  font-size: 5.0625rem;
-  line-height: 7.5rem;
+  margin-top: -2.5700722762rem;
+  margin-bottom: 2.5700722762rem;
+  font-size: 6.8535260698rem;
+  line-height: 9rem;
   top: 0.02825em;
   font-family: Arial, sans-serif; }
-  h1.stats:hover:before, .h1.stats:hover:before {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 9999;
-    padding: 0.375rem;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1;
-    background: #ff6347;
-    content: attr(identifier) ": Font size: 5.0625rem / Line height: 7.5rem / Font height: 7.59375rem / Rhythm count: 5.0625 / Rhythm offset: 1.8984375rem"; }
 
 h2, .h2 {
   position: relative;
-  margin-top: -1.265625rem;
-  margin-bottom: 1.265625rem;
-  font-size: 3.375rem;
-  line-height: 4.5rem;
+  margin-top: -1.588425387rem;
+  margin-bottom: 1.588425387rem;
+  font-size: 4.235801032rem;
+  line-height: 6rem;
   top: 0.02825em;
   font-family: Arial, sans-serif; }
-  h2.stats:hover:before, .h2.stats:hover:before {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 9999;
-    padding: 0.375rem;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1;
-    background: #ff6347;
-    content: attr(identifier) ": Font size: 3.375rem / Line height: 4.5rem / Font height: 5.0625rem / Rhythm count: 3.375 / Rhythm offset: 1.265625rem"; }
 
 h3, .h3 {
   position: relative;
-  margin-top: -0.84375rem;
-  margin-bottom: 0.84375rem;
-  font-size: 2.25rem;
+  margin-top: -0.9817215rem;
+  margin-bottom: 0.9817215rem;
+  font-size: 2.617924rem;
   line-height: 3rem;
   top: 0.02825em;
   font-family: Arial, sans-serif; }
-  h3.stats:hover:before, .h3.stats:hover:before {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 9999;
-    padding: 0.375rem;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1;
-    background: #ff6347;
-    content: attr(identifier) ": Font size: 2.25rem / Line height: 3rem / Font height: 3.375rem / Rhythm count: 2.25 / Rhythm offset: 0.84375rem"; }
 
 h4, .h4 {
   position: relative;
-  margin-top: -0.5625rem;
-  margin-bottom: 0.5625rem;
-  font-size: 1.5rem;
+  margin-top: -0.60675rem;
+  margin-bottom: 0.60675rem;
+  font-size: 1.618rem;
   line-height: 1.5rem;
   top: 0.02825em;
   font-family: Arial, sans-serif; }
-  h4.stats:hover:before, .h4.stats:hover:before {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 9999;
-    padding: 0.375rem;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1;
-    background: #ff6347;
-    content: attr(identifier) ": Font size: 1.5rem / Line height: 1.5rem / Font height: 2.25rem / Rhythm count: 1.5 / Rhythm offset: 0.5625rem"; }
 
 h5, .h5 {
   position: relative;
@@ -149,37 +78,15 @@ h5, .h5 {
   line-height: 1.5rem;
   top: 0.02825em;
   font-family: Arial, sans-serif; }
-  h5.stats:hover:before, .h5.stats:hover:before {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 9999;
-    padding: 0.375rem;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1;
-    background: #ff6347;
-    content: attr(identifier) ": Font size: 1rem / Line height: 1.5rem / Font height: 1.5rem / Rhythm count: 1 / Rhythm offset: 0.375rem"; }
 
 h6, .h6 {
   position: relative;
-  margin-top: -0.25rem;
-  margin-bottom: 0.25rem;
-  font-size: 0.6666666667rem;
+  margin-top: -0.2317676143rem;
+  margin-bottom: 0.2317676143rem;
+  font-size: 0.6180469716rem;
   line-height: 1.5rem;
   top: 0.02825em;
   font-family: Arial, sans-serif; }
-  h6.stats:hover:before, .h6.stats:hover:before {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 9999;
-    padding: 0.375rem;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1;
-    background: #ff6347;
-    content: attr(identifier) ": Font size: 0.6666666667rem / Line height: 0rem / Font height: 1rem / Rhythm count: 0.6666666667 / Rhythm offset: 0.25rem"; }
 
 p {
   position: relative;
@@ -191,41 +98,19 @@ p {
   font-family: Georgia, serif;
   padding-top: 0;
   padding-bottom: 1.5rem; }
-  p.stats:hover:before {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 9999;
-    padding: 0.375rem;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1;
-    background: #ff6347;
-    content: attr(identifier) ": Font size: 1rem / Line height: 1.5rem / Font height: 1.5rem / Rhythm count: 1 / Rhythm offset: 0.375rem"; }
 
 blockquote {
   margin: 0;
   padding: 0; }
   blockquote p {
     position: relative;
-    margin-top: -0.5625rem;
-    margin-bottom: 0.5625rem;
-    font-size: 1.5rem;
+    margin-top: -0.60675rem;
+    margin-bottom: 0.60675rem;
+    font-size: 1.618rem;
     line-height: 1.5rem;
     top: 0.02825em;
     font-family: Georgia, serif;
     padding: 0; }
-    blockquote p.stats:hover:before {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      z-index: 9999;
-      padding: 0.375rem;
-      font-size: 1rem;
-      font-weight: normal;
-      line-height: 1;
-      background: #ff6347;
-      content: attr(identifier) ": Font size: 1.5rem / Line height: 1.5rem / Font height: 2.25rem / Rhythm count: 1.5 / Rhythm offset: 0.5625rem"; }
 
 cite {
   position: relative;
@@ -237,17 +122,6 @@ cite {
   font-family: Arial, sans-serif;
   display: block;
   padding: 0 0 1.5rem; }
-  cite.stats:hover:before {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 9999;
-    padding: 0.375rem;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1;
-    background: #ff6347;
-    content: attr(identifier) ": Font size: 1rem / Line height: 1.5rem / Font height: 1.5rem / Rhythm count: 1 / Rhythm offset: 0.375rem"; }
 
 code {
   position: relative;
@@ -255,31 +129,22 @@ code {
   margin-bottom: 0.375rem;
   font-size: 1rem;
   line-height: 1.5rem;
-  top: 0.1em;
+  top: 0.10625em;
   font-family: "Courier New", monospace;
-  display: inline-block;
-  width: 100%; }
-  code.stats:hover:before {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 9999;
-    padding: 0.375rem;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1;
-    background: #ff6347;
-    content: attr(identifier) ": Font size: 1rem / Line height: 1.5rem / Font height: 1.5rem / Rhythm count: 1 / Rhythm offset: 0.375rem"; }
+  display: block; }
 
-ol li,
-ul li {
-  padding: 0 0 1.5rem; }
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0; }
 
 small {
-  font-size: 0.6666666667rem;
+  font-size: 0.6180469716rem;
   line-height: 1; }
 
-.btn {
+.btn, input[type=submit] {
   position: relative;
   margin-top: -0.375rem;
   margin-bottom: 0.375rem;
@@ -288,23 +153,12 @@ small {
   top: 0.02825em;
   font-family: Arial, sans-serif;
   display: inline-block;
-  margin: -0.125rem 0 1.375rem;
-  padding: 0;
+  margin: -0.0625rem 0 1.4375rem;
+  padding: 0.375rem 0.75rem;
   text-decoration: none;
-  border: 0.125rem solid;
+  border: 0.0625rem solid;
   cursor: pointer; }
-  .btn.stats:hover:before {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 9999;
-    padding: 0.375rem;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1;
-    background: #ff6347;
-    content: attr(identifier) ": Font size: 1rem / Line height: 1.5rem / Font height: 1.5rem / Rhythm count: 1 / Rhythm offset: 0.375rem"; }
-  .btn::-moz-focus-inner {
+  .btn::-moz-focus-inner, input[type=submit]::-moz-focus-inner {
     margin-top: 0;
     margin-bottom: 0;
     padding: 0;
@@ -314,8 +168,8 @@ form {
   font-family: Arial, sans-serif; }
 
 fieldset {
-  margin: 0;
-  padding: 0.375rem 0.75rem 0.3125rem;
+  margin: 0 0 1.5rem;
+  padding: 0.3125rem 0.75rem;
   border: solid 0.0625rem; }
 
 legend {
@@ -327,18 +181,7 @@ legend {
   top: 0.02825em;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0 0.75rem; }
-  legend.stats:hover:before {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 9999;
-    padding: 0.375rem;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1;
-    background: #ff6347;
-    content: attr(identifier) ": Font size: 1rem / Line height: 1.5rem / Font height: 1.5rem / Rhythm count: 1 / Rhythm offset: 0.375rem"; }
+  padding: 0 0.75rem 0.0625rem; }
 
 label {
   position: relative;
@@ -349,19 +192,9 @@ label {
   top: 0.02825em;
   font-family: Arial, sans-serif;
   display: block;
-  padding: 0 0 0.75rem;
+  width: 100%;
+  padding: 0;
   cursor: pointer; }
-  label.stats:hover:before {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 9999;
-    padding: 0.375rem;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1;
-    background: #ff6347;
-    content: attr(identifier) ": Font size: 1rem / Line height: 1.5rem / Font height: 1.5rem / Rhythm count: 1 / Rhythm offset: 0.375rem"; }
 
 input,
 select,
@@ -375,28 +208,15 @@ textarea {
   font-family: Arial, sans-serif;
   display: block;
   width: 100%;
-  height: 2.25rem;
-  margin: 0;
-  padding: 0 0.75rem;
-  line-height: 1.5;
+  margin: 0 0 1.5rem;
+  padding: 0.3125rem 0.375rem;
   border: solid 0.0625rem; }
-  input.stats:hover:before,
-  select.stats:hover:before,
-  textarea.stats:hover:before {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 9999;
-    padding: 0.375rem;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1;
-    background: #ff6347;
-    content: attr(identifier) ": Font size: 1rem / Line height: 1.5rem / Font height: 1.5rem / Rhythm count: 1 / Rhythm offset: 0.375rem"; }
+
+select {
+  height: 2.25rem; }
 
 textarea {
-  height: 15rem;
-  padding-top: 0.28125rem; }
+  height: 10.5rem; }
 
 input[type=search], input[type=number] {
   box-sizing: border-box;
@@ -405,19 +225,43 @@ input[type=search], input[type=number] {
 input[type=radio], input[type=checkbox] {
   display: inline-block;
   width: auto;
-  height: auto; }
+  margin: 0;
+  padding: 0; }
   input[type=radio] + label, input[type=checkbox] + label {
     display: inline-block;
-    margin: 0;
+    width: auto;
+    margin: 0 0.75rem 0 0;
     padding: 0; }
 
+input[type=submit] {
+  width: auto; }
+
+.table-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: -0.0625rem 0 1.5rem;
+  border: 0.0625rem solid; }
+
 table {
-  margin: 0 0 1.5rem;
+  width: 100%;
   border-collapse: collapse;
   border-spacing: 0; }
 
-tr td,
-tr th {
+tfoot tr:last-child th,
+tfoot tr:last-child td,
+tbody tr:last-child th,
+tbody tr:last-child td {
+  border-bottom: none; }
+
+tfoot tr:first-child th,
+tfoot tr:first-child td {
+  border-top: 0.0625rem solid; }
+
+tr {
+  vertical-align: top; }
+
+th,
+td {
   position: relative;
   margin-top: -0.375rem;
   margin-bottom: 0.375rem;
@@ -425,75 +269,84 @@ tr th {
   line-height: 1.5rem;
   top: 0.02825em;
   font-family: Arial, sans-serif;
-  padding: 0.375rem 0.75rem 0.3125rem;
+  padding: 1.125rem 0.75rem 1.0625rem;
+  text-align: left;
+  border-right: 0.0625rem solid;
   border-bottom: 0.0625rem solid;
-  border-left: 0.0625rem solid; }
-  tr td.stats:hover:before,
-  tr th.stats:hover:before {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 9999;
-    padding: 0.375rem;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1;
-    background: #ff6347;
-    content: attr(identifier) ": Font size: 1rem / Line height: 1.5rem / Font height: 1.5rem / Rhythm count: 1 / Rhythm offset: 0.375rem"; }
-  tr td:last-of-type,
-  tr th:last-of-type {
-    border-right: 0.0625rem solid; }
-
-thead {
-  border-top: 0.0625rem solid;
-  border-bottom: 0.0625rem solid; }
-  thead th,
-  thead td {
-    padding-top: 0.3125rem;
-    padding-bottom: 0.3125rem; }
-
-tfoot {
-  border-bottom: 0.0625rem solid; }
-  tfoot th,
-  tfoot td {
-    padding-bottom: 0.3125rem; }
-
-a {
-  color: #222; }
+  cursor: default;
+  vertical-align: top; }
+  th:last-child,
+  td:last-child {
+    border-right: none; }
 
 body {
-  overflow-x: hidden;
-  padding: 0 0.75rem;
-  color: #222;
-  background-color: #fff; }
+  padding: 1.5rem 0 0;
+  color: #fff;
+  background-color: #1f2128; }
+
+header,
+main,
+footer {
+  padding: 0 0.75rem; }
+
+@media (min-width: 60rem) {
+  header {
+    position: fixed;
+    top: 2.25rem;
+    left: 0;
+    width: 33.3333333333%;
+    text-align: center; }
+    header:after {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 0.125rem;
+      height: 1000%;
+      margin: 0.75rem 0 0;
+      background: #fff;
+      content: ''; } }
+
+@media (min-width: 60rem) {
+  main,
+  footer {
+    margin-left: 33.3333333333%; } }
+
+section {
+  overflow: hidden;
+  margin: 0 0 2.875rem;
+  padding: 0 0 1.5rem;
+  border-bottom: 0.125rem solid #fff; }
+
+a {
+  color: #fff; }
 
 blockquote {
   display: inline-block;
   margin: 0 0 1.5rem;
   padding: 3rem 1.5rem 0;
-  background: #ffffc2; }
+  background-color: #30333e; }
 
 code {
   padding: 0.75rem 1.5rem;
-  background-color: #ffffc2; }
-  code + p {
-    padding-top: 1.5rem; }
+  background-color: #30333e;
+  border-radius: 0.125rem; }
 
-form label,
-form legend {
+form label {
   font-weight: bold; }
+
+form legend {
+  display: none; }
 
 form fieldset,
 form input,
 form select,
 form textarea {
-  margin-bottom: 1.5rem; }
+  color: #fff;
+  background-color: #30333e;
+  border-color: #30333e; }
 
-form input[type=radio], form input[type=checkbox] {
-  margin-bottom: 0; }
-  form input[type=radio] + label, form input[type=checkbox] + label {
-    margin-right: 0.75rem;
-    font-weight: normal; }
+form input[type=radio] + label, form input[type=checkbox] + label {
+  font-weight: normal; }
 
 h1, .h1,
 h2, .h2,
@@ -503,53 +356,90 @@ h5, .h5,
 h6, .h6 {
   font-weight: bold; }
 
+h5, .h5,
+h6, .h6 {
+  padding-bottom: 1.5rem; }
+
 ol {
-  flex-wrap: wrap;
-  display: flex;
-  margin: 0 -0.75rem;
+  margin: 0;
   padding: 0;
-  list-style-type: none; }
+  list-style-type: none;
+  counter-reset: how-to; }
   ol li {
-    width: 100%;
-    padding: 0 0.75rem; }
-    @media (min-width: 30rem) {
-      ol li {
-        width: 50%; } }
-    @media (min-width: 60rem) {
-      ol li {
-        width: 25%; } }
+    top: 0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    padding: 0 0 2.25rem 2.25rem; }
+    ol li:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1.5rem;
+      margin: -0.5rem 0 0;
+      padding: 0.375rem 0 0;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      text-align: center;
+      border-top: 0.125rem solid #fff;
+      content: counter(how-to);
+      counter-increment: how-to; }
+    ol li h5 {
+      padding: 0; }
 
 table {
-  width: 100%;
-  text-align: left; }
-  table thead,
-  table tfoot,
-  table tbody {
-    vertical-align: top; }
-
-.btn {
-  padding: 0.75rem 1.5rem;
-  font-weight: bold;
-  background-color: #fff;
-  border-color: #222; }
-  .btn:active, .btn:focus, .btn:hover {
-    color: #fff;
-    background-color: #222; }
-
-.header {
-  text-align: center; }
-
-.section {
-  position: relative;
-  margin: -0.125rem 0 0;
-  padding: 3rem 0 0;
-  border-top: 0.125rem solid #222; }
+  border-color: #30333e; }
+  table * {
+    border-color: #30333e; }
+  table tr:hover {
+    background-color: #30333e; }
 
 .table-wrapper {
-  overflow-x: auto;
-  overflow-y: hidden;
-  margin: 0 0 1.5rem; }
-  .table-wrapper table {
-    margin-bottom: 0; }
+  border-color: #30333e; }
+
+.btn, input[type=submit] {
+  padding: 1.125rem 1.875rem;
+  color: #1f2128;
+  font-weight: bold;
+  background-color: #fff;
+  border-color: transparent; }
+
+.logo {
+  position: relative;
+  margin-top: -1.588425387rem;
+  margin-bottom: 1.588425387rem;
+  font-size: 4.235801032rem;
+  line-height: 6rem;
+  top: 0.02825em;
+  font-family: Arial, sans-serif;
+  padding-bottom: 1.5rem;
+  font-weight: bold;
+  line-height: 4.5rem; }
+  .logo:after {
+    clear: both;
+    display: table;
+    content: ''; }
+  .logo__letter {
+    float: left;
+    width: 33.3333333333%;
+    padding: 0 0.75rem; }
+  .logo__item {
+    float: left;
+    width: 50%; }
+
+.grid {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  display: flex;
+  pointer-events: none; }
+  .grid__item {
+    width: 33.3333333333%;
+    margin: -0.0625rem 0.6875rem;
+    border: 0.0625rem solid rgba(255, 99, 71, 0.5); }
 
 /*# sourceMappingURL=demo.css.map */

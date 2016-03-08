@@ -6,37 +6,40 @@ $font-mono:						'Courier New', monospace;
 
 $cap-font-display:				0.02825;
 $cap-font-body:					0.02825;
-$cap-font-mono:					0.1;
+$cap-font-mono:					0.10625;
 
-$base-font-size:				1rem;
-$base-line-height:				1.5;
+$px-font-size:					16;
+$px-line-height:				24; // Even numbers work best
+
+$base-font-size:				($px-font-size / 16) * 1rem;
+$base-line-height:				($px-line-height / $px-font-size);
 
 $rhythm:						($base-font-size * $base-line-height);
 
 // Modular scale - see <functions/calc-font-sizes> for all preset scales
-// $type-scale:					'minor-second';
-// $type-scale:					'major-second';
-// $type-scale:					'minor-third';
-// $type-scale:					'major-third';
-// $type-scale:					'perfect-fourth';
-// $type-scale:					'augmented-fourth';
-$type-scale:					'perfect-fifth';
-// $type-scale:					'minor-sixth';
-// $type-scale:					'golden-section';
-// $type-scale:					'major-sixth';
-// $type-scale:					'minor-seventh';
-// $type-scale:					'major-seventh';
-// $type-scale:					'octave';
-// $type-scale:					'major-tenth';
-// $type-scale:					'major-eleventh';
-// $type-scale:					'major-twelfth';
-// $type-scale:					'double-octave';
+// $modular-scale:					'minor-second';
+// $modular-scale:					'major-second';
+// $modular-scale:					'minor-third';
+// $modular-scale:					'major-third';
+// $modular-scale:					'perfect-fourth';
+// $modular-scale:					'augmented-fourth';
+// $modular-scale:					'perfect-fifth';
+// $modular-scale:					'minor-sixth';
+$modular-scale:					'golden-section';
+// $modular-scale:					'major-sixth';
+// $modular-scale:					'minor-seventh';
+// $modular-scale:					'major-seventh';
+// $modular-scale:					'octave';
+// $modular-scale:					'major-tenth';
+// $modular-scale:					'major-eleventh';
+// $modular-scale:					'major-twelfth';
+// $modular-scale:					'double-octave';
 
 $font-sizes:					('xs', 's', 'm', 'l', 'xl', 'xxl');
 $font-size-default:				's';
 
 // Font sizes
-$font-sizes:					calc-font-sizes($type-scale, $font-sizes, $font-size-default);
+$font-sizes:					calc-font-sizes($modular-scale, $font-sizes, $font-size-default);
 
 $font-size-xs:					map-get($font-sizes, xs);
 $font-size-s:					map-get($font-sizes, s);
@@ -62,6 +65,11 @@ $border-width-s:				0.0625rem;
 $border-width-m:				0.125rem;
 $border-width-l:				0.25rem;
 
+$border-radius-s:				0.125rem;
+$border-radius-m:				0.25rem;
+$border-radius-l:				0.5rem;
+
 // Colors
+$vr-black:						#000;
 $vr-color-base:					#ff6347;
 $vr-color:						rgba($vr-color-base, 0.5);

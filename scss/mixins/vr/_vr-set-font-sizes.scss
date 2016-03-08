@@ -1,19 +1,25 @@
 @mixin vr($font-family: $font-body, $font-size: $base-font-size) {
-	$offset-font-display: $cap-font-display * 1em;
-	$offset-font-body: $cap-font-body * 1em;
-	$offset-font-mono: $cap-font-mono * 1em;
+	// Calculate offset between line height and base line height (1.5)
+	$offset-line-height: ((((16 - $px-font-size) / 16) / 2) - ((1.5 - $base-line-height) / 4));
 
-	// What height does this text have?
+	// Calculate offset between font size and base font size (16px)
+	$offset-font-size: (($px-font-size - 16) / 16 / 2);
+
+	// Combine cap height and other offsets so we can shift text accordingly
+	$offset-font-display: ($cap-font-display + $offset-line-height + $offset-font-size) * 1em;
+	$offset-font-body: ($cap-font-body + $offset-line-height + $offset-font-size) * 1em;
+	$offset-font-mono: ($cap-font-mono + $offset-line-height + $offset-font-size) * 1em;
+
+	// Calculate the height of the text
 	$text-height: $font-size * $base-line-height;
 
-	// How many rhythms fit inside that height?
+	// Calculate how much rhythm the text height has
 	$rhythm-count: $text-height / $rhythm;
 
-	// How much offset does the text have compared to the rhythm?
+	// Calculate the offset of the text height compared to the rhythm
 	$rhythm-offset: ($text-height * 0.25);
-	// $rhythm-offset - ($type-scale - $base-font-size)
 
-	// How would that convert to a line height?
+	// Combine text height and offset to form the adjusted line height
 	$line-height: ($rhythm-count - ($rhythm-count - floor($rhythm-count))) * $rhythm;
 
 	position: relative;
@@ -24,7 +30,7 @@
 	font-size: $font-size;
 
 	@if $line-height == 0rem {
-		line-height: $base-line-height * 1rem;
+		line-height: $rhythm; // TODO: fractional line height
 	} @else {
 		line-height: $line-height;
 	}
@@ -43,24 +49,11 @@
 
 		font-family: $font-body;
 	}
+}
 
-	&.stats {
-		&:hover {
-			&:before {
-				position: absolute;
-				top: 100%;
-				left: 0;
-				z-index: 9999;
+@mixin vr-reset {
+	top: 0;
 
-				padding: $distance-s;
-
-				font-size: $base-font-size;
-				font-weight: normal;
-				line-height: 1;
-
-				background: $vr-color-base;
-				content: attr(identifier) ': Font size: #{$font-size} / Line height: #{$line-height} / Font height: #{$text-height} / Rhythm count: #{$rhythm-count} / Rhythm offset: #{$rhythm-offset}';
-			}
-		}
-	}
+	margin: 0;
+	padding: 0;
 }
