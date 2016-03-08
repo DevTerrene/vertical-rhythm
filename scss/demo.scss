@@ -6,20 +6,43 @@ $grid-break-l: 60rem;
 
 $grid-gutter: $distance-m;
 
-$black: #1f2128;
-$gray: lighten($black, 7.5%);
+$black: #000;
+$gray: lighten($black, 75%);
 $white: #fff;
+
 $yellow: #fff6cc;
-$red: #f12b24;
-$brown: #bc9f75;
+$red: #ff1919;
+
+$bg-color: $white;
+$text-color: $black;
 
 // Layout
+::selection {
+	color: $white;
+	text-shadow: none;
+
+	background-color: $red; /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+	color: $white;
+	text-shadow: none;
+
+	background-color: $red; /* Gecko Browsers */
+}
+
 body {
+	overflow-x: hidden;
+
 	padding: $paragraph-trailer 0 0;
 
-	color: $white;
+	color: $text-color;
 
-	background-color: $black;
+	background-color: $bg-color;
+
+	@media (min-width: $grid-break-m) {
+		padding-top: $rhythm * 3;
+	}
 }
 
 header,
@@ -31,27 +54,13 @@ footer {
 header {
 	@media (min-width: $grid-break-m) {
 		position: fixed;
-		top: $rhythm * 1.5;
+		top: 0;
+		bottom: 0;
 		left: 0;
 
-		width: (100% / 3);
+		width: calc((100% / 3) - #{$grid-gutter});
 
-		text-align: center;
-
-		&:after {
-			position: absolute;
-			top: 100%;
-			left: 50%;
-
-			width: $border-width-m;
-			height: 1000%;
-
-			margin: $distance-m 0 0;
-
-			background: $white;
-
-			content: '';
-		}
+		padding-top: $rhythm * 2;
 	}
 }
 
@@ -62,38 +71,127 @@ footer {
 	}
 }
 
-section {
+.section {
 	$section-border-width: $border-width-m;
 	$section-spacing: $distance-l * 2;
-
-	overflow: hidden;
 
 	margin: 0 0 ($section-spacing - $section-border-width);
 	padding: 0 0 ($section-spacing - $paragraph-trailer);
 
-	border-bottom: $section-border-width solid $white;
-}
+	border-bottom: $section-border-width solid $text-color;
 
+	&__title {
+		@include vr($font-display, $font-size-l);
+
+		&:before {
+			color: $red;
+
+			content: '# ';
+		}
+	}
+
+	&__subtitle {
+		@include vr($font-display, $base-font-size);
+
+		padding-top: $paragraph-trailer;
+		padding-bottom: $paragraph-trailer;
+
+		color: $red;
+	}
+}
 
 // Typography
 a {
-	color: $white;
+	position: relative;
+
+	color: $text-color;
+	text-decoration: none;
+	text-shadow: -1px -1px 0 $white,
+				 1px -1px 0 $white,
+				 -1px 1px 0 $white,
+				 1px 1px 0 $white;
+
+	background-image: linear-gradient(to top, transparent,
+											  transparent 2px, $black 2px, $black 3px,
+											  transparent 3px);
+
+	&:hover {
+		color: $red;
+
+		background-image: linear-gradient(to top, transparent,
+												  transparent 2px, $red 2px, $red 3px,
+												  transparent 3px);
+	}
+}
+
+.article {
+	&__row {
+		margin: 0 ($grid-gutter * -1);
+
+		// Clearfix
+		&:after {
+			clear: both;
+			display: table;
+			content: '';
+		}
+	}
+
+	&__col {
+		float: left;
+
+		width: 100%;
+
+		padding: 0 $grid-gutter;
+
+		@media (min-width: $grid-break-m) {
+			width: 50%;
+		}
+	}
+
+	&__dropcap {
+		$dropcap-size: $rhythm * 3.5;
+
+		@include vr($font-display, $font-size-xl);
+
+		float: left;
+
+		width: $dropcap-size;
+
+		margin-right: $distance-m;
+
+		color: $white;
+		font-weight: bold;
+		line-height: $dropcap-size;
+		text-align: center;
+
+		background-color: $red;
+		transform: translate(0, ($rhythm));
+	}
+
+	&__streamer {
+		letter-spacing: 0.0625em;
+		text-transform: uppercase;
+	}
+
+	h1, .h1,
+	h2, .h2,
+	h3, .h3,
+	h4, .h4,
+	h5, .h5,
+	h6, .h6 {
+		padding-top: $distance-l;
+	}
 }
 
 blockquote {
+	$blockquote-border-width: $border-width-m;
+
 	display: inline-block;
 
-	margin: 0 0 $paragraph-trailer;
+	margin: ($blockquote-border-width * -1) 0 ($paragraph-trailer - $blockquote-border-width);
 	padding: ($distance-l + $distance-l) $paragraph-trailer 0;
 
-	background-color: $gray;
-}
-
-code {
-	padding: $distance-m $distance-l;
-
-	background-color: $gray;
-	border-radius: $border-radius-s;
+	border: $blockquote-border-width solid $text-color;
 }
 
 form {
@@ -105,14 +203,19 @@ form {
 		display: none;
 	}
 
-	fieldset,
 	input,
 	select,
 	textarea {
-		color: $white;
+		color: $text-color;
 
-		background-color: $gray;
-		border-color: $gray;
+		background-color: transparent;
+		border-color: $text-color;
+		outline: none;
+
+		&:active,
+		&:focus {
+			border-color: $red;
+		}
 	}
 
 	input {
@@ -134,118 +237,33 @@ h6, .h6 {
 	font-weight: bold;
 }
 
-h5, .h5,
-h6, .h6 {
-	padding-bottom: $paragraph-trailer;
-}
-
-// <ol> is used to style the 'How it works' steps
-ol {
-	$counter-size: $rhythm * 1;
-
-	margin: 0;
-	padding: 0;
-
-	list-style-type: none;
-
-	counter-reset: how-to;
-
-	li {
-		@include vr-reset; // Because we use <h5> and <code> inside <li>
-
-		position: relative; // For custom numbering
-
-		padding: 0 0 ($paragraph-trailer + $distance-m) ($counter-size + $grid-gutter);
-
-		// Custom numbering
-		&:before {
-			position: absolute;
-			top: 0;
-			left: 0;
-
-			width: $counter-size;
-
-			margin: (($distance-s + $border-width-m) * -1) 0 0;
-			padding: $distance-s 0 0;
-
-			color: $white;
-			font-family: $font-display;
-			font-weight: bold;
-			text-align: center;
-
-			border-top: $border-width-m solid $white;
-
-			content: counter(how-to);
-			counter-increment: how-to;
-		}
-
-		h5 {
-			padding: 0; // Reset trailer
-		}
-	}
-}
-
-table {
-	border-color: $gray;
-
-	* {
-		border-color: $gray;
-	}
-
-	tr {
-		&:hover {
-			background-color: $gray;
-		}
-	}
-}
-
-.table-wrapper {
-	border-color: $gray;
-}
-
 // Elements
 %btn {
 	padding: ($distance-m + $distance-s) ($distance-l + $distance-s);
 
-	color: $black;
+	color: $text-color;
 	font-weight: bold;
 
-	background-color: $white;
-	border-color: transparent;
+	background-color: transparent;
+	border-color: $text-color;
+
+	&:active,
+	&:focus,
+	&:hover {
+		color: $white;
+
+		background-color: $red;
+		border-color: $red;
+	}
 }
 
 // Styling
 .logo {
-	$logo-item-size: 100% / 3;
-	$logo-line-height: $rhythm * 3;
+	@include vr($font-body, $font-size-xl);
 
-	@include vr($font-display, $font-size-xl);
-
-	padding-bottom: $paragraph-trailer;
+	color: $red;
 
 	font-weight: bold;
-	line-height: $logo-line-height;
-
-	// Clearfix
-	&:after {
-		clear: both;
-		display: table;
-		content: '';
-	}
-
-	&__letter {
-		float: left;
-
-		width: $logo-item-size;
-
-		padding: 0 $grid-gutter;
-	}
-
-	&__item {
-		float: left;
-
-		width: 50%;
-	}
 }
 
 .grid {
@@ -254,7 +272,7 @@ table {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	z-index: -1;
+	z-index: 9999;
 	display: flex;
 
 	pointer-events: none;

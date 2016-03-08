@@ -49,11 +49,38 @@
 
 		font-family: $font-body;
 	}
+
+	@if $show-stats == true {
+		&:hover {
+			&:after {
+				position: fixed;
+				right: 0;
+				bottom: 0;
+				z-index: 1000;
+
+				padding: $distance-s $distance-m;
+
+				color: $vr-white;
+
+				font-family: $font-display;
+				font-size: $base-font-size;
+				font-style: normal;
+				font-weight: normal;
+				line-height: $base-line-height;
+
+				background-color: $vr-color-base;
+
+				content: 'Font size: #{$font-size} / Line height: #{$line-height}';
+			}
+		}
+	}
 }
 
 @mixin vr-reset {
 	top: 0;
 
-	margin: 0;
-	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
 }

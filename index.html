@@ -20,107 +20,82 @@
 		</div>
 
 		<header>
-			<div class="logo">
-				<span class="logo__letter">
-					<span class="logo__item">V</span>
-					<span class="logo__item">V</span>
-					<span class="logo__item">V</span>
-					<span class="logo__item">V</span>
-				</span>
-				<span class="logo__letter">
-					<span class="logo__item">R</span>
-					<span class="logo__item">R</span>
-					<span class="logo__item">R</span>
-					<span class="logo__item">R</span>
-				</span>
-				<span class="logo__letter">
-					<span class="logo__item logo__item--half">2</span>
-					<span class="logo__item logo__item--half">2</span>
-					<span class="logo__item logo__item--half">2</span>
-					<span class="logo__item logo__item--half">2</span>
-				</span>
-			</div>
-
-			<h1 class="h3">Vertical rhythm</h1>
-			<p class="h5">for the creative developer</p>
-			<a class="btn" href="https://github.com/vicompany/vertical-rhythm">Github</a>
+			<h1 class="logo">
+				Vertical<br />
+				Rhythm<br />
+				2.👌
+			</h1>
+			<p>For the creative developer. View on <a href="https://github.com/vicompany/vertical-rhythm">Github</a></p>
 		</header>
 
 		<main>
-			<section>
-				<h2>How it works</h2>
+			<section class="section">
+				<h2 class="section__title">How it works</h2>
 
-				<ol>
-					<li>
-						<h5>Import VR Mixin</h5>
-						<code>
-							@import 'mixins/vr/vr-main';
-						</code>
-					</li>
-					<li>
-						<h5>Set base typograhy</h5>
-						<code>
-							$font-display: Arial, sans-serif;<br />
-							$cap-font-display: 0.02825;<br />
-							$px-font-size: 16;<br />
-							$px-line-height: 24;<br />
-							$modular-scale: &lsquo;golden section&rsquo;;
-						</code>
-					</li>
+				<h3 class="section__subtitle">Import VR Mixin</h3>
+				<code>
+					@import 'mixins/vr/vr-main';
+				</code>
 
-					<li>
-						<h5>Personal styling</h5>
-						<code>
-							div { margin-bottom: $distance-s; }<br />
-							h1 { @include vr($font-size-m); }<br />
-							code { padding-bottom: $paragraph-trailer; }<br />
-							img { height: $size-m; }
-						</code>
-					</li>
-				</ol>
+				<h3 class="section__subtitle">Set base typograhy</h3>
+				<code>
+					$font-display: Arial, sans-serif;<br />
+					$cap-font-display: 0.02825;<br />
+					$px-font-size: 16;<br />
+					$px-line-height: 24;<br />
+					$modular-scale: &lsquo;golden section&rsquo;;
+				</code>
+
+				<h3 class="section__subtitle">Personal styling</h3>
+				<code>
+					div { margin-bottom: $distance-s; }<br />
+					h1 { @include vr($font-size-m); }<br />
+					code { padding-bottom: $paragraph-trailer; }<br />
+					img { height: $size-m; }
+				</code>
 			</section>
 
-			<section>
-				<h2>Typography</h2>
-				<h3 class="h5">Header 1</h3>
+			<section class="section">
+				<h2 class="section__title">Typography</h2>
+				<h3 class="section__subtitle">Header 1</h3>
 				<p class="h1">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
 
-				<h3 class="h5">Header 2</h3>
+				<h3 class="section__subtitle">Header 2</h3>
 				<p class="h2">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
 
-				<h3 class="h5">Header 3</h3>
+				<h3 class="section__subtitle">Header 3</h3>
 				<p class="h3">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
 
-				<h3 class="h5">Header 4</h3>
+				<h3 class="section__subtitle">Header 4</h3>
 				<p class="h4">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
 
-				<h3 class="h5">Header 5</h3>
+				<h3 class="section__subtitle">Header 5</h3>
 				<p class="h5">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
 
-				<h3 class="h5">Header 6</h3>
+				<h3 class="section__subtitle">Header 6</h3>
 				<p class="h6">Lynx c.q. vos prikt bh: dag zwemjuf!</p>
 
-				<h3 class="h5">Paragraphs</h3>
+				<h3 class="section__subtitle">Paragraph</h3>
 				<p>Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed.</p>
 
-				<h3 class="h5">Small text</h3>
+				<h3 class="section__subtitle">Small text</h3>
 				<p><small>Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed.</small></p>
 
-				<h3 class="h5">Blockquote</h3>
+				<h3 class="section__subtitle">Blockquote</h3>
 				<blockquote>
 					<p>&ldquo;Vertical Rhythm is the holy grail of front-end development.&rdquo;</p>
 					<cite>&mdash; <a href="http://olafmuller.nl">Olaf Muller</a></cite>
 				</blockquote>
 			</section>
 
-			<section>
-				<h2>Buttons</h2>
+			<section class="section">
+				<h2 class="section__title">Buttons</h2>
 
 				<button class="btn">Button</button>
 			</section>
 
-			<section>
-				<h2>Form elements</h2>
+			<section class="section">
+				<h2 class="section__title">Form elements</h2>
 
 				<form class="form">
 					<label for="text">Label text</label>
@@ -166,6 +141,73 @@
 						<option value="value-7">Option 7</option>
 					</select>
 				</form>
+			</section>
+
+			<section class="section">
+				<h2 class="section__title">Example article</h2>
+
+				<article class="article">
+					<h1>Typography</h1>
+					<p>From <a href="https://en.wikipedia.org/wiki/Typography">Wikipedia</a>, the free encyclopedia</p>
+
+					<div class="article__row">
+						<div class="article__col">
+							<p><span class="article__dropcap">T</span>ypography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed. The arrangement of type involves selecting typefaces, point size, line length, line-spacing (leading), letter-spacing (tracking), and adjusting the space within letters pairs (kerning). The term typography is also applied to the style, arrangement, and appearance of the letters, numbers, and symbols created by the process. Type design is a closely related craft, sometimes considered part of typography; most typographers do not design typefaces, and some type designers do not consider themselves typographers. Typography also may be used as a decorative device, unrelated to communication of information.</p>
+						</div>
+
+						<div class="article__col">
+							<ul>
+								<li>History
+									<ul>
+										<li>Evolution</li>
+										<li>Experimental typeface uses</li>
+										<li>Techniques</li>
+									</ul>
+								</li>
+								<li>Scope</li>
+								<li>Text typefaces
+									<ul>
+										<li>Color</li>
+										<li>Principles of the craft</li>
+									</ul>
+								</li>
+								<li>Display graphics
+									<ul>
+										<li>Advertising</li>
+										<li>Inscriptional and architectural lettering</li>
+									</ul>
+								</li>
+								<li>See also</li>
+								<li>Notes
+									<ul>
+										<li>General References</li>
+									</ul>
+								</li>
+								<li>External links</li>
+							</ul>
+						</div>
+					</div>
+
+					<h2>History</h2>
+					<div class="article__row">
+						<div class="article__col">
+							<p>The essential criterion of type identity was met by medieval print artifacts such as the Latin Pruefening Abbey inscription of 1119 that was created by the same technique as the Phaistos disc. The silver altarpiece of patriarch Pellegrinus II (1195−1204) in the cathedral of Cividale was printed with individual letter punches. Apparently, the same printing technique may be found in tenth to twelfth century Byzantine reliquaries. Other early examples include individual letter tiles where the words are formed by assembling single letter tiles in the desired order, which were reasonably widespread in medieval Northern Europe.</p>
+						</div>
+						<div class="article__col">
+							<p>Typography with movable type was invented during the eleventh-century Song dynasty in China by Bi Sheng (990–1051). His movable type system was manufactured from ceramic materials, and clay type printing continued to be practiced in China until the Qing Dynasty.</p>
+						</div>
+					</div>
+
+					<h3>Evolution</h3>
+					<div class="article__row">
+						<div class="article__col">
+							<p><span class="article__streamer">The design of typefaces</span> has developed alongside the development of typesetting systems. Although typography has evolved significantly from its origins, it is a largely conservative art that tends to cleave closely to tradition. This is because legibility is paramount, and so the typefaces that are the most readable usually are retained. In addition, the evolution of typography is inextricably intertwined with lettering by hand and related art forms, especially formal styles, which thrived for centuries preceding typography, and so the evolution of typography must be discussed with reference to this relationship.</p>
+						</div>
+						<div class="article__col">
+							<p>The development of Roman typeface can be traced back to Greek lapidary letters. Greek lapidary letters were carved into stone and &ldquo;one of the first formal uses of Western letterforms&rdquo;; after that, Roman lapidary letterforms evolved into the monumental capitals, which laid the foundation for Western typographical design, especially serif typefaces. There are two styles of Roman typefaces: the old style, and the modern. The former is characterized by its similarly-weighted lines, while the latter is distinguished by its contrast of light and heavy lines. Often, these styles are combined.</p>
+						</div>
+					</div>
+				</article>
 			</section>
 		</main>
 

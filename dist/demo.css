@@ -2,7 +2,7 @@ html {
   position: relative;
   box-sizing: border-box; }
   html:after {
-    background-image: linear-gradient(to bottom, transparent 0, transparent 0.6875rem, rgba(255, 99, 71, 0.5) 0.6875rem, rgba(255, 99, 71, 0.5) 0.75rem);
+    background-image: linear-gradient(to bottom, transparent 0, transparent 0.6875rem, rgba(255, 25, 25, 0.5) 0.6875rem, rgba(255, 25, 25, 0.5) 0.75rem);
     background-position: 0 0.75rem;
     background-size: 100% 0.75rem;
     background-repeat: repeat;
@@ -36,39 +36,95 @@ h6, .h6 {
 
 h1, .h1 {
   position: relative;
-  margin-top: -2.5700722762rem;
-  margin-bottom: 2.5700722762rem;
-  font-size: 6.8535260698rem;
-  line-height: 9rem;
+  margin-top: -1.8984375rem;
+  margin-bottom: 1.8984375rem;
+  font-size: 5.0625rem;
+  line-height: 7.5rem;
   top: 0.02825em;
   font-family: Arial, sans-serif; }
+  h1:hover:after, .h1:hover:after {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.375rem 0.75rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: #ff1919;
+    content: "Font size: 5.0625rem / Line height: 7.5rem"; }
 
 h2, .h2 {
   position: relative;
-  margin-top: -1.588425387rem;
-  margin-bottom: 1.588425387rem;
-  font-size: 4.235801032rem;
-  line-height: 6rem;
+  margin-top: -1.265625rem;
+  margin-bottom: 1.265625rem;
+  font-size: 3.375rem;
+  line-height: 4.5rem;
   top: 0.02825em;
   font-family: Arial, sans-serif; }
+  h2:hover:after, .h2:hover:after {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.375rem 0.75rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: #ff1919;
+    content: "Font size: 3.375rem / Line height: 4.5rem"; }
 
 h3, .h3 {
   position: relative;
-  margin-top: -0.9817215rem;
-  margin-bottom: 0.9817215rem;
-  font-size: 2.617924rem;
+  margin-top: -0.84375rem;
+  margin-bottom: 0.84375rem;
+  font-size: 2.25rem;
   line-height: 3rem;
   top: 0.02825em;
   font-family: Arial, sans-serif; }
+  h3:hover:after, .h3:hover:after {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.375rem 0.75rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: #ff1919;
+    content: "Font size: 2.25rem / Line height: 3rem"; }
 
 h4, .h4 {
   position: relative;
-  margin-top: -0.60675rem;
-  margin-bottom: 0.60675rem;
-  font-size: 1.618rem;
+  margin-top: -0.5625rem;
+  margin-bottom: 0.5625rem;
+  font-size: 1.5rem;
   line-height: 1.5rem;
   top: 0.02825em;
   font-family: Arial, sans-serif; }
+  h4:hover:after, .h4:hover:after {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.375rem 0.75rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: #ff1919;
+    content: "Font size: 1.5rem / Line height: 1.5rem"; }
 
 h5, .h5 {
   position: relative;
@@ -78,15 +134,43 @@ h5, .h5 {
   line-height: 1.5rem;
   top: 0.02825em;
   font-family: Arial, sans-serif; }
+  h5:hover:after, .h5:hover:after {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.375rem 0.75rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: #ff1919;
+    content: "Font size: 1rem / Line height: 1.5rem"; }
 
 h6, .h6 {
   position: relative;
-  margin-top: -0.2317676143rem;
-  margin-bottom: 0.2317676143rem;
-  font-size: 0.6180469716rem;
+  margin-top: -0.25rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.6666666667rem;
   line-height: 1.5rem;
   top: 0.02825em;
   font-family: Arial, sans-serif; }
+  h6:hover:after, .h6:hover:after {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.375rem 0.75rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: #ff1919;
+    content: "Font size: 0.6666666667rem / Line height: 0rem"; }
 
 p {
   position: relative;
@@ -98,19 +182,46 @@ p {
   font-family: Georgia, serif;
   padding-top: 0;
   padding-bottom: 1.5rem; }
+  p:hover:after {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.375rem 0.75rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: #ff1919;
+    content: "Font size: 1rem / Line height: 1.5rem"; }
 
 blockquote {
   margin: 0;
   padding: 0; }
   blockquote p {
     position: relative;
-    margin-top: -0.60675rem;
-    margin-bottom: 0.60675rem;
-    font-size: 1.618rem;
+    margin-top: -0.5625rem;
+    margin-bottom: 0.5625rem;
+    font-size: 1.5rem;
     line-height: 1.5rem;
     top: 0.02825em;
-    font-family: Georgia, serif;
-    padding: 0; }
+    font-family: Georgia, serif; }
+    blockquote p:hover:after {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      padding: 0.375rem 0.75rem;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.5;
+      background-color: #ff1919;
+      content: "Font size: 1.5rem / Line height: 1.5rem"; }
 
 cite {
   position: relative;
@@ -122,6 +233,20 @@ cite {
   font-family: Arial, sans-serif;
   display: block;
   padding: 0 0 1.5rem; }
+  cite:hover:after {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.375rem 0.75rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: #ff1919;
+    content: "Font size: 1rem / Line height: 1.5rem"; }
 
 code {
   position: relative;
@@ -131,17 +256,60 @@ code {
   line-height: 1.5rem;
   top: 0.10625em;
   font-family: "Courier New", monospace;
-  display: block; }
+  display: block;
+  padding: 0 0 1.5rem; }
+  code:hover:after {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.375rem 0.75rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: #ff1919;
+    content: "Font size: 1rem / Line height: 1.5rem"; }
 
 ol,
 ul {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0; }
+  position: relative;
+  margin-top: -0.375rem;
+  margin-bottom: 0.375rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  top: 0.02825em;
+  font-family: Georgia, serif;
+  padding-bottom: 1.5rem; }
+  ol:hover:after,
+  ul:hover:after {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.375rem 0.75rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: #ff1919;
+    content: "Font size: 1rem / Line height: 1.5rem"; }
+  ol ol,
+  ol ul,
+  ul ol,
+  ul ul {
+    top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0; }
 
 small {
-  font-size: 0.6180469716rem;
+  font-size: 0.6666666667rem;
   line-height: 1; }
 
 .btn, input[type=submit] {
@@ -153,11 +321,25 @@ small {
   top: 0.02825em;
   font-family: Arial, sans-serif;
   display: inline-block;
-  margin: -0.0625rem 0 1.4375rem;
+  margin: -0.125rem 0 1.375rem;
   padding: 0.375rem 0.75rem;
   text-decoration: none;
-  border: 0.0625rem solid;
+  border: 0.125rem solid;
   cursor: pointer; }
+  .btn:hover:after, input[type=submit]:hover:after {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.375rem 0.75rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: #ff1919;
+    content: "Font size: 1rem / Line height: 1.5rem"; }
   .btn::-moz-focus-inner, input[type=submit]::-moz-focus-inner {
     margin-top: 0;
     margin-bottom: 0;
@@ -169,8 +351,8 @@ form {
 
 fieldset {
   margin: 0 0 1.5rem;
-  padding: 0.3125rem 0.75rem;
-  border: solid 0.0625rem; }
+  padding: 0.25rem 0.75rem;
+  border: solid 0.125rem; }
 
 legend {
   position: relative;
@@ -181,7 +363,21 @@ legend {
   top: 0.02825em;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0 0.75rem 0.0625rem; }
+  padding: 0 0.75rem 0.125rem; }
+  legend:hover:after {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.375rem 0.75rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: #ff1919;
+    content: "Font size: 1rem / Line height: 1.5rem"; }
 
 label {
   position: relative;
@@ -195,6 +391,20 @@ label {
   width: 100%;
   padding: 0;
   cursor: pointer; }
+  label:hover:after {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.375rem 0.75rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: #ff1919;
+    content: "Font size: 1rem / Line height: 1.5rem"; }
 
 input,
 select,
@@ -209,8 +419,24 @@ textarea {
   display: block;
   width: 100%;
   margin: 0 0 1.5rem;
-  padding: 0.3125rem 0.375rem;
-  border: solid 0.0625rem; }
+  padding: 0.25rem 0.375rem;
+  border: solid 0.125rem; }
+  input:hover:after,
+  select:hover:after,
+  textarea:hover:after {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.375rem 0.75rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: #ff1919;
+    content: "Font size: 1rem / Line height: 1.5rem"; }
 
 select {
   height: 2.25rem; }
@@ -275,14 +501,45 @@ td {
   border-bottom: 0.0625rem solid;
   cursor: default;
   vertical-align: top; }
+  th:hover:after,
+  td:hover:after {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.375rem 0.75rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: #ff1919;
+    content: "Font size: 1rem / Line height: 1.5rem"; }
   th:last-child,
   td:last-child {
     border-right: none; }
 
-body {
-  padding: 1.5rem 0 0;
+::selection {
   color: #fff;
-  background-color: #1f2128; }
+  text-shadow: none;
+  background-color: #ff1919;
+  /* WebKit/Blink Browsers */ }
+
+::-moz-selection {
+  color: #fff;
+  text-shadow: none;
+  background-color: #ff1919;
+  /* Gecko Browsers */ }
+
+body {
+  overflow-x: hidden;
+  padding: 1.5rem 0 0;
+  color: #000;
+  background-color: #fff; }
+  @media (min-width: 60rem) {
+    body {
+      padding-top: 4.5rem; } }
 
 header,
 main,
@@ -292,44 +549,146 @@ footer {
 @media (min-width: 60rem) {
   header {
     position: fixed;
-    top: 2.25rem;
+    top: 0;
+    bottom: 0;
     left: 0;
-    width: 33.3333333333%;
-    text-align: center; }
-    header:after {
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      width: 0.125rem;
-      height: 1000%;
-      margin: 0.75rem 0 0;
-      background: #fff;
-      content: ''; } }
+    width: calc((100% / 3) - 0.75rem);
+    padding-top: 3rem; } }
 
 @media (min-width: 60rem) {
   main,
   footer {
     margin-left: 33.3333333333%; } }
 
-section {
-  overflow: hidden;
+.section {
   margin: 0 0 2.875rem;
   padding: 0 0 1.5rem;
-  border-bottom: 0.125rem solid #fff; }
+  border-bottom: 0.125rem solid #000; }
+  .section__title {
+    position: relative;
+    margin-top: -0.84375rem;
+    margin-bottom: 0.84375rem;
+    font-size: 2.25rem;
+    line-height: 3rem;
+    top: 0.02825em;
+    font-family: Arial, sans-serif; }
+    .section__title:hover:after {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      padding: 0.375rem 0.75rem;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.5;
+      background-color: #ff1919;
+      content: "Font size: 2.25rem / Line height: 3rem"; }
+    .section__title:before {
+      color: #ff1919;
+      content: '# '; }
+  .section__subtitle {
+    position: relative;
+    margin-top: -0.375rem;
+    margin-bottom: 0.375rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    top: 0.02825em;
+    font-family: Arial, sans-serif;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    color: #ff1919; }
+    .section__subtitle:hover:after {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      padding: 0.375rem 0.75rem;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1.5;
+      background-color: #ff1919;
+      content: "Font size: 1rem / Line height: 1.5rem"; }
 
 a {
-  color: #fff; }
+  position: relative;
+  color: #000;
+  text-decoration: none;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  background-image: linear-gradient(to top, transparent, transparent 2px, #000 2px, #000 3px, transparent 3px); }
+  a:hover {
+    color: #ff1919;
+    background-image: linear-gradient(to top, transparent, transparent 2px, #ff1919 2px, #ff1919 3px, transparent 3px); }
+
+.article__row {
+  margin: 0 -0.75rem; }
+  .article__row:after {
+    clear: both;
+    display: table;
+    content: ''; }
+
+.article__col {
+  float: left;
+  width: 100%;
+  padding: 0 0.75rem; }
+  @media (min-width: 60rem) {
+    .article__col {
+      width: 50%; } }
+
+.article__dropcap {
+  position: relative;
+  margin-top: -1.265625rem;
+  margin-bottom: 1.265625rem;
+  font-size: 3.375rem;
+  line-height: 4.5rem;
+  top: 0.02825em;
+  font-family: Arial, sans-serif;
+  float: left;
+  width: 5.25rem;
+  margin-right: 0.75rem;
+  color: #fff;
+  font-weight: bold;
+  line-height: 5.25rem;
+  text-align: center;
+  background-color: #ff1919;
+  transform: translate(0, 1.5rem); }
+  .article__dropcap:hover:after {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.375rem 0.75rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: #ff1919;
+    content: "Font size: 3.375rem / Line height: 4.5rem"; }
+
+.article__streamer {
+  letter-spacing: 0.0625em;
+  text-transform: uppercase; }
+
+.article h1, .article .h1,
+.article h2, .article .h2,
+.article h3, .article .h3,
+.article h4, .article .h4,
+.article h5, .article .h5,
+.article h6, .article .h6 {
+  padding-top: 1.5rem; }
 
 blockquote {
   display: inline-block;
-  margin: 0 0 1.5rem;
+  margin: -0.125rem 0 1.375rem;
   padding: 3rem 1.5rem 0;
-  background-color: #30333e; }
-
-code {
-  padding: 0.75rem 1.5rem;
-  background-color: #30333e;
-  border-radius: 0.125rem; }
+  border: 0.125rem solid #000; }
 
 form label {
   font-weight: bold; }
@@ -337,13 +696,19 @@ form label {
 form legend {
   display: none; }
 
-form fieldset,
 form input,
 form select,
 form textarea {
-  color: #fff;
-  background-color: #30333e;
-  border-color: #30333e; }
+  color: #000;
+  background-color: transparent;
+  border-color: #000;
+  outline: none; }
+  form input:active, form input:focus,
+  form select:active,
+  form select:focus,
+  form textarea:active,
+  form textarea:focus {
+    border-color: #ff1919; }
 
 form input[type=radio] + label, form input[type=checkbox] + label {
   font-weight: normal; }
@@ -356,77 +721,41 @@ h5, .h5,
 h6, .h6 {
   font-weight: bold; }
 
-h5, .h5,
-h6, .h6 {
-  padding-bottom: 1.5rem; }
-
-ol {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  counter-reset: how-to; }
-  ol li {
-    top: 0;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    padding: 0 0 2.25rem 2.25rem; }
-    ol li:before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 1.5rem;
-      margin: -0.5rem 0 0;
-      padding: 0.375rem 0 0;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-      text-align: center;
-      border-top: 0.125rem solid #fff;
-      content: counter(how-to);
-      counter-increment: how-to; }
-    ol li h5 {
-      padding: 0; }
-
-table {
-  border-color: #30333e; }
-  table * {
-    border-color: #30333e; }
-  table tr:hover {
-    background-color: #30333e; }
-
-.table-wrapper {
-  border-color: #30333e; }
-
 .btn, input[type=submit] {
   padding: 1.125rem 1.875rem;
-  color: #1f2128;
+  color: #000;
   font-weight: bold;
-  background-color: #fff;
-  border-color: transparent; }
+  background-color: transparent;
+  border-color: #000; }
+  .btn:active, input[type=submit]:active, .btn:focus, input[type=submit]:focus, .btn:hover, input[type=submit]:hover {
+    color: #fff;
+    background-color: #ff1919;
+    border-color: #ff1919; }
 
 .logo {
   position: relative;
-  margin-top: -1.588425387rem;
-  margin-bottom: 1.588425387rem;
-  font-size: 4.235801032rem;
-  line-height: 6rem;
+  margin-top: -1.265625rem;
+  margin-bottom: 1.265625rem;
+  font-size: 3.375rem;
+  line-height: 4.5rem;
   top: 0.02825em;
-  font-family: Arial, sans-serif;
-  padding-bottom: 1.5rem;
-  font-weight: bold;
-  line-height: 4.5rem; }
-  .logo:after {
-    clear: both;
-    display: table;
-    content: ''; }
-  .logo__letter {
-    float: left;
-    width: 33.3333333333%;
-    padding: 0 0.75rem; }
-  .logo__item {
-    float: left;
-    width: 50%; }
+  font-family: Georgia, serif;
+  color: #ff1919;
+  font-weight: bold; }
+  .logo:hover:after {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 0.375rem 0.75rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: #ff1919;
+    content: "Font size: 3.375rem / Line height: 4.5rem"; }
 
 .grid {
   position: fixed;
@@ -434,12 +763,12 @@ table {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
+  z-index: 9999;
   display: flex;
   pointer-events: none; }
   .grid__item {
     width: 33.3333333333%;
     margin: -0.0625rem 0.6875rem;
-    border: 0.0625rem solid rgba(255, 99, 71, 0.5); }
+    border: 0.0625rem solid rgba(255, 25, 25, 0.5); }
 
 /*# sourceMappingURL=demo.css.map */

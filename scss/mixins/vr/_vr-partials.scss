@@ -87,8 +87,6 @@ blockquote {
 
 	p {
 		@include vr($font-body, $font-size-m);
-
-		padding: 0; // Reset header and trailer paddings
 	}
 }
 
@@ -101,17 +99,23 @@ cite {
 }
 
 code {
-	@include vr($font-mono);
+	@include vr($font-mono, $base-font-size);
 
 	display: block;
+
+	padding: 0 0 $paragraph-trailer;
 }
 
 ol,
 ul {
-	margin-top: 0;
-	margin-bottom: 0;
-	padding-top: 0;
-	padding-bottom: 0;
+	@include vr($font-body, $base-font-size);
+
+	padding-bottom: $paragraph-trailer;
+
+	ol,
+	ul {
+		@include vr-reset;
+	}
 }
 
 small {
@@ -120,7 +124,7 @@ small {
 }
 
 // Buttons
-$btn-border-width: $border-width-s;
+$btn-border-width: $border-width-m;
 
 .btn {
 	@extend %btn;
@@ -152,7 +156,7 @@ $btn-border-width: $border-width-s;
 }
 
 // Forms
-$form-border-width: $border-width-s;
+$form-border-width: $border-width-m;
 $form-textarea-height: $rhythm * 7;
 $form-item-spacing: $distance-l;
 

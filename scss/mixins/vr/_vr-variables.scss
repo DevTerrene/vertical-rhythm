@@ -1,4 +1,5 @@
-$show-baseline:					true; // Toggles the baseline
+$show-baseline:					true;
+$show-stats:					true;
 
 $font-display:					Arial, sans-serif;
 $font-body:						Georgia, serif;
@@ -23,9 +24,9 @@ $rhythm:						($base-font-size * $base-line-height);
 // $modular-scale:					'major-third';
 // $modular-scale:					'perfect-fourth';
 // $modular-scale:					'augmented-fourth';
-// $modular-scale:					'perfect-fifth';
+$modular-scale:					'perfect-fifth';
 // $modular-scale:					'minor-sixth';
-$modular-scale:					'golden-section';
+// $modular-scale:					'golden-section';
 // $modular-scale:					'major-sixth';
 // $modular-scale:					'minor-seventh';
 // $modular-scale:					'major-seventh';
@@ -71,5 +72,7 @@ $border-radius-l:				0.5rem;
 
 // Colors
 $vr-black:						#000;
-$vr-color-base:					#ff6347;
+$vr-white:						#fff;
+
+$vr-color-base:					#ff1919;
 $vr-color:						rgba($vr-color-base, 0.5);
