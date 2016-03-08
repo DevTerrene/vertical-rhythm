@@ -1,0 +1,234 @@
+// Base
+html {
+	position: relative;
+
+	box-sizing: border-box;
+
+	@if ($show-baseline == true) {
+		&:after {
+			@include vr-baseline;
+
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			z-index: 999;
+
+			height: 100%;
+
+			content: '';
+			pointer-events: none;
+		}
+	}
+}
+
+* {
+	&,
+	&:before,
+	&:after {
+		box-sizing: inherit;
+	}
+}
+
+body {
+	margin: 0;
+	padding: 0;
+
+	font-family: $font-body;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+}
+
+// Typography
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	padding-top: 0;
+	padding-bottom: $header-trailer;
+}
+
+h1, .h1 {
+	@include vr($font-display, $font-size-xxl);
+}
+
+h2, .h2 {
+	@include vr($font-display, $font-size-xl);
+}
+
+h3, .h3 {
+	@include vr($font-display, $font-size-l);
+}
+
+h4, .h4 {
+	@include vr($font-display, $font-size-m);
+}
+
+h5, .h5 {
+	@include vr($font-display, $font-size-s);
+}
+
+h6, .h6 {
+	@include vr($font-display, $font-size-xs);
+}
+
+p {
+	@include vr;
+
+	padding-top: 0;
+	padding-bottom: $paragraph-trailer;
+}
+
+blockquote {
+	margin: 0;
+	padding: 0;
+
+	p {
+		@include vr($font-body, $font-size-m);
+	}
+}
+
+cite {
+	@include vr($font-display, $base-font-size);
+
+	display: block;
+
+	padding: 0 0 $paragraph-trailer;
+}
+
+code {
+	@include vr($font-mono, $base-font-size);
+
+	display: block;
+
+	padding: 0 0 $paragraph-trailer;
+}
+
+ol,
+ul {
+	@include vr($font-body, $base-font-size);
+
+	padding-bottom: $paragraph-trailer;
+
+	ol,
+	ul {
+		@include vr-reset;
+	}
+}
+
+small {
+	font-size: $font-size-xs;
+	line-height: 1;
+}
+
+@if $include-vr-buttons == true {
+	.btn {
+		@include vr($font-display, $base-font-size);
+
+		display: inline-block; // For when used on anchors
+
+		margin: ($vr-btn-border-width * -1) 0 ($paragraph-trailer - $vr-btn-border-width);
+		padding: $distance-s $distance-l;
+
+		text-decoration: none;
+
+		border: $vr-btn-border-width solid;
+
+		cursor: pointer;
+
+		// FF button height fix: https://davidwalsh.name/firefox-buttons
+		&::-moz-focus-inner {
+			margin-top: 0;
+			margin-bottom: 0;
+
+			padding: 0;
+
+			border: none;
+		}
+	}
+}
+
+@if $include-vr-forms == true {
+	form {
+		font-family: $font-display;
+	}
+
+	fieldset {
+		margin: 0 0 $vr-form-item-spacing;
+		padding: ($distance-s - $vr-form-border-width) $distance-m;
+
+		border: solid $vr-form-border-width;
+	}
+
+	legend {
+		@include vr($font-display, $base-font-size);
+
+		margin: 0;
+		padding: 0 $distance-m $vr-form-border-width;
+	}
+
+	label {
+		@include vr($font-display, $base-font-size);
+
+		display: block;
+
+		width: 100%;
+
+		padding: 0;
+
+		cursor: pointer;
+	}
+
+	input,
+	select,
+	textarea {
+		@include vr($font-display, $base-font-size);
+
+		display: block;
+
+		width: 100%;
+
+		margin: 0 0 $vr-form-item-spacing;
+		padding: ($distance-s - $vr-form-border-width) $distance-s;
+
+		border: solid $vr-form-border-width;
+	}
+
+	select {
+		height: $rhythm * 1.5;
+	}
+
+	textarea {
+		height: $vr-form-textarea-height;
+	}
+
+	input {
+		&[type=search],
+		&[type=number] {
+			box-sizing: border-box;
+
+			appearance: textfield;
+		}
+
+		&[type=radio],
+		&[type=checkbox] {
+			display: inline-block;
+
+			width: auto;
+
+			margin: 0;
+			padding: 0;
+
+			+ label {
+				display: inline-block;
+
+				width: auto;
+
+				margin: 0 $distance-m 0 0;
+				padding: 0;
+			}
+		}
+	}
+}
