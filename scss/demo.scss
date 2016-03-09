@@ -31,10 +31,6 @@ body {
 	color: $text-color;
 
 	background-color: $bg-color;
-
-	@media (min-width: $grid-break) {
-		padding-top: $rhythm * 3;
-	}
 }
 
 header,
@@ -58,10 +54,22 @@ header {
 	}
 }
 
+main {
+	padding-top: $rhythm * 1;
+
+	@media (min-width: $grid-break) {
+		padding-top: $rhythm * 3;
+	}
+}
+
 main,
 footer {
 	@media (min-width: $grid-break) {
-		margin-left: (100% / 3 * 1);
+		position: relative;
+		left: (100% / 3 * 1);
+		display: block; // IE fix
+
+		width: (100% / 3 * 2);
 	}
 }
 

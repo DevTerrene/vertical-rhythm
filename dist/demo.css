@@ -524,9 +524,6 @@ body {
   padding: 0;
   color: #000;
   background-color: #fff; }
-  @media (min-width: 52.5rem) {
-    body {
-      padding-top: 4.875rem; } }
 
 header,
 main,
@@ -544,10 +541,19 @@ header {
       left: 0;
       width: 33.3333333333%; } }
 
+main {
+  padding-top: 1.625rem; }
+  @media (min-width: 52.5rem) {
+    main {
+      padding-top: 4.875rem; } }
+
 @media (min-width: 52.5rem) {
   main,
   footer {
-    margin-left: 33.3333333333%; } }
+    position: relative;
+    left: 33.3333333333%;
+    display: block;
+    width: 66.6666666667%; } }
 
 footer {
   padding-bottom: 4.875rem; }
