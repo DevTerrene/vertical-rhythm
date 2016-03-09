@@ -521,22 +521,22 @@ input[type=radio], input[type=checkbox] {
   /* Gecko Browsers */ }
 
 body {
-  overflow-x: hidden;
   padding: 0;
   color: #000;
   background-color: #fff; }
-  @media (min-width: 60rem) {
+  @media (min-width: 52.5rem) {
     body {
       padding-top: 4.875rem; } }
 
 header,
 main,
 footer {
+  overflow: hidden;
   padding: 0 0.8125rem; }
 
 header {
   text-align: center; }
-  @media (min-width: 60rem) {
+  @media (min-width: 52.5rem) {
     header {
       position: fixed;
       top: 0;
@@ -544,7 +544,7 @@ header {
       left: 0;
       width: 33.3333333333%; } }
 
-@media (min-width: 60rem) {
+@media (min-width: 52.5rem) {
   main,
   footer {
     margin-left: 33.3333333333%; } }
@@ -622,6 +622,7 @@ a {
 
 blockquote {
   display: inline-block;
+  max-width: 100%;
   margin: -0.0625rem 0 1.5625rem;
   padding: 2.4375rem 1.625rem 0;
   border: 0.0625rem solid #ff1919; }
@@ -665,7 +666,8 @@ code {
   background-position: 0 0.8125rem;
   background-size: 100% 3.25rem;
   background-repeat: repeat;
-  border-radius: 0.125rem; }
+  border-radius: 0.125rem;
+  word-break: break-word; }
   code + p {
     padding-top: 1.625rem; }
 
@@ -723,7 +725,7 @@ h6, .h6 {
     float: left;
     width: 100%;
     padding: 0 0.8125rem; }
-    @media (min-width: 60rem) {
+    @media (min-width: 52.5rem) {
       .article__col {
         width: 50%; } }
   .article__dropcap {

@@ -1,6 +1,6 @@
 @import 'mixins/vr/vr-main';
 
-$grid-break: 60rem;
+$grid-break: 52.5rem;
 $grid-gutter: $distance-m;
 
 $black: #000;
@@ -26,8 +26,6 @@ $text-color: $black;
 }
 
 body {
-	overflow-x: hidden;
-
 	padding: 0;
 
 	color: $text-color;
@@ -42,6 +40,8 @@ body {
 header,
 main,
 footer {
+	overflow: hidden;
+
 	padding: 0 $grid-gutter;
 }
 
@@ -115,6 +115,8 @@ blockquote {
 
 	display: inline-block;
 
+	max-width: 100%;
+
 	margin: ($blockquote-border-width * -1) 0 ($paragraph-trailer - $blockquote-border-width);
 	padding: ($distance-m + $distance-l) $distance-l 0;
 
@@ -156,6 +158,8 @@ code {
 	background-size: 100% ($rhythm * 2);
 	background-repeat: repeat;
 	border-radius: $border-radius-s;
+
+	word-break: break-word;
 
 	& + p {
 		padding-top: $paragraph-trailer;
