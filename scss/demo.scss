@@ -99,9 +99,6 @@ footer {
 	&__subtitle {
 		@include vr($font-display, $base-font-size);
 
-		padding-top: $paragraph-trailer;
-		padding-bottom: $paragraph-trailer;
-
 		color: $red;
 	}
 }
@@ -170,7 +167,7 @@ code {
 	word-break: break-word;
 
 	& + p {
-		padding-top: $paragraph-trailer;
+		padding-top: $distance-m;
 	}
 }
 
@@ -194,7 +191,7 @@ p {
 
 form {
 	label {
-		font-weight: bold;
+		font-weight: 600;
 	}
 
 	legend {
@@ -232,7 +229,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-	font-weight: bold;
+	font-weight: 600;
 }
 
 .article {
@@ -273,7 +270,7 @@ h6, .h6 {
 		margin-right: $distance-m;
 
 		color: $white;
-		font-weight: bold;
+		font-weight: 600;
 		line-height: $dropcap-size;
 		text-align: center;
 
@@ -297,7 +294,7 @@ h6, .h6 {
 
 .btn {
 	color: $text-color;
-	font-weight: bold;
+	font-weight: 600;
 
 	background-color: transparent;
 	border-color: $text-color;
@@ -335,7 +332,11 @@ h6, .h6 {
 
 
 .logo {
-	@include vr($font-body, $font-size-xl);
+	@include vr($font-display, $font-size-xxl);
+
+	overflow: hidden;
+
+	padding-bottom: 0; // Reset trailer
 
 	color: $red;
 

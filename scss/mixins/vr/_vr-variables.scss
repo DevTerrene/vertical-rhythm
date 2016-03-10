@@ -3,24 +3,27 @@ $show-baseline:					true;
 $show-stats:					true;
 
 // Typography
-$font-display:					Arial, sans-serif;
-$font-body:						Georgia, serif;
+$font-display:					'Work Sans', Arial, sans-serif;
+$font-body:						'Lora', Georgia, serif;
 $font-mono:						'Courier New', monospace;
 
-$cap-font-display:				0.02825;
-$cap-font-body:					0.02825;
+// The most effective way to calculate the
+// cap height is by zooming to 500% in
+// your browser and adjust these values.
+$cap-font-display:				0.03;
+$cap-font-body:					0.007;
 $cap-font-mono:					0.10625;
 
 $px-font-size:					18;
-$px-line-height:				26; // Only even numbers are supported
+$px-line-height:				28; // Only even numbers are supported, for now.
 
 $base-font-size:				($px-font-size / 16) * 1rem;
 $base-line-height:				($px-line-height / $px-font-size);
 
 $rhythm:						($base-font-size * $base-line-height);
 
-// Modular scale - see <functions/calc-font-sizes> for all preset scales
-$modular-scale:					'perfect-fifth';
+// Modular scale - see <_vr-calc-font-sizes.scss> for all preset scales
+$modular-scale:					'augmented-fourth';
 
 $font-sizes:					('xs', 's', 'm', 'l', 'xl', 'xxl');
 $font-size-default:				's';
@@ -36,7 +39,7 @@ $font-size-xl:					map-get($font-sizes, xl);
 $font-size-xxl:					map-get($font-sizes, xxl);
 
 // Alignment
-$header-trailer:				$rhythm * 0;
+$header-trailer:				$rhythm * 0.5;
 $paragraph-trailer:				$rhythm * 1;
 
 $distance-s:					$rhythm * 0.25;

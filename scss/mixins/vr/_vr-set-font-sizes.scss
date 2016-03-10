@@ -24,10 +24,17 @@
 
 	position: relative;
 
-	margin-top: $rhythm-offset * -1;
-	margin-bottom: $rhythm-offset;
-
 	font-size: $font-size;
+
+	@if $font-size < ($base-font-size * 2) and $font-size > ($base-font-size * 1) {
+		$line-height: $line-height * 1.5;
+
+		margin-top: ($rhythm-offset + ($line-height * -0.17))* -1;
+		margin-bottom: ($rhythm-offset - ($line-height * 0.17));
+	} @else {
+		margin-top: $rhythm-offset * -1;
+		margin-bottom: $rhythm-offset;
+	}
 
 	@if $line-height == 0rem {
 		line-height: $rhythm; // TODO: fractional line height
