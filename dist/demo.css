@@ -21,7 +21,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Lora", Georgia, serif;
+  font-family: Georgia, serif;
   font-size: 1.125rem;
   line-height: 1.5555555556; }
 
@@ -40,8 +40,8 @@ h1, .h1 {
   margin-top: -1.7489431596rem;
   margin-bottom: 1.7489431596rem;
   line-height: 5.25rem;
-  top: 0.0438888889em;
-  font-family: "Work Sans", Arial, sans-serif; }
+  top: 0.0421388889em;
+  font-family: Arial, sans-serif; }
   h1:hover, .h1:hover {
     color: #000;
     background-color: rgba(255, 25, 25, 0.25); }
@@ -52,7 +52,7 @@ h1, .h1 {
       z-index: 1000;
       padding: 0.4375rem 0.875rem;
       color: #fff;
-      font-family: "Work Sans", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 1.125rem;
       font-style: normal;
       font-weight: normal;
@@ -66,8 +66,8 @@ h2, .h2 {
   margin-top: -1.2368763505rem;
   margin-bottom: 1.2368763505rem;
   line-height: 3.5rem;
-  top: 0.0438888889em;
-  font-family: "Work Sans", Arial, sans-serif; }
+  top: 0.0421388889em;
+  font-family: Arial, sans-serif; }
   h2:hover, .h2:hover {
     color: #000;
     background-color: rgba(255, 25, 25, 0.25); }
@@ -78,7 +78,7 @@ h2, .h2 {
       z-index: 1000;
       padding: 0.4375rem 0.875rem;
       color: #fff;
-      font-family: "Work Sans", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 1.125rem;
       font-style: normal;
       font-weight: normal;
@@ -92,8 +92,8 @@ h3, .h3 {
   margin-top: -0.42848575rem;
   margin-bottom: 0.42848575rem;
   line-height: 2.625rem;
-  top: 0.0438888889em;
-  font-family: "Work Sans", Arial, sans-serif; }
+  top: 0.0421388889em;
+  font-family: Arial, sans-serif; }
   h3:hover, .h3:hover {
     color: #000;
     background-color: rgba(255, 25, 25, 0.25); }
@@ -104,7 +104,7 @@ h3, .h3 {
       z-index: 1000;
       padding: 0.4375rem 0.875rem;
       color: #fff;
-      font-family: "Work Sans", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 1.125rem;
       font-style: normal;
       font-weight: normal;
@@ -118,8 +118,8 @@ h4, .h4 {
   margin-top: -0.172375rem;
   margin-bottom: 0.172375rem;
   line-height: 2.625rem;
-  top: 0.0438888889em;
-  font-family: "Work Sans", Arial, sans-serif; }
+  top: 0.0421388889em;
+  font-family: Arial, sans-serif; }
   h4:hover, .h4:hover {
     color: #000;
     background-color: rgba(255, 25, 25, 0.25); }
@@ -130,7 +130,7 @@ h4, .h4 {
       z-index: 1000;
       padding: 0.4375rem 0.875rem;
       color: #fff;
-      font-family: "Work Sans", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 1.125rem;
       font-style: normal;
       font-weight: normal;
@@ -144,8 +144,8 @@ h5, .h5 {
   margin-top: -0.4375rem;
   margin-bottom: 0.4375rem;
   line-height: 1.75rem;
-  top: 0.0438888889em;
-  font-family: "Work Sans", Arial, sans-serif; }
+  top: 0.0421388889em;
+  font-family: Arial, sans-serif; }
   h5:hover, .h5:hover {
     color: #000;
     background-color: rgba(255, 25, 25, 0.25); }
@@ -156,7 +156,7 @@ h5, .h5 {
       z-index: 1000;
       padding: 0.4375rem 0.875rem;
       color: #fff;
-      font-family: "Work Sans", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 1.125rem;
       font-style: normal;
       font-weight: normal;
@@ -170,8 +170,8 @@ h6, .h6 {
   margin-top: -0.3094059406rem;
   margin-bottom: 0.3094059406rem;
   line-height: 1.75rem;
-  top: 0.0438888889em;
-  font-family: "Work Sans", Arial, sans-serif; }
+  top: 0.0421388889em;
+  font-family: Arial, sans-serif; }
   h6:hover, .h6:hover {
     color: #000;
     background-color: rgba(255, 25, 25, 0.25); }
@@ -182,7 +182,7 @@ h6, .h6 {
       z-index: 1000;
       padding: 0.4375rem 0.875rem;
       color: #fff;
-      font-family: "Work Sans", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 1.125rem;
       font-style: normal;
       font-weight: normal;
@@ -196,8 +196,8 @@ p {
   margin-top: -0.4375rem;
   margin-bottom: 0.4375rem;
   line-height: 1.75rem;
-  top: 0.0208888889em;
-  font-family: "Lora", Georgia, serif;
+  top: 0.0421388889em;
+  font-family: Georgia, serif;
   padding-top: 0;
   padding-bottom: 1.75rem; }
   p:hover {
@@ -210,7 +210,7 @@ p {
       z-index: 1000;
       padding: 0.4375rem 0.875rem;
       color: #fff;
-      font-family: "Work Sans", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 1.125rem;
       font-style: normal;
       font-weight: normal;
@@ -227,8 +227,8 @@ blockquote {
     margin-top: -0.172375rem;
     margin-bottom: 0.172375rem;
     line-height: 2.625rem;
-    top: 0.0208888889em;
-    font-family: "Lora", Georgia, serif; }
+    top: 0.0421388889em;
+    font-family: Georgia, serif; }
     blockquote p:hover {
       color: #000;
       background-color: rgba(255, 25, 25, 0.25); }
@@ -239,7 +239,7 @@ blockquote {
         z-index: 1000;
         padding: 0.4375rem 0.875rem;
         color: #fff;
-        font-family: "Work Sans", Arial, sans-serif;
+        font-family: Arial, sans-serif;
         font-size: 1.125rem;
         font-style: normal;
         font-weight: normal;
@@ -253,8 +253,8 @@ cite {
   margin-top: -0.4375rem;
   margin-bottom: 0.4375rem;
   line-height: 1.75rem;
-  top: 0.0438888889em;
-  font-family: "Work Sans", Arial, sans-serif;
+  top: 0.0421388889em;
+  font-family: Arial, sans-serif;
   display: block;
   padding: 0 0 1.75rem; }
   cite:hover {
@@ -267,7 +267,7 @@ cite {
       z-index: 1000;
       padding: 0.4375rem 0.875rem;
       color: #fff;
-      font-family: "Work Sans", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 1.125rem;
       font-style: normal;
       font-weight: normal;
@@ -295,7 +295,7 @@ code {
       z-index: 1000;
       padding: 0.4375rem 0.875rem;
       color: #fff;
-      font-family: "Work Sans", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 1.125rem;
       font-style: normal;
       font-weight: normal;
@@ -310,8 +310,8 @@ ul {
   margin-top: -0.4375rem;
   margin-bottom: 0.4375rem;
   line-height: 1.75rem;
-  top: 0.0208888889em;
-  font-family: "Lora", Georgia, serif;
+  top: 0.0421388889em;
+  font-family: Georgia, serif;
   padding-bottom: 1.75rem; }
   ol:hover,
   ul:hover {
@@ -325,7 +325,7 @@ ul {
       z-index: 1000;
       padding: 0.4375rem 0.875rem;
       color: #fff;
-      font-family: "Work Sans", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 1.125rem;
       font-style: normal;
       font-weight: normal;
@@ -353,8 +353,8 @@ small {
   margin-top: -0.4375rem;
   margin-bottom: 0.4375rem;
   line-height: 1.75rem;
-  top: 0.0438888889em;
-  font-family: "Work Sans", Arial, sans-serif;
+  top: 0.0421388889em;
+  font-family: Arial, sans-serif;
   display: inline-block;
   margin: -0.125rem 0 1.625rem;
   padding: 0.4375rem 1.75rem;
@@ -371,7 +371,7 @@ small {
       z-index: 1000;
       padding: 0.4375rem 0.875rem;
       color: #fff;
-      font-family: "Work Sans", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 1.125rem;
       font-style: normal;
       font-weight: normal;
@@ -385,7 +385,7 @@ small {
     border: none; }
 
 form {
-  font-family: "Work Sans", Arial, sans-serif; }
+  font-family: Arial, sans-serif; }
 
 fieldset {
   margin: 0 0 1.75rem;
@@ -398,8 +398,8 @@ legend {
   margin-top: -0.4375rem;
   margin-bottom: 0.4375rem;
   line-height: 1.75rem;
-  top: 0.0438888889em;
-  font-family: "Work Sans", Arial, sans-serif;
+  top: 0.0421388889em;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0 0.875rem 0.0625rem; }
   legend:hover {
@@ -412,7 +412,7 @@ legend {
       z-index: 1000;
       padding: 0.4375rem 0.875rem;
       color: #fff;
-      font-family: "Work Sans", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 1.125rem;
       font-style: normal;
       font-weight: normal;
@@ -426,8 +426,8 @@ label {
   margin-top: -0.4375rem;
   margin-bottom: 0.4375rem;
   line-height: 1.75rem;
-  top: 0.0438888889em;
-  font-family: "Work Sans", Arial, sans-serif;
+  top: 0.0421388889em;
+  font-family: Arial, sans-serif;
   display: block;
   width: 100%;
   padding: 0;
@@ -442,7 +442,7 @@ label {
       z-index: 1000;
       padding: 0.4375rem 0.875rem;
       color: #fff;
-      font-family: "Work Sans", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 1.125rem;
       font-style: normal;
       font-weight: normal;
@@ -458,8 +458,8 @@ textarea {
   margin-top: -0.4375rem;
   margin-bottom: 0.4375rem;
   line-height: 1.75rem;
-  top: 0.0438888889em;
-  font-family: "Work Sans", Arial, sans-serif;
+  top: 0.0421388889em;
+  font-family: Arial, sans-serif;
   display: block;
   width: 100%;
   margin: 0 0 1.75rem;
@@ -479,7 +479,7 @@ textarea {
       z-index: 1000;
       padding: 0.4375rem 0.875rem;
       color: #fff;
-      font-family: "Work Sans", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 1.125rem;
       font-style: normal;
       font-weight: normal;
@@ -568,8 +568,8 @@ footer {
     margin-top: -0.42848575rem;
     margin-bottom: 0.42848575rem;
     line-height: 2.625rem;
-    top: 0.0438888889em;
-    font-family: "Work Sans", Arial, sans-serif; }
+    top: 0.0421388889em;
+    font-family: Arial, sans-serif; }
     .section__title:hover {
       color: #000;
       background-color: rgba(255, 25, 25, 0.25); }
@@ -580,7 +580,7 @@ footer {
         z-index: 1000;
         padding: 0.4375rem 0.875rem;
         color: #fff;
-        font-family: "Work Sans", Arial, sans-serif;
+        font-family: Arial, sans-serif;
         font-size: 1.125rem;
         font-style: normal;
         font-weight: normal;
@@ -596,8 +596,8 @@ footer {
     margin-top: -0.4375rem;
     margin-bottom: 0.4375rem;
     line-height: 1.75rem;
-    top: 0.0438888889em;
-    font-family: "Work Sans", Arial, sans-serif;
+    top: 0.0421388889em;
+    font-family: Arial, sans-serif;
     color: #ff1919; }
     .section__subtitle:hover {
       color: #000;
@@ -609,7 +609,7 @@ footer {
         z-index: 1000;
         padding: 0.4375rem 0.875rem;
         color: #fff;
-        font-family: "Work Sans", Arial, sans-serif;
+        font-family: Arial, sans-serif;
         font-size: 1.125rem;
         font-style: normal;
         font-weight: normal;
@@ -636,8 +636,8 @@ blockquote {
     margin-top: -0.42848575rem;
     margin-bottom: 0.42848575rem;
     line-height: 2.625rem;
-    top: 0.0208888889em;
-    font-family: "Lora", Georgia, serif;
+    top: 0.0421388889em;
+    font-family: Georgia, serif;
     padding-bottom: 0;
     text-indent: -0.4125em; }
     blockquote p:hover {
@@ -650,7 +650,7 @@ blockquote {
         z-index: 1000;
         padding: 0.4375rem 0.875rem;
         color: #fff;
-        font-family: "Work Sans", Arial, sans-serif;
+        font-family: Arial, sans-serif;
         font-size: 1.125rem;
         font-style: normal;
         font-weight: normal;
@@ -738,8 +738,8 @@ h6, .h6 {
     margin-top: -1.2368763505rem;
     margin-bottom: 1.2368763505rem;
     line-height: 3.5rem;
-    top: 0.0438888889em;
-    font-family: "Work Sans", Arial, sans-serif;
+    top: 0.0421388889em;
+    font-family: Arial, sans-serif;
     float: left;
     width: 6.125rem;
     margin-right: 0.875rem;
@@ -759,7 +759,7 @@ h6, .h6 {
         z-index: 1000;
         padding: 0.4375rem 0.875rem;
         color: #fff;
-        font-family: "Work Sans", Arial, sans-serif;
+        font-family: Arial, sans-serif;
         font-size: 1.125rem;
         font-style: normal;
         font-weight: normal;
@@ -805,8 +805,8 @@ h6, .h6 {
   margin-top: -1.7489431596rem;
   margin-bottom: 1.7489431596rem;
   line-height: 5.25rem;
-  top: 0.0438888889em;
-  font-family: "Work Sans", Arial, sans-serif;
+  top: 0.0421388889em;
+  font-family: Arial, sans-serif;
   overflow: hidden;
   padding-bottom: 0;
   color: #ff1919; }
@@ -820,7 +820,7 @@ h6, .h6 {
       z-index: 1000;
       padding: 0.4375rem 0.875rem;
       color: #fff;
-      font-family: "Work Sans", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 1.125rem;
       font-style: normal;
       font-weight: normal;

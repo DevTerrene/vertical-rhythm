@@ -3,15 +3,15 @@ $show-baseline:					true;
 $show-stats:					true;
 
 // Typography
-$font-display:					'Work Sans', Arial, sans-serif;
-$font-body:						'Lora', Georgia, serif;
+$font-display:					Arial, sans-serif;
+$font-body:						Georgia, serif;
 $font-mono:						'Courier New', monospace;
 
 // The most effective way to calculate the
 // cap height is by zooming to 500% in
 // your browser and adjust these values.
-$cap-font-display:				0.03;
-$cap-font-body:					0.007;
+$cap-font-display:				0.02825;
+$cap-font-body:					0.02825;
 $cap-font-mono:					0.10625;
 
 $px-font-size:					18;
