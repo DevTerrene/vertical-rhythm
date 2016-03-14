@@ -25,12 +25,14 @@ $text-color: $black;
 	background-color: $red; /* Gecko Browsers */
 }
 
+html {
+	background-color: $bg-color;
+}
+
 body {
 	padding: 0;
 
 	color: $text-color;
-
-	background-color: $bg-color;
 }
 
 header,
@@ -42,20 +44,31 @@ footer {
 }
 
 header {
-	text-align: center;
-
 	@media (min-width: $grid-break) {
 		position: fixed;
 		top: 0;
 		bottom: 0;
 		left: 0;
+		z-index: 1;
 
 		width: (100% / 3);
+	}
+
+	&:before {
+		display: block;
+
+		height: $rhythm * 1;
+
+		margin: 0 0 ($rhythm * 0.5);
+
+		background: $red;
+
+		content: '';
 	}
 }
 
 main {
-	padding-top: $rhythm * 1;
+	padding-top: $rhythm * 2;
 
 	@media (min-width: $grid-break) {
 		padding-top: $rhythm * 3;
@@ -89,6 +102,8 @@ footer {
 	&__title {
 		@include vr($font-display, $font-size-l);
 
+		padding-bottom: $paragraph-trailer;
+
 		&:before {
 			color: $red;
 
@@ -98,6 +113,8 @@ footer {
 
 	&__subtitle {
 		@include vr($font-display, $base-font-size);
+
+		padding-bottom: $rhythm * 0.5;
 
 		color: $red;
 	}
@@ -118,26 +135,16 @@ a {
 blockquote {
 	$blockquote-border-width: $border-width-s;
 
-	display: inline-block;
-
-	max-width: 100%;
-
 	margin: ($blockquote-border-width * -1) 0 ($paragraph-trailer - $blockquote-border-width);
-	padding: ($distance-m + $distance-l) $distance-l 0;
+	padding: $paragraph-trailer $distance-l 0;
 
 	border: $blockquote-border-width solid $red;
 
 	p {
 		@include vr($font-body, $font-size-l);
 
-		padding-bottom: 0; // Reset paragraph trailer
-
 		text-indent: 0.4125em * -1;
 	}
-}
-
-cite {
-	font-style: normal;
 }
 
 code {
@@ -190,12 +197,25 @@ p {
 }
 
 form {
-	label {
-		font-weight: 600;
+	fieldset {
+		margin: 0 0 $vr-form-field-trailer;
+		padding-top: 0;
+		padding-right: 0;
+		padding-left: 0;
+		border: none;
 	}
 
 	legend {
-		display: none;
+		@include vr;
+
+		margin: 0;
+		padding: 0;
+
+		font-weight: bold;
+	}
+
+	label {
+		font-weight: bold;
 	}
 
 	input,
@@ -229,14 +249,28 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-	font-weight: 600;
+	font-weight: bold;
 }
 
 .article {
-	padding-top: $distance-l;
-
 	&__row {
+		position: relative; // For border
+
 		margin: 0 ($grid-gutter * -1);
+		padding: ($rhythm * 1.5) 0 0;
+
+		&:before {
+			position: absolute;
+			top: 0;
+			left: $grid-gutter;
+			right: $grid-gutter;
+
+			height: $border-width-m;
+
+			background: $text-color;
+
+			content: '';
+		}
 
 		// Clearfix
 		&:after {
@@ -261,26 +295,20 @@ h6, .h6 {
 	&__dropcap {
 		$dropcap-size: $rhythm * 3.5;
 
-		@include vr($font-display, $font-size-xl);
-
 		float: left;
 
 		width: $dropcap-size;
 
-		margin-right: $distance-m;
+		margin: $distance-s $distance-m 0 0;
 
 		color: $white;
-		font-weight: 600;
+		font-size: $font-size-xl;
+		font-family: $font-display;
+		font-weight: bold;
 		line-height: $dropcap-size;
 		text-align: center;
 
 		background-color: $red;
-		transform: translate(0, ($rhythm));
-
-		// Hide the stat tooltip for this one
-		&:after {
-			display: none;
-		}
 	}
 
 	&__streamer {
@@ -294,7 +322,7 @@ h6, .h6 {
 
 .btn {
 	color: $text-color;
-	font-weight: 600;
+	font-weight: bold;
 
 	background-color: transparent;
 	border-color: $text-color;
@@ -310,45 +338,12 @@ h6, .h6 {
 	}
 }
 
-.grid {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 9999;
-	display: flex;
-
-	pointer-events: none;
-
-	&__item {
-		width: (100% / 3);
-
-		margin: ($border-width-s * -1) ($grid-gutter - $border-width-s);
-
-		border: $border-width-s solid $vr-color;
-	}
-}
-
-
 .logo {
-	@include vr($font-display, $font-size-xxl);
+	@include vr($font-display, $font-size-xl);
 
 	overflow: hidden;
 
-	padding-bottom: 0; // Reset trailer
+	padding-top: $rhythm * 1;
 
 	color: $red;
-
-	&:before {
-		display: block;
-
-		height: $rhythm * 2;
-
-		margin: 0 0 ($rhythm * 0.5);
-
-		background: $red;
-
-		content: '';
-	}
 }

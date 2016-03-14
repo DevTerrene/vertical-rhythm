@@ -1,98 +1,51 @@
 @mixin vr($font-family: $font-body, $font-size: $base-font-size) {
-	// Calculate offset between line height and base line height (1.5)
-	$offset-line-height: ((((16 - $px-font-size) / 16) / 2) - ((1.5 - $base-line-height) / 4));
 
-	// Calculate offset between font size and base font size (16px)
-	$offset-font-size: (($px-font-size - 16) / 16 / 2);
+	// Calculate the line height of the text.
+	$line-height: $font-size * $base-line-height;
 
-	// Combine cap height and other offsets so we can shift text accordingly
-	$offset-font-display: ($cap-font-display + $offset-line-height + $offset-font-size) * 1em;
-	$offset-font-body: ($cap-font-body + $offset-line-height + $offset-font-size) * 1em;
-	$offset-font-mono: ($cap-font-mono + $offset-line-height + $offset-font-size) * 1em;
+	// How much rhythm fits in the line height?
+	$rhythm-count: $line-height / $rhythm;
 
-	// Calculate the height of the text
-	$text-height: $font-size * $base-line-height;
+	// Round the rhythm count to half cycles.
+	$rhythm-count-half: $rhythm-count - ($rhythm-count - floor($rhythm-count));
 
-	// Calculate how much rhythm the text height has
-	$rhythm-count: $text-height / $rhythm;
+	// Calculate the adjusted line height.
+	$adjusted-line-height: $rhythm-count-half * $rhythm;
 
-	// Calculate the offset of the text height compared to the rhythm
-	$rhythm-offset: ($text-height * 0.25);
-
-	// Combine text height and offset to form the adjusted line height
-	$line-height: ($rhythm-count - ($rhythm-count - floor($rhythm-count))) * $rhythm;
+	// Shift the text to the baseline (distance between the baseline and descender height).
+	$baseline-shift: (($adjusted-line-height - $font-size) * 0.5);
 
 	position: relative;
 
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+
 	font-size: $font-size;
 
-	@if $font-size < ($base-font-size * 2) and $font-size > ($base-font-size * 1) {
-		$line-height: $line-height * 1.5;
-
-		margin-top: ($rhythm-offset + ($line-height * -0.17))* -1;
-		margin-bottom: ($rhythm-offset - ($line-height * 0.17));
+	// Make sure that 1 rhythm is the minimum line height.
+	@if $adjusted-line-height < 1 {
+		line-height: $base-font-size * $base-line-height;
 	} @else {
-		margin-top: $rhythm-offset * -1;
-		margin-bottom: $rhythm-offset;
+		line-height: $adjusted-line-height;
 	}
 
-	@if $line-height == 0rem {
-		line-height: $rhythm; // TODO: fractional line height
-	} @else {
-		line-height: $line-height;
-	}
-
-	// Set font offsets and families
+	// Set offsets and font families.
 	@if $font-family == $font-display {
-		top: $offset-font-display;
+		top: calc(#{$cap-font-display} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5));
 
 		font-family: $font-display;
 	} @else if $font-family == $font-mono {
-		top: $offset-font-mono;
+		top: calc(#{$cap-font-mono} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5));
 
 		font-family: $font-mono;
 	} @else {
-		top: $offset-font-body;
-
-		font-family: $font-body;
-	}
-
-	@if $show-stats == true {
-		&:hover {
-			color: $vr-black;
-
-			background-color: $vr-color;
-
-			&:after {
-				position: fixed;
-				right: 0;
-				bottom: 0;
-				z-index: 1000;
-
-				padding: $distance-s $distance-m;
-
-				color: $vr-white;
-
-				font-family: $font-display;
-				font-size: $base-font-size;
-				font-style: normal;
-				font-weight: normal;
-				line-height: $base-line-height;
-
-				background-color: $vr-color-base;
-
-				content: 'Font size: #{$font-size} / Line height: #{$line-height}';
-			}
-		}
+		top: calc(#{$cap-font-body} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5));
 	}
 }
 
 @mixin vr-reset {
 	position: static;
 	top: auto;
-
-	margin-top: 0;
-	margin-bottom: 0;
-	padding-top: 0;
-	padding-bottom: 0;
 }

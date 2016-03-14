@@ -1,34 +1,36 @@
+// Default settings, override these in <_vr-user-settings.scss>!
+
 // Helpers
-$show-baseline:					true;
-$show-stats:					true;
+$show-baseline:					true !default;
 
 // Typography
-$font-display:					Arial, sans-serif;
-$font-body:						Georgia, serif;
-$font-mono:						'Courier New', monospace;
+$font-display:					Arial, serif !default;
+$font-body:						Georgia, serif !default;
+$font-mono:						'Courier New', monospace !default;
 
-// The most effective way to calculate the
-// cap height is by zooming to 500% in
-// your browser and adjust these values.
-$cap-font-display:				0.02825;
-$cap-font-body:					0.02825;
-$cap-font-mono:					0.10625;
+$cap-font-display:				0.153em !default;
+$cap-font-body:					0.153em !default;
+$cap-font-mono:					0.235em !default;
 
-$px-font-size:					18;
-$px-line-height:				28; // Only even numbers are supported, for now.
+$px-font-size:					16 !default; // Pixels
+$px-line-height:				24 !default; // Pixels
 
 $base-font-size:				($px-font-size / 16) * 1rem;
 $base-line-height:				($px-line-height / $px-font-size);
 
 $rhythm:						($base-font-size * $base-line-height);
 
+$header-trailer:				$rhythm * 0.5 !default;
+$paragraph-trailer:				$rhythm * 1 !default;
+
 // Modular scale - see <_vr-calc-font-sizes.scss> for all preset scales
-$modular-scale:					'augmented-fourth';
+$modular-scale:					'perfect-fifth';
 
+// Add or remove sizes in $font-sizes.
+// Don't forget to create or delete it's corresponding $font-size-?? variable!
 $font-sizes:					('xs', 's', 'm', 'l', 'xl', 'xxl');
-$font-size-default:				's';
+$font-size-default:				's'; // Starting size of the modular scale
 
-// Font sizes
 $font-sizes:					calc-font-sizes($modular-scale, $font-sizes, $font-size-default);
 
 $font-size-xs:					map-get($font-sizes, xs);
@@ -39,41 +41,43 @@ $font-size-xl:					map-get($font-sizes, xl);
 $font-size-xxl:					map-get($font-sizes, xxl);
 
 // Alignment
-$header-trailer:				$rhythm * 0.5;
-$paragraph-trailer:				$rhythm * 1;
+$distance-s:					$rhythm * 0.25 !default;
+$distance-m:					$rhythm * 0.5 !default;
+$distance-l:					$rhythm * 1 !default;
 
-$distance-s:					$rhythm * 0.25;
-$distance-m:					$rhythm * 0.5;
-$distance-l:					$rhythm * 1;
-
-$size-s:						$rhythm * 0.25;
-$size-m:						$rhythm * 0.5;
-$size-l:						$rhythm * 1;
+$size-s:						$rhythm * 0.25 !default;
+$size-m:						$rhythm * 0.5 !default;
+$size-l:						$rhythm * 1 !default;
 
 // Borders
-$border-width-s:				0.0625rem;
-$border-width-m:				0.125rem;
-$border-width-l:				0.25rem;
+$border-width-s:				0.0625rem !default;
+$border-width-m:				0.125rem !default;
+$border-width-l:				0.25rem !default;
 
-$border-radius-s:				0.125rem;
-$border-radius-m:				0.25rem;
-$border-radius-l:				0.5rem;
-
-// Colors
-$vr-black:						#000;
-$vr-white:						#fff;
-
-$vr-color-base:					#ff1919;
-$vr-color:						rgba($vr-color-base, 0.25);
+$border-radius-s:				0.125rem !default;
+$border-radius-m:				0.25rem !default;
+$border-radius-l:				0.5rem !default;
 
 // VR buttons
-$include-vr-buttons:			true;
+$include-vr-buttons:			true !default;
 
-$vr-btn-border-width:			$border-width-m;
+$vr-btn-border-width:			$border-width-m !default;
+$vr-btn-padding-x:				$distance-l !default; // Padding right, left.
+$vr-btn-padding-y:				$distance-m !default; // Padding top, bottom.
 
 // VR forms
-$include-vr-forms:				true;
+$include-vr-forms:				true !default;
 
-$vr-form-border-width:			$border-width-s;
-$vr-form-textarea-height:		$rhythm * 6;
-$vr-form-item-spacing:			$distance-l;
+$vr-form-label-trailer:			$distance-m !default;
+
+$vr-form-field-border-width:	$border-width-m !default;
+$vr-form-field-trailer:			$distance-l !default;
+$vr-form-field-padding-x:		$distance-m !default; // Padding right, left.
+$vr-form-field-padding-y:		$distance-m !default; // Padding top, bottom.
+
+$vr-form-select-height:			$rhythm * 2 !default;
+$vr-form-textarea-height:		$rhythm * 6 !default;
+
+// Colors
+$vr-color:						#ff1919 !default;
+$vr-color-transparent:			rgba($vr-color, 0.25) !default;

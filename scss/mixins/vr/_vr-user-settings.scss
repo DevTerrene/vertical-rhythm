@@ -1,0 +1,87 @@
+// Helpers
+$show-baseline:					true;
+
+// Typography
+$font-display:					Arial, serif;
+$font-body:						Georgia, serif;
+$font-mono:						'Courier New', monospace;
+
+// To get the cap height: zoom to 500% in your browser and adjust these values.
+$cap-font-display:				0.153em;
+$cap-font-body:					0.153em;
+$cap-font-mono:					0.235em;
+
+$px-font-size:					16; // Pixels
+$px-line-height:				24; // Pixels
+
+// ! ----------
+// ! Don't change these variables!
+// ! These are used to create the new $rhythm based on your $px-font-size and $px-line-height.
+$base-font-size:				($px-font-size / 16) * 1rem; // ! Don't change this!
+$base-line-height:				($px-line-height / $px-font-size); // ! Don't change this!
+$rhythm:						($base-font-size * $base-line-height); // ! Don't change this!
+// ! ----------
+
+$header-trailer:				$rhythm * 0.5;
+$paragraph-trailer:				$rhythm * 1;
+
+// Modular scale - see <_vr-calc-font-sizes.scss> for all preset scales
+$modular-scale:					'perfect-fifth';
+$font-size-default:				's'; // Starting size of the modular scale
+
+// Alignment
+$distance-s:					$rhythm * 0.25;
+$distance-m:					$rhythm * 0.5;
+$distance-l:					$rhythm * 1;
+
+$size-s:						$rhythm * 0.25;
+$size-m:						$rhythm * 0.5;
+$size-l:						$rhythm * 1;
+
+// Borders
+$border-width-s:				0.0625rem;
+$border-width-m:				0.125rem;
+$border-width-l:				0.25rem;
+
+$border-radius-s:				0.125rem;
+$border-radius-m:				0.25rem;
+$border-radius-l:				0.5rem;
+
+// VR buttons
+$include-vr-buttons:			true;
+
+$vr-btn-border-width:			$border-width-m;
+$vr-btn-padding-x:				$distance-l; // Padding right, left.
+$vr-btn-padding-y:				$distance-m; // Padding top, bottom.
+
+// VR forms
+$include-vr-forms:				true;
+
+$vr-form-label-trailer:			$distance-m;
+
+$vr-form-field-border-width:	$border-width-m;
+$vr-form-field-trailer:			$distance-l;
+$vr-form-field-padding-x:		$distance-m; // Padding right, left.
+$vr-form-field-padding-y:		$distance-m; // Padding top, bottom.
+
+$vr-form-select-height:			$rhythm * 2;
+$vr-form-textarea-height:		$rhythm * 6;
+
+// Colors
+$vr-color:						#ff1919;
+$vr-color-transparent:			rgba($vr-color, 0.25);
+
+// ! ----------
+// ! Don't change these variables!
+// ! These are here to create a new map based on the $modular-scale.
+$font-sizes:					('xs', 's', 'm', 'l', 'xl', 'xxl'); // ! Don't change this!
+
+$font-sizes:					calc-font-sizes($modular-scale, $font-sizes, $font-size-default); // ! Don't change this!
+
+$font-size-xs:					map-get($font-sizes, xs); // ! Don't change this!
+$font-size-s:					map-get($font-sizes, s); // ! Don't change this!
+$font-size-m:					map-get($font-sizes, m); // ! Don't change this!
+$font-size-l:					map-get($font-sizes, l); // ! Don't change this!
+$font-size-xl:					map-get($font-sizes, xl); // ! Don't change this!
+$font-size-xxl:					map-get($font-sizes, xxl); // ! Don't change this!
+// ! ----------

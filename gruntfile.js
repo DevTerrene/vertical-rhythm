@@ -6,7 +6,6 @@ module.exports = function (grunt) {
 
 	'use strict';
 
-	// Load all NPM installed grunt tasks
 	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
@@ -54,7 +53,6 @@ module.exports = function (grunt) {
 		}
 	});
 
-	// Default task.
 	grunt.registerTask('default', ['sass:dev', 'watch']);
 
 };

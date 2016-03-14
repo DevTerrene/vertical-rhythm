@@ -17,17 +17,16 @@ A collection of examples that displays the effects of a proper vertical rhythm.
 ### Base typography
 The goal of typography is to create balanced, readable and legible text. Good typography depends on many factors.
 
-VR takes into account the cap height of different typefaces. This is the only number that needs some fine-tuning to get everything just right.
+VR takes into account the cap height of different typefaces. This is the only number that needs some fine-tuning to get everything just right. Located in: <_vr-user-settings.scss>
 
 ```
 $show-baseline: true;
-$show-stats: true;
 
 $font-display: Arial, sans-serif;
-$cap-font-display: 0.02825;
+$cap-font-display: 0.0155em;
 
 $px-font-size: 16;
-$px-line-height: 24; // Only even numbers are supported
+$px-line-height: 24;
 
 $modular-scale: 'golden section';
 ```
@@ -58,7 +57,7 @@ $modular-scales: (
 ```
 
 ### Alignment
-All alignment classes are based on the $rhythm. The $rhythm is calculated by multiplying the $base-font-size with the $base-line-height.
+All alignment classes are based on the $rhythm ($base-font-size * $base-line-height).
 
 ```
 div  { margin-bottom: $distance-s; }
@@ -68,12 +67,17 @@ img  { max-height: $size-m; }
 ```
 
 ### Borders
-Aligning borders might be a bit tricky at first, but eventually it becomes second nature.
+Use negative margins to align elements that have a top- and/or bottom border(s). Aligning borders might be a bit tricky at first, but eventually it becomes second nature.
 
 ```
-.section {
-  margin-top: $border-width-m * -1;
+.foo {
+  margin-top: ($border-width-m * -1);
   border-top: $border-width-m solid $black;
+}
+
+.bar {
+  margin-bottom: ($distance-s - $border-width-m);
+  border-bottom: $border-width-m solid $black;
 }
 ```
 
