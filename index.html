@@ -1,10 +1,10 @@
 <!doctype html>
 
-<html>
+<html class="demo">
 	<head>
 		<meta charset="utf-8" />
 
-		<title>Vertical Rhythm 2.0</title>
+		<title>Vertical Rhythm</title>
 
 		<meta name="author" content="Olaf Muller" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -14,17 +14,10 @@
 	</head>
 
 	<body>
-		<div class="grid">
-			<div class="grid__item"></div>
-			<div class="grid__item"></div>
-			<div class="grid__item"></div>
-		</div>
-
 		<header>
 			<h1 class="logo">
 				Vertical<br />
-				Rhythm<br />
-				2.0
+				Rhythm
 			</h1>
 			<p>For the creative developer. View on <a href="https://github.com/vicompany/vertical-rhythm">Github</a></p>
 		</header>
@@ -41,15 +34,14 @@
 
 				<h3 class="section__subtitle">Set base typograhy</h3>
 				<code>
-					$show-baseline: true;<br />
-					$show-stats: true;<br /><br />
+					$show-baseline: true;<br /><br />
 					$font-display: Arial, sans-serif;<br />
 					$cap-font-display: 0.02825;<br /><br />
 					$px-font-size: 16;<br />
 					$px-line-height: 24;<br /><br />
 					$modular-scale: 'golden section';
 				</code>
-				<p>VR takes into account the cap height of different typefaces. This is the only number that needs some fine-tuning to get everything just right. Located in: <code><_vr-variables.scss></code></p>
+				<p>VR takes into account the cap height of different typefaces. This is the only number that needs some fine-tuning to get everything just right. Located in: <code><_vr-user-settings.scss></code></p>
 
 				<h3 class="section__subtitle">Personal styling</h3>
 				<code>
@@ -237,7 +229,7 @@
 		</main>
 
 		<footer>
-			<p class="h5">Vertical Rhythm 2.0 for the creative developer. <a href="https://github.com/vicompany/vertical-rhythm">Github</a></p>
+			<p class="h5">Vertical Rhythm for the creative developer. <a href="https://github.com/vicompany/vertical-rhythm">Github</a></p>
 		</footer>
 	</body>
 </html>

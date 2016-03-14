@@ -1,24 +1,9 @@
 // Base
 html {
-	position: relative;
-
 	box-sizing: border-box;
 
 	@if ($show-baseline == true) {
-		&:after {
-			@include vr-baseline;
-
-			position: absolute;
-			top: 0;
-			right: 0;
-			left: 0;
-			z-index: 999;
-
-			height: 100%;
-
-			content: '';
-			pointer-events: none;
-		}
+		@include vr-baseline;
 	}
 }
 
@@ -40,16 +25,6 @@ body {
 }
 
 // Typography
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
-	padding-top: 0;
-	padding-bottom: $header-trailer;
-}
-
 h1, .h1 {
 	@include vr($font-display, $font-size-xxl);
 }
@@ -74,10 +49,18 @@ h6, .h6 {
 	@include vr($font-display, $font-size-xs);
 }
 
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	margin-bottom: $header-trailer;
+}
+
 p {
 	@include vr;
 
-	padding-top: 0;
 	padding-bottom: $paragraph-trailer;
 }
 
@@ -104,6 +87,20 @@ code {
 	display: block;
 
 	padding: 0 0 $paragraph-trailer;
+
+	pre {
+		margin: 0;
+
+		font-family: $font-mono;
+	}
+
+	p & {
+		@include vr-reset;
+
+		display: inline;
+
+		line-height: 0;
+	}
 }
 
 ol,
@@ -115,6 +112,8 @@ ul {
 	ol,
 	ul {
 		@include vr-reset;
+
+		padding-bottom: 0; // Reset trailer
 	}
 }
 
@@ -123,6 +122,7 @@ small {
 	line-height: 1;
 }
 
+// Buttons
 @if $include-vr-buttons == true {
 	.btn {
 		@include vr($font-display, $base-font-size);
@@ -130,7 +130,7 @@ small {
 		display: inline-block; // For when used on anchors
 
 		margin: ($vr-btn-border-width * -1) 0 ($paragraph-trailer - $vr-btn-border-width);
-		padding: $distance-s $distance-l;
+		padding: $vr-btn-padding-y $vr-btn-padding-x;
 
 		text-decoration: none;
 
@@ -150,23 +150,19 @@ small {
 	}
 }
 
+// Forms
 @if $include-vr-forms == true {
 	form {
+		margin: 0 0 ($paragraph-trailer - $vr-form-field-trailer);
+
 		font-family: $font-display;
 	}
 
 	fieldset {
-		margin: 0 0 $vr-form-item-spacing;
-		padding: ($distance-s - $vr-form-border-width) $distance-m;
+		margin: 0 0 ($vr-form-field-trailer - $vr-form-field-border-width);
+		padding: $vr-form-field-padding-y $vr-form-field-padding-x;
 
-		border: solid $vr-form-border-width;
-	}
-
-	legend {
-		@include vr($font-display, $base-font-size);
-
-		margin: 0;
-		padding: 0 $distance-m $vr-form-border-width;
+		border: solid $vr-form-field-border-width;
 	}
 
 	label {
@@ -174,9 +170,7 @@ small {
 
 		display: block;
 
-		width: 100%;
-
-		padding: 0;
+		padding: 0 0 $vr-form-label-trailer;
 
 		cursor: pointer;
 	}
@@ -190,14 +184,15 @@ small {
 
 		width: 100%;
 
-		margin: 0 0 $vr-form-item-spacing;
-		padding: ($distance-s - $vr-form-border-width) $distance-s;
+		margin: 0 0 $vr-form-field-trailer;
+		padding: ($vr-form-field-padding-y - $vr-form-field-border-width) $vr-form-field-padding-x;
 
-		border: solid $vr-form-border-width;
+		background: transparent;
+		border: solid $vr-form-field-border-width;
 	}
 
 	select {
-		height: $rhythm * 1.5;
+		height: $vr-form-select-height;
 	}
 
 	textarea {
