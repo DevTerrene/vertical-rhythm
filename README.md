@@ -3,7 +3,7 @@
 ## Description
 A SASS-based tool that let’s any designer create a vertical rhythm.
 
-## New in V2.0
+## New in this version
 * All files can now be imported as a mixin.
 * Standard 6 font sizes (xs - xxl).
 * New calculations for typeface specific cap heights.

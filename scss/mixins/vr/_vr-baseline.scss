@@ -1,13 +1,15 @@
 @mixin vr-baseline {
+	$baseline-size: 0.0625rem;
+
 	// Sets a baseline every half rhythm.
 	background: linear-gradient(
 		transparent,
-		transparent ($rhythm / 2 - 0.0625rem),
-		$vr-color-transparent ($rhythm / 2 - 0.0625rem),
+		transparent ($rhythm / 2 - $baseline-size),
+		$vr-color-transparent ($rhythm / 2 - $baseline-size),
 		$vr-color-transparent ($rhythm / 2),
 		transparent ($rhythm / 2),
-		transparent ($rhythm - 0.0625rem),
-		$vr-color-transparent ($rhythm - 0.0625rem),
+		transparent ($rhythm - $baseline-size),
+		$vr-color-transparent ($rhythm - $baseline-size),
 		$vr-color-transparent ($rhythm)
 	);
 

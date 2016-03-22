@@ -1,5 +1,5 @@
 // Helpers
-$show-baseline:					true;
+$show-baseline:					true; // Doesn't work in IE and Edge
 
 // Typography
 $font-display:					Arial, serif;
@@ -11,8 +11,8 @@ $cap-font-display:				0.153em;
 $cap-font-body:					0.153em;
 $cap-font-mono:					0.235em;
 
-$px-font-size:					16; // Pixels
-$px-line-height:				24; // Pixels
+$px-font-size:					18; // Pixels
+$px-line-height:				26; // Pixels
 
 // ! ----------
 // ! Don't change these variables!
@@ -26,7 +26,7 @@ $header-trailer:				$rhythm * 0.5;
 $paragraph-trailer:				$rhythm * 1;
 
 // Modular scale - see <_vr-calc-font-sizes.scss> for all preset scales
-$modular-scale:					'perfect-fifth';
+$modular-scale:					'golden-section';
 $font-size-default:				's'; // Starting size of the modular scale
 
 // Alignment

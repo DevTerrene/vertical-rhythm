@@ -3,13 +3,14 @@
 $grid-break: 52.5rem;
 $grid-gutter: $distance-m;
 
-$black: #000;
-$gray: lighten($black, 75%);
+$black: #222;
+$gray: lighten($black, 5%);
 $red: #ff1919;
 $white: #fff;
 
 $bg-color: $white;
-$text-color: $black;
+$text-color: $red;
+$text-color-transparent: rgba($red, 0.3125);
 
 ::selection {
 	color: $white;
@@ -30,38 +31,37 @@ html {
 }
 
 body {
-	padding: 0;
+	margin: 0 auto;
+	padding: 0 $grid-gutter;
 
 	color: $text-color;
+
+	font-feature-settings: 'liga', 'dlig';
+	text-rendering: optimizeLegibility;
+
+	@media (min-width: $grid-break) {
+		padding: 0 26.5% 0 5.5%;
+	}
 }
 
 header,
 main,
 footer {
-	overflow: hidden;
-
-	padding: 0 $grid-gutter;
+	display: block; // IE fix
 }
 
 header {
-	@media (min-width: $grid-break) {
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		z-index: 1;
+	position: relative; // For block
 
-		width: (100% / 3);
-	}
-
+	// Block
 	&:before {
 		display: block;
 
-		height: $rhythm * 1;
+		height: $rhythm * 0.5;
 
 		margin: 0 0 ($rhythm * 0.5);
 
-		background: $red;
+		background: $text-color;
 
 		content: '';
 	}
@@ -69,35 +69,16 @@ header {
 
 main {
 	padding-top: $rhythm * 2;
-
-	@media (min-width: $grid-break) {
-		padding-top: $rhythm * 3;
-	}
-}
-
-main,
-footer {
-	@media (min-width: $grid-break) {
-		position: relative;
-		left: (100% / 3 * 1);
-		display: block; // IE fix
-
-		width: (100% / 3 * 2);
-	}
 }
 
 footer {
-	padding-bottom: $rhythm * 3;
+	@extend %section;
+
+	padding-bottom: $rhythm * 1;
 }
 
 .section {
-	$section-border-width: $border-width-m;
-	$section-spacing: $distance-l * 2;
-
-	margin: 0 0 ($section-spacing - $section-border-width);
-	padding: 0 0 ($section-spacing - $paragraph-trailer);
-
-	border-bottom: $section-border-width solid $text-color;
+	@extend %section;
 
 	&__title {
 		@include vr($font-display, $font-size-l);
@@ -105,8 +86,6 @@ footer {
 		padding-bottom: $paragraph-trailer;
 
 		&:before {
-			color: $red;
-
 			content: '# ';
 		}
 	}
@@ -116,29 +95,44 @@ footer {
 
 		padding-bottom: $rhythm * 0.5;
 
-		color: $red;
+		&:before {
+			content: '## ';
+		}
 	}
 }
 
+%section {
+	$section-border-width: $border-width-m;
+	$section-spacing: $distance-l * 2;
+
+	overflow: hidden;
+
+	margin-top: ($section-border-width * -1);
+	padding-top: $section-spacing;
+
+	border-top: $section-border-width solid $text-color;
+}
+
 a {
-	color: $red;
-	text-decoration: none;
+	color: $text-color;
 
 	outline: none;
 
 	&:focus,
 	&:hover {
-		color: $text-color;
+		color: $black;
+
+		text-decoration: none;
 	}
 }
 
 blockquote {
-	$blockquote-border-width: $border-width-s;
+	$blockquote-border-width: $border-width-m;
 
 	margin: ($blockquote-border-width * -1) 0 ($paragraph-trailer - $blockquote-border-width);
-	padding: $paragraph-trailer $distance-l 0;
+	padding: ($rhythm * 1.5) ($rhythm * 1.5) 0;
 
-	border: $blockquote-border-width solid $red;
+	border: $blockquote-border-width solid $text-color;
 
 	p {
 		@include vr($font-body, $font-size-l);
@@ -149,7 +143,7 @@ blockquote {
 
 code {
 	$code-padding: $grid-gutter;
-	$code-stripe: rgba($white, 0.1875);
+	$code-stripe: $gray;
 
 	display: block;
 
@@ -188,11 +182,12 @@ p {
 		display: inline;
 
 		margin: 0;
-		padding: 0 $distance-s;
+		padding: ($distance-s / 2) $distance-s;
 
+		color: $white;
 		line-height: 0;
 
-		background: $black;
+		background: $text-color;
 	}
 }
 
@@ -209,7 +204,7 @@ form {
 		@include vr;
 
 		margin: 0;
-		padding: 0;
+		padding: 0 0 $vr-form-label-trailer;
 
 		font-weight: bold;
 	}
@@ -227,9 +222,25 @@ form {
 		border-color: $text-color;
 		outline: none;
 
+		&::-webkit-input-placeholder {
+			color: $text-color-transparent;
+		}
+
+		&:-moz-placeholder { /* Firefox 18- */
+			color: $text-color-transparent;
+		}
+
+		&::-moz-placeholder {  /* Firefox 19+ */
+			color: $text-color-transparent;
+		}
+
+		&:-ms-input-placeholder {
+			color: $text-color-transparent;
+		}
+
 		&:active,
 		&:focus {
-			border-color: $red;
+			border-color: $text-color;
 		}
 	}
 
@@ -252,25 +263,24 @@ h6, .h6 {
 	font-weight: bold;
 }
 
+h1, .h1 {
+	@include vr($font-display, $font-size-xl);
+
+	@media (min-width: $grid-break) {
+		@include vr($font-display, $font-size-xxl);
+	}
+}
+
 .article {
+	@extend %section;
+
 	&__row {
+		@extend %section;
+
 		position: relative; // For border
 
-		margin: 0 ($grid-gutter * -1);
-		padding: ($rhythm * 1.5) 0 0;
-
-		&:before {
-			position: absolute;
-			top: 0;
-			left: $grid-gutter;
-			right: $grid-gutter;
-
-			height: $border-width-m;
-
-			background: $text-color;
-
-			content: '';
-		}
+		margin-right: $grid-gutter * -1;
+		margin-left: $grid-gutter * -1;
 
 		// Clearfix
 		&:after {
@@ -302,13 +312,13 @@ h6, .h6 {
 		margin: $distance-s $distance-m 0 0;
 
 		color: $white;
-		font-size: $font-size-xl;
 		font-family: $font-display;
+		font-size: $font-size-xl;
 		font-weight: bold;
 		line-height: $dropcap-size;
 		text-align: center;
 
-		background-color: $red;
+		background-color: $text-color;
 	}
 
 	&__streamer {
@@ -321,10 +331,10 @@ h6, .h6 {
 }
 
 .btn {
-	color: $text-color;
+	color: $bg-color;
 	font-weight: bold;
 
-	background-color: transparent;
+	background-color: $text-color;
 	border-color: $text-color;
 	outline: none;
 
@@ -333,17 +343,17 @@ h6, .h6 {
 	&:hover {
 		color: $white;
 
-		background-color: $red;
-		border-color: $red;
+		background-color: $black;
+		border-color: $black;
 	}
 }
 
 .logo {
-	@include vr($font-display, $font-size-xl);
-
 	overflow: hidden;
 
 	padding-top: $rhythm * 1;
 
-	color: $red;
+	@media (min-width: $grid-break) {
+		padding-top: $rhythm * 2;
+	}
 }
